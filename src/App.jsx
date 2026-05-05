@@ -63,7 +63,7 @@ function App() {
           <div className="about-grid">
             <div className="about-image">
               <div className="image-placeholder">
-                <span className="emoji-avatar">👒</span>
+                <img src="https://avatars.githubusercontent.com/u/183245483?v=4" alt="Carlos Ávila" className="profile-photo" />
               </div>
             </div>
             <div className="about-content">

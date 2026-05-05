@@ -222,6 +222,14 @@
   animation: shimmer 3s infinite;
 }
 
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  border-radius: 20px;
+}
+
 .emoji-avatar {
   font-size: 8rem;
   z-index: 1;
