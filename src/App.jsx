@@ -36,7 +36,7 @@ function App() {
             <span className="gradient-text">Carlos Ávila</span>
           </h1>
           <h2 className="hero-subtitle">
-            Full Stack Developer <span className="text-accent">🇻🇪</span>
+            Developer <span className="text-accent">🇻🇪</span>
           </h2>
           <p className="hero-description">
             Creo soluciones digitales que combinan potencia, estética y funcionalidad.
