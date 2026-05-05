@@ -33,7 +33,7 @@ function App() {
         <div className="hero-content">
           <div className="hero-badge">👋 Hola, soy</div>
           <h1 className="hero-title">
-            <span className="gradient-text">Carlos Ávila</span>
+            <span className="gradient-text">Carlos Avila</span>
           </h1>
           <h2 className="hero-subtitle">
             Developer <span className="text-accent">🇻🇪</span>
@@ -63,7 +63,7 @@ function App() {
           <div className="about-grid">
             <div className="about-image">
               <div className="image-placeholder">
-                <img src="https://avatars.githubusercontent.com/u/183245483?v=4" alt="Carlos Ávila" className="profile-photo" />
+                <img src="https://avatars.githubusercontent.com/u/183245483?v=4" alt="Carlos Avila" className="profile-photo" />
               </div>
             </div>
             <div className="about-content">
@@ -373,7 +373,7 @@ function App() {
           <p>
             Hecho con <span className="text-accent">💚</span> y ☕ en Venezuela
           </p>
-          <p className="footer-year">© 2026 Carlos Ávila. Todos los derechos reservados.</p>
+          <p className="footer-year">© 2026 Carlos Avila. Todos los derechos reservados.</p>
         </div>
       </footer>
     </>
