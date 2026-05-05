@@ -309,10 +309,6 @@ function App() {
               </div>
             </div>
           </div>
-                <span className="tag">📱 Responsive</span>
-              </div>
-            </div>
-          </div>
           
           <div className="projects-cta">
             <a href="https://github.com/AvilaCarlosDev" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
