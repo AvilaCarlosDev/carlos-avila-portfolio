@@ -4,6 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- Security: Content Security Policy -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https://avatars.githubusercontent.com https://images.githubusercontent.com data: blob:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';" />
+
+  <!-- Security: Referrer Policy -->
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+  <!-- Security: Additional headers -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
+
   <!-- Primary SEO -->
   <title>Carlos Avila | Developer</title>
   <meta name="description" content="Portfolio of Carlos Avila, Developer, mentor, and Community & Public Support Specialist at 4Geeks Academy, focused on web development, learner support, and AI-powered workflows." />
