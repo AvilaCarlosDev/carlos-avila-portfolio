@@ -1,108 +1,79 @@
-# 🌐 Carlos Ávila Portfolio
+# Carlos Avila Portfolio
 
-**Portfolio profesional de Carlos Ávila - Developer 🇻🇪**
+Portfolio profesional de Carlos Avila - Developer
 
-[![Deploy en Vercel](https://img.shields.io/badge/Vercel-Deploy-black?style=for-the-badge&logo=vercel)](https://carlosavila.dev)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![Deploy](https://img.shields.io/badge/Deploy-Vercel-black?logo=vercel)](https://carlos-avila-portfolio.vercel.app)
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)](https://react.dev)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-06B6D4?logo=tailwindcss)](https://tailwindcss.com)
+[![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite)](https://vitejs.dev)
 
----
+## Descripcion
 
-## 📋 Descripción
+Portfolio profesional construido con React + Vite + Tailwind CSS v4.
 
-Mi portfolio profesional construido con:
-- **Vite** - Build tool rápido
-- **React** - Framework UI
-- **Tailwind CSS v4** - Estilos modernos
-- **Deploy automático** - Vercel
+**Carlos Avila** - Developer & Community & Public Support Specialist en 4Geeks Academy.
 
----
+## Caracteristicas
 
-## 🎨 Características
-
-- ✅ **Hero Section** - Saludo con badge, título con gradiente animado
-- ✅ **Sobre Mí** - Bio con avatar y stats
-- ✅ **Servicios** - 4 cards (Landing Pages, React Apps, Full Stack, IA/Automatización)
-- ✅ **Stack Tecnológico** - 4 categorías con iconos
-- ✅ **Proyectos Destacados** - 4 proyectos con links reales
-- ✅ **Contacto** - Email, ubicación, redes sociales
-- ✅ **Dark Mode** - Minimalista con colores verde esmeralda + naranja coral
-
----
-
-## 🚀 Demo en Vivo
-
-**URL:** https://carlosavila.dev (o el dominio que uses)
-
-**Features:**
-- Responsive (mobile-first)
+- Dark Mode / Light Mode toggle
+- Multiidioma (ES / EN) - i18n integrado
+- Scroll animations (fade-in, slide-in)
+- Responsive design (mobile-first)
+- Seccion AI & Automation Tools
+- Seguridad HTTP headers en Vercel
 - SEO optimizado
-- Animaciones fade-in on scroll
-- Build optimizado: 209KB JS, 16.5KB CSS (gzip)
+- Accesibilidad mejorada (aria-labels, focus-visible)
+- Build optimizado para Vercel
 
----
+## Stack
 
-## 🛠️ Stack Técnico
-
-| Tecnología | Versión |
-|------------|---------|
-| Vite | 8.0.10 |
-| React | Latest |
+| Tecnologia | Version |
+|-----------|---------|
+| React | 19 |
+| Vite | 8 |
 | Tailwind CSS | v4 |
 | @tailwindcss/vite | Latest |
 
----
-
-## 🏃 Correr Localmente
+## Correr localmente
 
 ```bash
-# Clonar el repo
 git clone https://github.com/AvilaCarlosDev/carlos-avila-portfolio.git
-
-# Instalar dependencias
+cd carlos-avila-portfolio
 npm install
-
-# Correr en desarrollo
 npm run dev
+```
 
-# Build para producción
+## Build
+
+```bash
 npm run build
-
-# Preview del build
 npm run preview
 ```
 
----
-
-## 📁 Estructura
+## Estructura
 
 ```
 carlos-avila-portfolio/
 ├── src/
-│   ├── App.jsx           # Componente principal
-│   ├── index.css         # Estilos globales
-│   └── components/       # Componentes por sección
+│   ├── App.jsx        # Componente principal (i18n, dark mode, secciones)
+│   ├── App.css        # Estilos - dark/light mode, animaciones, responsive
+│   └── index.css      # Reset global + Tailwind
 ├── public/
-│   └── favicon.svg       # Favicon: 🏴‍☠️
-├── vercel.json           # Config para Vercel
-├── vite.config.js        # Config de Vite
+├── index.html         # SEO mejorado - Carlos Avila Developer
+├── vercel.json        # Config Vercel + HTTP security headers
+├── vite.config.js     # Vite + Tailwind v4
 └── package.json
 ```
 
----
+## Secciones
 
-## 🎯 Proyectos Destacados
-
-1. **GitHub Streak Keeper** 🟩 - Scripts para mantener racha en GitHub
-2. **Weather App** ⛅ - App del clima con API
-3. **Tienda de Muebles** 🪑 - E-commerce completo
-4. **Awesome Venezuela Dev** 🇻🇪 - Recursos para devs VE
-
----
-
-## 📝 Licencia
-
-MIT License - ver [LICENSE](./LICENSE) para detalles.
+- **Hero** - Nombre, titulo, cargo (Community & Public Support Specialist)
+- **Sobre Mi / About Me** - Bio, tags, stats
+- **Servicios / Services** - Landing Pages, React Apps, Full Stack, IA
+- **Stack** - Frontend, Backend, Tools, AI & Automation
+- **Proyectos / Projects** - 4 proyectos destacados
+- **Contacto / Contact** - Email, LinkedIn, GitHub
 
 ---
 
-*Workspace mantenido por Carlos Avila - Developer 🇻🇪*
+Desarrollado por **Carlos Avila** - Developer
