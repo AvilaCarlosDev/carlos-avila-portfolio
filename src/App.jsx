@@ -172,11 +172,19 @@ function useScrollReveal() {
   }, [])
 }
 
-function useTypewriter(texts, speed = 80, pause = 2000) {
+function useTypewriter(texts, speed = 80, pause = 2000, langKey = '') {
   const [displayed, setDisplayed] = useState('')
   const [idx, setIdx] = useState(0)
   const [charIdx, setCharIdx] = useState(0)
   const [deleting, setDeleting] = useState(false)
+
+  // Reiniciar cuando cambia el idioma (langKey)
+  useEffect(() => {
+    setDisplayed('')
+    setIdx(0)
+    setCharIdx(0)
+    setDeleting(false)
+  }, [langKey])
 
   useEffect(() => {
     const current = texts[idx]
@@ -293,9 +301,10 @@ function Navbar({ theme, toggleTheme, lang, toggleLang }) {
 }
 
 function Hero({ lang }) {
-  const rolesEs = useTypewriter(['Developer', 'Mentor', 'Community Specialist', 'AI Explorer', 'Problem Solver'])
-  const rolesEn = useTypewriter(['Desarrollador', 'Mentor', 'Community Specialist', 'Explorador de IA', 'Resolvedor de Problemas'])
-  const roles = lang === 'es' ? rolesEs : rolesEn
+  const rolesEs = ['Desarrollador', 'Mentor', 'Especialista en Comunidad', 'Explorador de IA', 'Solucionador de Problemas']
+  const rolesEn = ['Developer', 'Mentor', 'Community Specialist', 'AI Explorer', 'Problem Solver']
+  const rolesList = lang === 'es' ? rolesEs : rolesEn
+  const roles = useTypewriter(rolesList, 80, 2000, lang)
 
   const t = {
     es: {
@@ -893,7 +902,7 @@ function Contact({ lang }) {
 function Footer({ lang }) {
   const t = {
     es: {
-      tagline: 'Desarrollador · Mentor · Community Specialist',
+      tagline: 'Desarrollador · Mentor · Especialista en Comunidad',
       built: 'Hecho con React & Vite.',
       source: 'Código',
       github: 'GitHub',
