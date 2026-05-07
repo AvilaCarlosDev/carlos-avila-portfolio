@@ -1,66 +1,46 @@
-@import "tailwindcss";
+/* ── GLOBAL RESET & BASE ──────────────────────────────── */
+/* Carlos Avila Portfolio - index.css */
 
-/* Global reset */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
+/* Tailwind v4 base import (if using Tailwind utilities) */
+/* @import "tailwindcss"; */
 
+/* ── GLOBAL BASE ─────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-/* Accessibility: focus visible */
-:focus-visible {
-  outline: 2px solid #42ffa1;
-  outline-offset: 2px;
+/* Skip to content link for accessibility */
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.75rem 1.5rem;
+  background: #64ffda;
+  color: #0a0e1a;
+  font-weight: 700;
+  border-radius: 0 0 8px 8px;
+  transition: top 0.2s;
+  text-decoration: none;
+  font-size: 0.875rem;
 }
 
-/* Scrollbar (dark mode) */
-.dark-mode ::-webkit-scrollbar {
-  width: 6px;
+.skip-to-content:focus {
+  top: 0;
 }
 
-.dark-mode ::-webkit-scrollbar-track {
-  background: #0d1117;
+/* ── SMOOTH FOCUS RING ───────────────────────────────── */
+*:focus {
+  outline: none;
 }
 
-.dark-mode ::-webkit-scrollbar-thumb {
-  background: #30363d;
-  border-radius: 3px;
-}
-
-.dark-mode ::-webkit-scrollbar-thumb:hover {
-  background: #42ffa1;
-}
-
-/* Light mode scrollbar */
-.light-mode ::-webkit-scrollbar {
-  width: 6px;
-}
-
-.light-mode ::-webkit-scrollbar-track {
-  background: #f6f8fa;
-}
-
-.light-mode ::-webkit-scrollbar-thumb {
-  background: #d0d7de;
-  border-radius: 3px;
-}
-
-.light-mode ::-webkit-scrollbar-thumb:hover {
-  background: #42ffa1;
-}
-
-/* Selection */
-::selection {
-  background: rgba(66, 255, 161, 0.25);
-  color: inherit;
+*:focus-visible {
+  outline: 2px solid #64ffda;
+  outline-offset: 3px;
+  border-radius: 4px;
 }
