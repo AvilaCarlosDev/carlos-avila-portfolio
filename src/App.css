@@ -1399,3 +1399,44 @@ ul, ol { list-style: none; }
   .badge-dot, .cursor, .scroll-wheel { animation: none; }
   .btn:hover, .project-card:hover, .ailab-card:hover { transform: none; }
 }
+
+/* Project Badges */
+.project-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.project-badge.client {
+  background: var(--accent-dim);
+  color: var(--accent);
+  border: 1px solid var(--accent-dim);
+}
+
+.project-badge.personal {
+  background: rgba(192, 132, 252, 0.1);
+  color: var(--purple);
+  border: 1px solid rgba(192, 132, 252, 0.2);
+}
+
+/* Lang Toggle Button */
+.lang-btn {
+  margin-left: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  background: var(--bg4);
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.875rem;
+  border: 1px solid var(--border-subtle);
+  transition: all 0.2s ease;
+}
+
+.lang-btn:hover {
+  background: var(--accent-dim);
+  color: var(--accent);
+  border-color: var(--accent-dim);
+}
