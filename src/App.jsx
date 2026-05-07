@@ -1,531 +1,778 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './App.css'
 
 // ============================================================
-// TRANSLATIONS (i18n) - ES / EN
+// CARLOS AVILA PORTFOLIO - COMPLETE REDESIGN v2.0
+// Developer | Mentor | Community & Public Support Specialist
 // ============================================================
-const translations = {
-  es: {
-    nav: {
-      about: 'Sobre mi',
-      services: 'Servicios',
-      stack: 'Stack',
-      projects: 'Proyectos',
-      contact: 'Contacto',
-    },
-    hero: {
-      greeting: 'Hola, soy',
-      name: 'Carlos Avila',
-      role: 'Developer',
-      flag: '🇻🇪',
-      description: 'Developer & Community Support Specialist en 4Geeks Academy. Combino desarrollo web, mentoria estudiantil, automatizacion con IA y soporte tecnico para crear soluciones digitales con impacto real.',
-      cta_projects: 'Ver Proyectos',
-      cta_contact: 'Contactar',
-      scroll: 'Scroll para mas',
-    },
-    about: {
-      title: 'Sobre Mi',
-      p1: 'Soy un Developer venezolano apasionado por crear productos digitales que marquen la diferencia. Trabajo como Community & Public Support Specialist en 4Geeks Academy, donde acompano y mentorizo a estudiantes en su camino hacia el desarrollo profesional.',
-      p2: 'Mi enfoque combina precision tecnica, comunicacion clara y aprendizaje continuo. Disfruto resolviendo problemas complejos, automatizando procesos con IA y construyendo experiencias web modernas con React y Node.js.',
-      repos: 'Repos publicos',
-      followers: 'Seguidores',
-      coffee: 'Cafes consumidos',
-    },
-    services: {
-      title: 'Servicios',
-      subtitle: 'Soluciones completas desde el concepto hasta el deploy',
-      s1_title: 'Landing Pages',
-      s1_desc: 'Paginas de alto impacto optimizadas para conversion. Rapidas, responsive y con diseno que captura la esencia de tu marca.',
-      s1_f1: 'Diseno personalizado',
-      s1_f2: 'SEO optimizado',
-      s1_f3: 'Deploy en Vercel/Netlify',
-      s2_title: 'React Apps',
-      s2_desc: 'Aplicaciones web modernas con React. UI componetizada, estado bien manejado y experiencia de usuario fluida.',
-      s2_f1: 'Componentes reutilizables',
-      s2_f2: 'Estado con hooks',
-      s2_f3: 'Tailwind CSS',
-      s3_title: 'Full Stack',
-      s3_desc: 'Desarrollo completo frontend + backend. APIs REST, bases de datos y deploy en la nube.',
-      s3_f1: 'APIs REST con Node.js',
-      s3_f2: 'Bases de datos SQL/NoSQL',
-      s3_f3: 'Deploy en Vercel/Railway',
-      s4_title: 'IA & Automatizacion',
-      s4_desc: 'Integracion de herramientas de IA y automatizacion de flujos de trabajo para maximizar productividad.',
-      s4_f1: 'Chatbots y asistentes',
-      s4_f2: 'Automatizacion de tareas',
-      s4_f3: 'Claude / ChatGPT / Ollama',
-    },
-    stack: {
-      title: 'Stack Tecnologico',
-      subtitle: 'Tecnologias y herramientas que uso en el dia a dia',
-      frontend: 'Frontend',
-      backend: 'Backend & DB',
-      tools: 'Herramientas',
-      ai: 'IA & Automatizacion',
-    },
-    projects: {
-      title: 'Proyectos Destacados',
-      subtitle: 'Algunos de mis trabajos recientes',
-      view: 'Ver Proyecto',
-      code: 'Codigo',
-    },
-    contact: {
-      title: 'Contacto',
-      subtitle: 'Conectemos y construyamos algo genial juntos',
-      email: 'Email',
-      location: 'Ubicacion',
-      location_val: 'Venezuela',
-      linkedin: 'LinkedIn',
-      github: 'GitHub',
-    },
-    footer: {
-      rights: 'Carlos Avila. Todos los derechos reservados.',
-      role: 'Developer & Community Support Specialist',
-    },
-  },
-  en: {
-    nav: {
-      about: 'About',
-      services: 'Services',
-      stack: 'Stack',
-      projects: 'Projects',
-      contact: 'Contact',
-    },
-    hero: {
-      greeting: "Hi, I'm",
-      name: 'Carlos Avila',
-      role: 'Developer',
-      flag: '🇻🇪',
-      description: 'Developer & Community & Public Support Specialist at 4Geeks Academy. I combine web development, student mentoring, AI automation and technical support to create digital solutions with real impact.',
-      cta_projects: 'View Projects',
-      cta_contact: 'Contact',
-      scroll: 'Scroll for more',
-    },
-    about: {
-      title: 'About Me',
-      p1: "I'm a Venezuelan Developer passionate about building digital products that make a difference. I work as Community & Public Support Specialist at 4Geeks Academy, where I guide and mentor students on their journey to professional development.",
-      p2: 'My approach blends technical precision, clear communication and continuous learning. I enjoy solving complex problems, automating workflows with AI and building modern web experiences with React and Node.js.',
-      repos: 'Public repos',
-      followers: 'Followers',
-      coffee: 'Coffees consumed',
-    },
-    services: {
-      title: 'Services',
-      subtitle: 'End-to-end solutions from concept to deploy',
-      s1_title: 'Landing Pages',
-      s1_desc: 'High-impact pages optimized for conversion. Fast, responsive and designed to capture your brand essence.',
-      s1_f1: 'Custom design',
-      s1_f2: 'SEO optimized',
-      s1_f3: 'Deploy on Vercel/Netlify',
-      s2_title: 'React Apps',
-      s2_desc: 'Modern web apps with React. Componentized UI, well-managed state and smooth user experience.',
-      s2_f1: 'Reusable components',
-      s2_f2: 'State with hooks',
-      s2_f3: 'Tailwind CSS',
-      s3_title: 'Full Stack',
-      s3_desc: 'Complete frontend + backend development. REST APIs, databases and cloud deploy.',
-      s3_f1: 'REST APIs with Node.js',
-      s3_f2: 'SQL/NoSQL databases',
-      s3_f3: 'Deploy on Vercel/Railway',
-      s4_title: 'AI & Automation',
-      s4_desc: 'Integration of AI tools and workflow automation to maximize productivity.',
-      s4_f1: 'Chatbots and assistants',
-      s4_f2: 'Task automation',
-      s4_f3: 'Claude / ChatGPT / Ollama',
-    },
-    stack: {
-      title: 'Tech Stack',
-      subtitle: 'Technologies and tools I use daily',
-      frontend: 'Frontend',
-      backend: 'Backend & DB',
-      tools: 'Tools',
-      ai: 'AI & Automation',
-    },
-    projects: {
-      title: 'Featured Projects',
-      subtitle: 'Some of my recent work',
-      view: 'View Project',
-      code: 'Code',
-    },
-    contact: {
-      title: 'Contact',
-      subtitle: "Let's connect and build something great together",
-      email: 'Email',
-      location: 'Location',
-      location_val: 'Venezuela',
-      linkedin: 'LinkedIn',
-      github: 'GitHub',
-    },
-    footer: {
-      rights: 'Carlos Avila. All rights reserved.',
-      role: 'Developer & Community Support Specialist',
-    },
-  },
-}
 
-// ============================================================
-// PROJECTS DATA
-// ============================================================
-const projects = [
+const PROJECTS = [
   {
-    title: 'GitHub Streak Keeper',
-    emoji: '🟩',
-    descEs: 'Scripts para mantener y visualizar la racha de contribuciones en GitHub de forma automatizada.',
-    descEn: 'Scripts to maintain and visualize GitHub contribution streaks in an automated way.',
-    tags: ['Python', 'GitHub API', 'Automation'],
-    url: 'https://github.com/AvilaCarlosDev',
-    urlCode: 'https://github.com/AvilaCarlosDev',
+    id: 1,
+    title: 'AI Chat Interface',
+    description: 'A modern chat interface powered by local LLMs. Built with React + Flask backend, supports streaming responses and multiple AI models including Ollama and OpenAI-compatible APIs.',
+    tags: ['React', 'Flask', 'Python', 'Ollama', 'AI'],
+    github: 'https://github.com/AvilaCarlosDev',
+    demo: null,
+    featured: true,
   },
   {
-    title: 'Weather App',
-    emoji: '⛅',
-    descEs: 'Aplicacion del clima en tiempo real con API publica. Busqueda por ciudad, temperatura y pronostico.',
-    descEn: 'Real-time weather app using a public API. Search by city, temperature and forecast.',
-    tags: ['React', 'API REST', 'Tailwind CSS'],
-    url: 'https://github.com/AvilaCarlosDev',
-    urlCode: 'https://github.com/AvilaCarlosDev',
+    id: 2,
+    title: 'Portfolio v2',
+    description: 'This portfolio — built with React 19, Vite, Tailwind CSS v4 and custom CSS animations. Dark/light mode, i18n, scroll-triggered animations and responsive design.',
+    tags: ['React', 'Vite', 'Tailwind CSS', 'CSS Animations'],
+    github: 'https://github.com/AvilaCarlosDev/carlos-avila-portfolio',
+    demo: 'https://carlos-avila-portfolio.vercel.app',
+    featured: true,
   },
   {
-    title: 'Tienda de Muebles',
-    emoji: '🪑',
-    descEs: 'E-commerce completo con carrito de compras, catalogo de productos y diseno responsive moderno.',
-    descEn: 'Full e-commerce with shopping cart, product catalog and modern responsive design.',
-    tags: ['React', 'Node.js', 'CSS'],
-    url: 'https://github.com/AvilaCarlosDev',
-    urlCode: 'https://github.com/AvilaCarlosDev',
+    id: 3,
+    title: 'Landing Page Builder',
+    description: 'Fast, conversion-optimized landing page templates with custom forms, SEO meta tags, and one-click deploy to Vercel or Netlify. Ideal for small businesses.',
+    tags: ['React', 'Node.js', 'Tailwind CSS', 'Vercel'],
+    github: 'https://github.com/AvilaCarlosDev',
+    demo: null,
+    featured: true,
   },
   {
-    title: 'Awesome Venezuela Dev',
-    emoji: '🇻🇪',
-    descEs: 'Repositorio colaborativo de recursos, herramientas y comunidades para developers venezolanos.',
-    descEn: 'Collaborative repository of resources, tools and communities for Venezuelan developers.',
-    tags: ['Open Source', 'Community', 'Markdown'],
-    url: 'https://github.com/AvilaCarlosDev',
-    urlCode: 'https://github.com/AvilaCarlosDev',
+    id: 4,
+    title: '4Geeks Support Dashboard',
+    description: 'Internal tool for tracking student progress, support tickets and community interactions at 4Geeks Academy. Reduces response time and improves learner experience.',
+    tags: ['React', 'REST API', 'JavaScript', 'CSS'],
+    github: 'https://github.com/AvilaCarlosDev',
+    demo: null,
+    featured: false,
   },
 ]
 
-// ============================================================
-// MAIN APP
-// ============================================================
-function App() {
-  const [visibleSections, setVisibleSections] = useState({})
-  const [darkMode, setDarkMode] = useState(true)
-  const [lang, setLang] = useState('es')
-  const [menuOpen, setMenuOpen] = useState(false)
+const AI_LAB = [
+  {
+    id: 1,
+    icon: '🤖',
+    title: 'Local LLM Workflows',
+    description: 'Experiments with Ollama, LM Studio and local models. Building offline-first AI tools that work without cloud APIs.',
+    tags: ['Ollama', 'LM Studio', 'Python', 'Local AI'],
+    status: 'active',
+  },
+  {
+    id: 2,
+    icon: '⚡',
+    title: 'Automation Pipelines',
+    description: 'Task automation using AI agents, n8n workflows and custom Python scripts. From content generation to data processing.',
+    tags: ['n8n', 'Python', 'Claude API', 'Automation'],
+    status: 'active',
+  },
+  {
+    id: 3,
+    icon: '💬',
+    title: 'Prompt Engineering Lab',
+    description: 'Systematic prompt testing, chaining and optimization. Building reusable prompt templates for development and content workflows.',
+    tags: ['Prompt Engineering', 'Claude', 'ChatGPT', 'Templates'],
+    status: 'building',
+  },
+  {
+    id: 4,
+    icon: '🔧',
+    title: 'AI-Powered Dev Tools',
+    description: 'Exploring how AI can accelerate development: code review bots, documentation generators and smart code completion setups.',
+    tags: ['GitHub Copilot', 'Continue.dev', 'Cursor', 'VS Code'],
+    status: 'exploring',
+  },
+]
 
-  const t = translations[lang]
+const TECH_STACK = {
+  Frontend: [
+    { name: 'JavaScript', icon: '🟨' },
+    { name: 'React', icon: '⚛️' },
+    { name: 'HTML5', icon: '🧱' },
+    { name: 'CSS3', icon: '🎨' },
+    { name: 'Tailwind CSS', icon: '💨' },
+    { name: 'Vite', icon: '⚡' },
+  ],
+  Backend: [
+    { name: 'Node.js', icon: '🟢' },
+    { name: 'Python', icon: '🐍' },
+    { name: 'Flask', icon: '🌶️' },
+    { name: 'REST APIs', icon: '🔌' },
+    { name: 'SQL', icon: '🗄️' },
+  ],
+  Tools: [
+    { name: 'Git', icon: '🌿' },
+    { name: 'GitHub', icon: '🐙' },
+    { name: 'Vercel', icon: '▲' },
+    { name: 'VS Code', icon: '💙' },
+    { name: 'Linux', icon: '🐧' },
+  ],
+  AI: [
+    { name: 'Claude API', icon: '🧠' },
+    { name: 'Ollama', icon: '🦙' },
+    { name: 'ChatGPT', icon: '💬' },
+    { name: 'n8n', icon: '🔗' },
+    { name: 'LangChain', icon: '🔗' },
+  ],
+}
 
+const EXPERIENCE = [
+  {
+    period: '2023 — Present',
+    role: 'Community & Public Support Specialist',
+    company: '4Geeks Academy',
+    companyUrl: 'https://4geeks.com',
+    description: 'Supporting a global community of developers and learners. I manage technical support across digital channels, review student projects, guide learners through coding challenges and help maintain a positive, high-quality learning experience.',
+    tags: ['Community Support', 'Student Mentoring', 'Technical Assistance', 'Project Review', 'Communication'],
+  },
+  {
+    period: '2023 — Present',
+    role: 'Mentor & Technical Guide',
+    company: '4Geeks Academy',
+    companyUrl: 'https://4geeks.com',
+    description: 'Mentoring students in web development — from fundamentals to full-stack projects. I provide code reviews, debug sessions, project feedback and career guidance. I help learners build confidence and professional skills.',
+    tags: ['Mentorship', 'Code Review', 'Web Development', 'Learner Support', 'Career Guidance'],
+  },
+  {
+    period: '2022 — Present',
+    role: 'Freelance Developer',
+    company: 'Independent',
+    companyUrl: null,
+    description: 'Building custom web solutions for clients: landing pages, React apps, automation scripts and digital tools. Focused on clean code, fast delivery and real impact for small businesses and creators.',
+    tags: ['React', 'Node.js', 'Landing Pages', 'Automation', 'Freelance'],
+  },
+]
+
+// ── HOOKS ─────────────────────────────────────────────────
+
+function useScrollReveal() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setVisibleSections((prev) => ({ ...prev, [entry.target.id]: true }))
+            entry.target.classList.add('revealed')
           }
         })
       },
-      { threshold: 0.08 }
+      { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
     )
-    document.querySelectorAll('section[id]').forEach((s) => observer.observe(s))
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el))
     return () => observer.disconnect()
   }, [])
+}
+
+function useTypewriter(texts, speed = 80, pause = 2000) {
+  const [displayed, setDisplayed] = useState('')
+  const [idx, setIdx] = useState(0)
+  const [charIdx, setCharIdx] = useState(0)
+  const [deleting, setDeleting] = useState(false)
 
   useEffect(() => {
-    const html = document.documentElement
-    if (darkMode) {
-      html.classList.add('dark')
-      html.classList.remove('light')
-    } else {
-      html.classList.add('light')
-      html.classList.remove('dark')
+    const current = texts[idx]
+    if (!deleting && charIdx < current.length) {
+      const t = setTimeout(() => setCharIdx((c) => c + 1), speed)
+      setDisplayed(current.slice(0, charIdx + 1))
+      return () => clearTimeout(t)
+    } else if (!deleting && charIdx === current.length) {
+      const t = setTimeout(() => setDeleting(true), pause)
+      return () => clearTimeout(t)
+    } else if (deleting && charIdx > 0) {
+      const t = setTimeout(() => setCharIdx((c) => c - 1), speed / 2)
+      setDisplayed(current.slice(0, charIdx - 1))
+      return () => clearTimeout(t)
+    } else if (deleting && charIdx === 0) {
+      setDeleting(false)
+      setIdx((i) => (i + 1) % texts.length)
     }
-  }, [darkMode])
+  }, [charIdx, deleting, idx, texts, speed, pause])
 
-  const reveal = (id) => (visibleSections[id] ? 'visible' : '')
+  return displayed
+}
+
+// ── COMPONENTS ────────────────────────────────────────────
+
+function Navbar({ theme, toggleTheme }) {
+  const [scrolled, setScrolled] = useState(false)
+  const [mobileOpen, setMobileOpen] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20)
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  const links = [
+    { href: '#about', label: 'About' },
+    { href: '#experience', label: 'Experience' },
+    { href: '#projects', label: 'Projects' },
+    { href: '#ai-lab', label: 'AI Lab' },
+    { href: '#mentorship', label: 'Mentorship' },
+    { href: '#stack', label: 'Stack' },
+    { href: '#contact', label: 'Contact' },
+  ]
+
+  const handleNav = (e, href) => {
+    e.preventDefault()
+    const el = document.querySelector(href)
+    if (el) el.scrollIntoView({ behavior: 'smooth' })
+    setMobileOpen(false)
+  }
 
   return (
-    <div className={`app-wrapper ${darkMode ? 'dark-mode' : 'light-mode'}`}>
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} role="navigation" aria-label="Main navigation">
+      <div className="nav-inner container">
+        <a href="#" className="nav-logo" aria-label="Carlos Avila - Home" onClick={(e) => handleNav(e, '#hero')}>
+          <span className="logo-bracket">&lt;</span>
+          <span className="logo-name">CA</span>
+          <span className="logo-bracket">/&gt;</span>
+        </a>
 
-      {/* NAVBAR */}
-      <nav className="navbar" role="navigation" aria-label="Main navigation">
-        <div className="nav-inner">
-          <a href="#hero" className="nav-logo" aria-label="Carlos Avila - Home">
-            CA<span className="nav-logo-dot">.</span>
-          </a>
-          <ul className="nav-links" role="list">
-            <li><a href="#sobre-mi" className="nav-link">{t.nav.about}</a></li>
-            <li><a href="#servicios" className="nav-link">{t.nav.services}</a></li>
-            <li><a href="#stack" className="nav-link">{t.nav.stack}</a></li>
-            <li><a href="#proyectos" className="nav-link">{t.nav.projects}</a></li>
-            <li><a href="#contacto" className="nav-link">{t.nav.contact}</a></li>
-          </ul>
-          <div className="nav-controls">
-            <button
-              className="btn-control"
-              onClick={() => setLang(lang === 'es' ? 'en' : 'es')}
-              aria-label={lang === 'es' ? 'Switch to English' : 'Cambiar a Espanol'}
-              title={lang === 'es' ? 'Switch to English' : 'Cambiar a Espanol'}
-            >
-              <span className="control-icon">{lang === 'es' ? '🇺🇸' : '🇻🇪'}</span>
-              <span className="control-label">{lang === 'es' ? 'EN' : 'ES'}</span>
-            </button>
-            <button
-              className="btn-control"
-              onClick={() => setDarkMode(!darkMode)}
-              aria-label={darkMode ? 'Activar modo claro' : 'Activar modo oscuro'}
-              title={darkMode ? 'Activar modo claro' : 'Activar modo oscuro'}
-            >
-              <span className="control-icon">{darkMode ? '☀️' : '🌙'}</span>
-            </button>
-            <button
-              className="btn-control btn-menu"
-              onClick={() => setMenuOpen(!menuOpen)}
-              aria-label="Toggle menu"
-              aria-expanded={menuOpen}
-            >
-              <span className="control-icon">{menuOpen ? '✕' : '☰'}</span>
-            </button>
-          </div>
+        <ul className={`nav-links ${mobileOpen ? 'open' : ''}`} role="list">
+          {links.map((l) => (
+            <li key={l.href}>
+              <a href={l.href} className="nav-link" onClick={(e) => handleNav(e, l.href)}>
+                {l.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <div className="nav-actions">
+          <button
+            className="theme-btn"
+            onClick={toggleTheme}
+            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+            title={`${theme === 'dark' ? 'Light' : 'Dark'} mode`}
+          >
+            {theme === 'dark' ? '☀️' : '🌙'}
+          </button>
+          <button
+            className={`hamburger ${mobileOpen ? 'open' : ''}`}
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle navigation menu"
+            aria-expanded={mobileOpen}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
-        {menuOpen && (
-          <ul className="nav-mobile" role="list">
-            {[
-              ['#sobre-mi', t.nav.about],
-              ['#servicios', t.nav.services],
-              ['#stack', t.nav.stack],
-              ['#proyectos', t.nav.projects],
-              ['#contacto', t.nav.contact],
-            ].map(([href, label]) => (
-              <li key={href}>
-                <a href={href} className="nav-link" onClick={() => setMenuOpen(false)}>{label}</a>
-              </li>
-            ))}
-          </ul>
-        )}
-      </nav>
-
-      {/* HERO */}
-      <section id="hero" className={`hero-section ${reveal('hero')}`}>
-        <div className="hero-grid" aria-hidden="true"></div>
-        <div className="hero-content">
-          <div className="hero-badge">{t.hero.greeting}</div>
-          <h1 className="hero-title">
-            <span className="gradient-text">{t.hero.name}</span>
-          </h1>
-          <h2 className="hero-subtitle">
-            {t.hero.role} <span className="text-accent">{t.hero.flag}</span>
-          </h2>
-          <p className="hero-role-badge">
-            Community &amp; Public Support Specialist &middot; 4Geeks Academy &middot; Mentor
-          </p>
-          <p className="hero-description">{t.hero.description}</p>
-          <div className="hero-ctas">
-            <a href="#proyectos" className="btn btn-primary">{t.hero.cta_projects}</a>
-            <a href="#contacto" className="btn btn-secondary">{t.hero.cta_contact}</a>
-          </div>
-          <div className="hero-scroll" aria-hidden="true">
-            <span>&#8595; {t.hero.scroll}</span>
-          </div>
-        </div>
-      </section>
-
-      {/* ABOUT */}
-      <section id="sobre-mi" className={`about-section fade-section ${reveal('sobre-mi')}`}>
-        <div className="container">
-          <h2 className="section-title">{t.about.title}</h2>
-          <div className="about-grid">
-            <div className="about-image slide-left">
-              <div className="image-wrapper">
-                <img
-                  src="https://avatars.githubusercontent.com/u/183245483?v=4"
-                  alt="Carlos Avila - Developer"
-                  className="profile-photo"
-                  loading="lazy"
-                  width="280"
-                  height="280"
-                />
-              </div>
-            </div>
-            <div className="about-content slide-right">
-              <p>{t.about.p1}</p>
-              <p>{t.about.p2}</p>
-              <div className="about-tags">
-                {['React', 'Node.js', 'IA', 'Mentor', '4Geeks Academy', 'Open Source'].map((tag) => (
-                  <span key={tag} className="tag">{tag}</span>
-                ))}
-              </div>
-              <div className="about-stats">
-                <div className="stat"><span className="stat-number">28</span><span className="stat-label">{t.about.repos}</span></div>
-                <div className="stat"><span className="stat-number">21</span><span className="stat-label">{t.about.followers}</span></div>
-                <div className="stat"><span className="stat-number">∞</span><span className="stat-label">{t.about.coffee}</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SERVICES */}
-      <section id="servicios" className={`services-section fade-section ${reveal('servicios')}`}>
-        <div className="container">
-          <h2 className="section-title">{t.services.title}</h2>
-          <p className="section-subtitle">{t.services.subtitle}</p>
-          <div className="services-grid">
-            {[
-              { icon: '🌐', title: t.services.s1_title, desc: t.services.s1_desc, features: [t.services.s1_f1, t.services.s1_f2, t.services.s1_f3] },
-              { icon: '⚛️', title: t.services.s2_title, desc: t.services.s2_desc, features: [t.services.s2_f1, t.services.s2_f2, t.services.s2_f3] },
-              { icon: '🔧', title: t.services.s3_title, desc: t.services.s3_desc, features: [t.services.s3_f1, t.services.s3_f2, t.services.s3_f3] },
-              { icon: '🤖', title: t.services.s4_title, desc: t.services.s4_desc, features: [t.services.s4_f1, t.services.s4_f2, t.services.s4_f3] },
-            ].map((s, i) => (
-              <article key={i} className="service-card" style={{ animationDelay: `${i * 0.1}s` }}>
-                <div className="service-icon" aria-hidden="true">{s.icon}</div>
-                <h3>{s.title}</h3>
-                <p>{s.desc}</p>
-                <ul className="service-features">
-                  {s.features.map((f, fi) => <li key={fi}>✓ {f}</li>)}
-                </ul>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* STACK */}
-      <section id="stack" className={`stack-section fade-section ${reveal('stack')}`}>
-        <div className="container">
-          <h2 className="section-title">{t.stack.title}</h2>
-          <p className="section-subtitle">{t.stack.subtitle}</p>
-          <div className="stack-grid">
-            <div className="stack-category">
-              <h3 className="stack-cat-title"><span className="stack-cat-icon">🎨</span> {t.stack.frontend}</h3>
-              <div className="stack-items">
-                {['React', 'JavaScript', 'TypeScript', 'Tailwind CSS', 'Vite', 'HTML5', 'CSS3'].map((item) => (
-                  <span key={item} className="stack-item">{item}</span>
-                ))}
-              </div>
-            </div>
-            <div className="stack-category">
-              <h3 className="stack-cat-title"><span className="stack-cat-icon">⚙️</span> {t.stack.backend}</h3>
-              <div className="stack-items">
-                {['Node.js', 'Python', 'Express', 'REST APIs', 'PostgreSQL', 'MongoDB', 'MySQL'].map((item) => (
-                  <span key={item} className="stack-item">{item}</span>
-                ))}
-              </div>
-            </div>
-            <div className="stack-category">
-              <h3 className="stack-cat-title"><span className="stack-cat-icon">🛠️</span> {t.stack.tools}</h3>
-              <div className="stack-items">
-                {['Git', 'GitHub', 'Vercel', 'Railway', 'VS Code', 'Linux', 'Docker'].map((item) => (
-                  <span key={item} className="stack-item">{item}</span>
-                ))}
-              </div>
-            </div>
-            <div className="stack-category stack-ai">
-              <h3 className="stack-cat-title"><span className="stack-cat-icon">🤖</span> {t.stack.ai}</h3>
-              <div className="stack-items">
-                {['Claude Code', 'ChatGPT', 'Ollama', 'OpenClaw', 'Cursor', 'GitHub Copilot'].map((item) => (
-                  <span key={item} className="stack-item stack-item-ai">{item}</span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* PROJECTS */}
-      <section id="proyectos" className={`projects-section fade-section ${reveal('proyectos')}`}>
-        <div className="container">
-          <h2 className="section-title">{t.projects.title}</h2>
-          <p className="section-subtitle">{t.projects.subtitle}</p>
-          <div className="projects-grid">
-            {projects.map((p, i) => (
-              <article key={i} className="project-card" style={{ animationDelay: `${i * 0.1}s` }}>
-                <div className="project-emoji" aria-hidden="true">{p.emoji}</div>
-                <h3 className="project-title">{p.title}</h3>
-                <p className="project-desc">{lang === 'es' ? p.descEs : p.descEn}</p>
-                <div className="project-tags">
-                  {p.tags.map((tag) => <span key={tag} className="project-tag">{tag}</span>)}
-                </div>
-                <div className="project-links">
-                  <a href={p.url} target="_blank" rel="noopener noreferrer" className="btn btn-sm btn-primary">{t.projects.view}</a>
-                  <a href={p.urlCode} target="_blank" rel="noopener noreferrer" className="btn btn-sm btn-secondary">{t.projects.code}</a>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CONTACT */}
-      <section id="contacto" className={`contact-section fade-section ${reveal('contacto')}`}>
-        <div className="container">
-          <h2 className="section-title">{t.contact.title}</h2>
-          <p className="section-subtitle">{t.contact.subtitle}</p>
-          <div className="contact-grid">
-            <div className="contact-info">
-              <div className="contact-item">
-                <span className="contact-icon" aria-hidden="true">📧</span>
-                <div>
-                  <strong>{t.contact.email}</strong>
-                  <a href="mailto:avilacarlosdev@gmail.com" className="contact-link">avilacarlosdev@gmail.com</a>
-                </div>
-              </div>
-              <div className="contact-item">
-                <span className="contact-icon" aria-hidden="true">📍</span>
-                <div>
-                  <strong>{t.contact.location}</strong>
-                  <span>{t.contact.location_val}</span>
-                </div>
-              </div>
-              <div className="contact-item">
-                <span className="contact-icon" aria-hidden="true">💼</span>
-                <div>
-                  <strong>{t.contact.linkedin}</strong>
-                  <a href="https://linkedin.com/in/avilacarlosdev" target="_blank" rel="noopener noreferrer" className="contact-link">linkedin.com/in/avilacarlosdev</a>
-                </div>
-              </div>
-              <div className="contact-item">
-                <span className="contact-icon" aria-hidden="true">🐙</span>
-                <div>
-                  <strong>{t.contact.github}</strong>
-                  <a href="https://github.com/AvilaCarlosDev" target="_blank" rel="noopener noreferrer" className="contact-link">github.com/AvilaCarlosDev</a>
-                </div>
-              </div>
-            </div>
-            <div className="contact-cta">
-              <div className="cta-card">
-                <div className="cta-icon" aria-hidden="true">🚀</div>
-                <h3>{lang === 'es' ? 'Tienes un proyecto en mente?' : 'Have a project in mind?'}</h3>
-                <p>{lang === 'es' ? 'Disponible para proyectos freelance, colaboraciones y oportunidades de trabajo.' : "Available for freelance projects, collaborations and job opportunities."}</p>
-                <a href="mailto:avilacarlosdev@gmail.com" className="btn btn-primary btn-full">
-                  {lang === 'es' ? 'Enviar Email' : 'Send Email'}
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FOOTER */}
-      <footer className="footer" role="contentinfo">
-        <div className="container">
-          <div className="footer-inner">
-            <div className="footer-brand">
-              <span className="footer-logo">CA<span className="text-accent">.</span></span>
-              <p className="footer-role">{t.footer.role}</p>
-            </div>
-            <div className="footer-links">
-              <a href="https://github.com/AvilaCarlosDev" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
-              <a href="https://linkedin.com/in/avilacarlosdev" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
-              <a href="mailto:avilacarlosdev@gmail.com" aria-label="Email">Email</a>
-            </div>
-            <p className="footer-copy">© {new Date().getFullYear()} {t.footer.rights}</p>
-          </div>
-        </div>
-      </footer>
-
-    </div>
+      </div>
+    </nav>
   )
 }
 
-export default App
+function Hero() {
+  const roles = useTypewriter([
+    'Developer',
+    'Mentor',
+    'Community Specialist',
+    'AI Explorer',
+    'Problem Solver',
+  ])
+
+  return (
+    <section id="hero" className="hero" aria-label="Introduction">
+      <div className="hero-bg" aria-hidden="true">
+        <div className="hero-grid"></div>
+        <div className="hero-glow glow-1"></div>
+        <div className="hero-glow glow-2"></div>
+        <div className="hero-orb"></div>
+      </div>
+
+      <div className="container hero-content">
+        <div className="hero-badge reveal">
+          <span className="badge-dot"></span>
+          <span>Available for projects</span>
+        </div>
+
+        <h1 className="hero-name reveal reveal-delay-1">
+          Carlos <span className="accent-gradient">Avila</span>
+        </h1>
+
+        <div className="hero-role reveal reveal-delay-2" aria-live="polite">
+          <span className="role-prefix">I&apos;m a </span>
+          <span className="role-typed">{roles}</span>
+          <span className="cursor" aria-hidden="true">|</span>
+        </div>
+
+        <p className="hero-desc reveal reveal-delay-3">
+          Developer, mentor and community tech specialist focused on building useful web
+          experiences, supporting learners, and exploring modern AI&#8209;powered workflows.
+        </p>
+
+        <div className="hero-meta reveal reveal-delay-4">
+          <span className="meta-item">
+            <span aria-hidden="true">📍</span> Venezuela
+          </span>
+          <span className="meta-sep" aria-hidden="true">·</span>
+          <span className="meta-item">
+            <span aria-hidden="true">🏢</span> 4Geeks Academy
+          </span>
+          <span className="meta-sep" aria-hidden="true">·</span>
+          <span className="meta-item">
+            <span aria-hidden="true">🟢</span> Open to opportunities
+          </span>
+        </div>
+
+        <div className="hero-cta reveal reveal-delay-5">
+          <a href="#projects" className="btn btn-primary" onClick={(e) => { e.preventDefault(); document.querySelector('#projects').scrollIntoView({ behavior: 'smooth' }) }}>
+            View My Work
+            <span aria-hidden="true">→</span>
+          </a>
+          <a href="#contact" className="btn btn-outline" onClick={(e) => { e.preventDefault(); document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' }) }}>
+            Get In Touch
+          </a>
+        </div>
+
+        <div className="hero-social reveal reveal-delay-5" aria-label="Social links">
+          <a href="https://github.com/AvilaCarlosDev" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="GitHub profile">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/carlos-avila-dev/" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn profile">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div className="scroll-indicator reveal reveal-delay-5" aria-hidden="true">
+        <div className="scroll-mouse">
+          <div className="scroll-wheel"></div>
+        </div>
+        <span>Scroll</span>
+      </div>
+    </section>
+  )
+}
+function About() {
+  return (
+    <section id="about" className="section" aria-label="About me">
+      <div className="container">
+        <div className="about-grid">
+          <div className="about-text">
+            <p className="section-label reveal">About</p>
+            <h2 className="section-heading reveal reveal-delay-1">
+              Building things that <span className="accent-gradient">matter</span>
+            </h2>
+            <p className="about-p reveal reveal-delay-2">
+              I&apos;m a developer from Venezuela passionate about creating digital products that
+              solve real problems. Currently I work as{' '}
+              <strong>Community &amp; Public Support Specialist at 4Geeks Academy</strong>, where
+              I support and guide students across their coding journey.
+            </p>
+            <p className="about-p reveal reveal-delay-3">
+              My work sits at the intersection of engineering and education. I help learners
+              debug code, understand concepts, review projects and build confidence. At the
+              same time, I keep building — landing pages, web apps, automation tools and AI
+              experiments.
+            </p>
+            <p className="about-p reveal reveal-delay-4">
+              I&apos;m particularly interested in how AI is reshaping developer workflows. I
+              explore local LLMs, automation pipelines, prompt engineering and agent-based
+              tools as part of my personal projects.
+            </p>
+            <div className="about-tags reveal reveal-delay-5">
+              {['React', 'Node.js', 'Python', 'AI Tools', 'Mentorship', 'Community'].map((t) => (
+                <span key={t} className="tag">{t}</span>
+              ))}
+            </div>
+          </div>
+          <div className="about-side reveal reveal-delay-2">
+            <div className="about-card">
+              <div className="about-avatar">
+                <img
+                  src="https://avatars.githubusercontent.com/u/183245483?v=4"
+                  alt="Carlos Avila - Developer and Mentor"
+                  loading="lazy"
+                  width="120"
+                  height="120"
+                />
+              </div>
+              <div className="about-stats">
+                <div className="stat">
+                  <span className="stat-num">2+</span>
+                  <span className="stat-label">Years at 4Geeks</span>
+                </div>
+                <div className="stat">
+                  <span className="stat-num">100+</span>
+                  <span className="stat-label">Students Supported</span>
+                </div>
+                <div className="stat">
+                  <span className="stat-num">20+</span>
+                  <span className="stat-label">Projects Built</span>
+                </div>
+              </div>
+              <div className="about-currently">
+                <p className="currently-label">Currently</p>
+                <p className="currently-val">Community & Public Support Specialist</p>
+                <p className="currently-company">@ 4Geeks Academy</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function Experience() {
+  const [active, setActive] = useState(0)
+
+  return (
+    <section id="experience" className="section section-alt" aria-label="Work experience">
+      <div className="container">
+        <p className="section-label reveal">Experience</p>
+        <h2 className="section-heading reveal reveal-delay-1">
+          Where I&apos;ve <span className="accent-gradient">worked</span>
+        </h2>
+
+        <div className="exp-layout reveal reveal-delay-2">
+          <div className="exp-tabs" role="tablist" aria-label="Experience tabs">
+            {EXPERIENCE.map((exp, i) => (
+              <button
+                key={i}
+                role="tab"
+                aria-selected={active === i}
+                aria-controls={`exp-panel-${i}`}
+                id={`exp-tab-${i}`}
+                className={`exp-tab ${active === i ? 'active' : ''}`}
+                onClick={() => setActive(i)}
+              >
+                <span className="exp-tab-company">{exp.company}</span>
+                <span className="exp-tab-role">{exp.role}</span>
+              </button>
+            ))}
+          </div>
+
+          {EXPERIENCE.map((exp, i) => (
+            <div
+              key={i}
+              id={`exp-panel-${i}`}
+              role="tabpanel"
+              aria-labelledby={`exp-tab-${i}`}
+              className={`exp-panel ${active === i ? 'active' : ''}`}
+            >
+              <div className="exp-header">
+                <h3 className="exp-role">{exp.role}</h3>
+                <p className="exp-company">
+                  {exp.companyUrl ? (
+                    <a href={exp.companyUrl} target="_blank" rel="noopener noreferrer">
+                      @ {exp.company} ↗
+                    </a>
+                  ) : (
+                    <span>@ {exp.company}</span>
+                  )}
+                </p>
+                <p className="exp-period">{exp.period}</p>
+              </div>
+              <p className="exp-desc">{exp.description}</p>
+              <div className="exp-tags">
+                {exp.tags.map((t) => (
+                  <span key={t} className="tag">{t}</span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function Projects() {
+  const [filter, setFilter] = useState('all')
+  const filtered = filter === 'featured' ? PROJECTS.filter((p) => p.featured) : PROJECTS
+
+  return (
+    <section id="projects" className="section" aria-label="Projects">
+      <div className="container">
+        <p className="section-label reveal">Projects</p>
+        <h2 className="section-heading reveal reveal-delay-1">
+          Things I&apos;ve <span className="accent-gradient">built</span>
+        </h2>
+
+        <div className="proj-filters reveal reveal-delay-2" role="group" aria-label="Filter projects">
+          <button className={`filter-btn ${filter === 'all' ? 'active' : ''}`} onClick={() => setFilter('all')}>All</button>
+          <button className={`filter-btn ${filter === 'featured' ? 'active' : ''}`} onClick={() => setFilter('featured')}>Featured</button>
+        </div>
+
+        <div className="projects-grid">
+          {filtered.map((p, i) => (
+            <article
+              key={p.id}
+              className={`project-card reveal reveal-delay-${(i % 3) + 1}`}
+              aria-label={`Project: ${p.title}`}
+            >
+              <div className="project-header">
+                <div className="project-icon" aria-hidden="true">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                </div>
+                <div className="project-links">
+                  {p.github && (
+                    <a href={p.github} target="_blank" rel="noopener noreferrer" aria-label={`View ${p.title} source code on GitHub`} className="project-link-icon">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                  )}
+                  {p.demo && (
+                    <a href={p.demo} target="_blank" rel="noopener noreferrer" aria-label={`View ${p.title} live demo`} className="project-link-icon">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    </a>
+                  )}
+                </div>
+              </div>
+              <h3 className="project-title">{p.title}</h3>
+              <p className="project-desc">{p.description}</p>
+              <div className="project-tags">
+                {p.tags.map((t) => <span key={t} className="project-tag">{t}</span>)}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function AILab() {
+  const statusMap = {
+    active: { label: 'Active', color: 'green' },
+    building: { label: 'Building', color: 'yellow' },
+    exploring: { label: 'Exploring', color: 'blue' },
+  }
+
+  return (
+    <section id="ai-lab" className="section section-alt" aria-label="AI Lab experiments">
+      <div className="container">
+        <p className="section-label reveal">AI Lab</p>
+        <h2 className="section-heading reveal reveal-delay-1">
+          Experiments &amp; <span className="accent-gradient">exploration</span>
+        </h2>
+        <p className="section-sub reveal reveal-delay-2">
+          A space where I explore AI tools, automation workflows and experiments. Always building, always learning.
+        </p>
+
+        <div className="ailab-grid">
+          {AI_LAB.map((item, i) => {
+            const status = statusMap[item.status]
+            return (
+              <div key={item.id} className={`ailab-card reveal reveal-delay-${(i % 4) + 1}`}>
+                <div className="ailab-top">
+                  <span className="ailab-icon" aria-hidden="true">{item.icon}</span>
+                  <span className={`status-badge status-${status.color}`}>{status.label}</span>
+                </div>
+                <h3 className="ailab-title">{item.title}</h3>
+                <p className="ailab-desc">{item.description}</p>
+                <div className="ailab-tags">
+                  {item.tags.map((t) => <span key={t} className="tag">{t}</span>)}
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function Mentorship() {
+  const highlights = [
+    { icon: '👨‍🎓', title: 'Student Support', desc: 'Guiding learners through coding challenges, debugging sessions and project milestones at 4Geeks Academy.' },
+    { icon: '🔍', title: 'Code Reviews', desc: 'Reviewing student projects with detailed feedback, best practices and constructive suggestions for improvement.' },
+    { icon: '🌐', title: 'Community Building', desc: 'Managing digital channels, facilitating discussions and keeping the learning community active, engaged and welcoming.' },
+    { icon: '🛠️', title: 'Technical Guidance', desc: 'Helping students understand web development concepts, work through blockers and gain confidence in their skills.' },
+    { icon: '📣', title: 'Public Support', desc: 'Handling public-facing communications, social channels and community platforms with clarity and professionalism.' },
+    { icon: '🚀', title: 'Career Mentoring', desc: 'Advising students on job search strategies, portfolio building and how to present themselves to employers.' },
+  ]
+
+  return (
+    <section id="mentorship" className="section" aria-label="Mentorship and community work">
+      <div className="container">
+        <p className="section-label reveal">Mentorship</p>
+        <h2 className="section-heading reveal reveal-delay-1">
+          Education &amp; <span className="accent-gradient">community</span>
+        </h2>
+        <p className="section-sub reveal reveal-delay-2">
+          Beyond code, I believe in supporting people. Working at 4Geeks Academy has shaped how I think about teaching, communication and community.
+        </p>
+
+        <div className="mentorship-grid">
+          {highlights.map((h, i) => (
+            <div key={i} className={`mentorship-card reveal reveal-delay-${(i % 3) + 1}`}>
+              <span className="mentorship-icon" aria-hidden="true">{h.icon}</span>
+              <h3 className="mentorship-title">{h.title}</h3>
+              <p className="mentorship-desc">{h.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mentorship-quote reveal reveal-delay-3">
+          <blockquote>
+            <p>&quot;The best way to learn is to teach — and the best way to build is to support others in building too.&quot;</p>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function TechStack() {
+  return (
+    <section id="stack" className="section section-alt" aria-label="Technology stack">
+      <div className="container">
+        <p className="section-label reveal">Stack</p>
+        <h2 className="section-heading reveal reveal-delay-1">
+          Tools I <span className="accent-gradient">work with</span>
+        </h2>
+
+        <div className="stack-grid">
+          {Object.entries(TECH_STACK).map(([category, items], ci) => (
+            <div key={category} className={`stack-category reveal reveal-delay-${ci + 1}`}>
+              <h3 className="stack-cat-title">{category}</h3>
+              <div className="stack-items">
+                {items.map((item) => (
+                  <div key={item.name} className="stack-item">
+                    <span className="stack-icon" aria-hidden="true">{item.icon}</span>
+                    <span className="stack-name">{item.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function Contact() {
+  return (
+    <section id="contact" className="section" aria-label="Contact information">
+      <div className="container">
+        <p className="section-label reveal">Contact</p>
+        <h2 className="section-heading reveal reveal-delay-1">
+          Let&apos;s <span className="accent-gradient">connect</span>
+        </h2>
+        <p className="section-sub reveal reveal-delay-2">
+          I&apos;m open to freelance projects, full-time opportunities and interesting conversations about web, AI and education.
+        </p>
+
+        <div className="contact-grid reveal reveal-delay-3">
+          <div className="contact-info">
+            <a href="mailto:avilacarlosdev@gmail.com" className="contact-item">
+              <span className="contact-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </span>
+              <div>
+                <p className="contact-label">Email</p>
+                <p className="contact-value">avilacarlosdev@gmail.com</p>
+              </div>
+            </a>
+            <a href="https://github.com/AvilaCarlosDev" target="_blank" rel="noopener noreferrer" className="contact-item">
+              <span className="contact-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </span>
+              <div>
+                <p className="contact-label">GitHub</p>
+                <p className="contact-value">AvilaCarlosDev ↗</p>
+              </div>
+            </a>
+            <a href="https://www.linkedin.com/in/carlos-avila-dev/" target="_blank" rel="noopener noreferrer" className="contact-item">
+              <span className="contact-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              </span>
+              <div>
+                <p className="contact-label">LinkedIn</p>
+                <p className="contact-value">carlos-avila-dev ↗</p>
+              </div>
+            </a>
+            <div className="contact-item static">
+              <span className="contact-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </span>
+              <div>
+                <p className="contact-label">Location</p>
+                <p className="contact-value">Venezuela 🇻🇪</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="contact-cta">
+            <div className="cta-card">
+              <h3 className="cta-title">Ready to collaborate?</h3>
+              <p className="cta-text">Whether it&apos;s a project, a question or just a conversation about tech — my inbox is open.</p>
+              <a
+                href="mailto:avilacarlosdev@gmail.com"
+                className="btn btn-primary btn-lg"
+              >
+                Send me an email
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function Footer() {
+  return (
+    <footer className="footer" role="contentinfo">
+      <div className="container footer-inner">
+        <div className="footer-left">
+          <a href="#" className="footer-logo" aria-label="Carlos Avila - Back to top">
+            <span className="logo-bracket">&lt;</span>
+            <span className="logo-name">CA</span>
+            <span className="logo-bracket">/&gt;</span>
+          </a>
+          <p className="footer-tagline">Developer · Mentor · Community Specialist</p>
+        </div>
+        <div className="footer-right">
+          <p className="footer-copy">
+            &copy; {new Date().getFullYear()} Carlos Avila. Built with React &amp; Vite.
+          </p>
+          <div className="footer-links">
+            <a href="https://github.com/AvilaCarlosDev/carlos-avila-portfolio" target="_blank" rel="noopener noreferrer" aria-label="Portfolio source code">Source</a>
+            <a href="https://github.com/AvilaCarlosDev" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">GitHub</a>
+            <a href="https://www.linkedin.com/in/carlos-avila-dev/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  )
+}
+
+// ── MAIN APP ──────────────────────────────────────────────
+
+export default function App() {
+  const [theme, setTheme] = useState(() => {
+    const saved = localStorage.getItem('ca-theme')
+    return saved || 'dark'
+  })
+
+  useScrollReveal()
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+    localStorage.setItem('ca-theme', theme)
+  }, [theme])
+
+  const toggleTheme = () => setTheme((t) => (t === 'dark' ? 'light' : 'dark'))
+
+  return (
+    <div className={`app-wrapper ${theme === 'dark' ? 'dark-mode' : 'light-mode'}`}>
+      <Navbar theme={theme} toggleTheme={toggleTheme} />
+      <main id="main-content">
+        <Hero />
+        <About />
+        <Experience />
+        <Projects />
+        <AILab />
+        <Mentorship />
+        <TechStack />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
+  )
+}
