@@ -32,6 +32,7 @@ Portfolio profesional construido con React + Vite + Tailwind CSS v4.
 | React | 19 |
 | Vite | 8 |
 | Tailwind CSS | v4 |
+| Font Awesome | 7 |
 | @tailwindcss/vite | Latest |
 
 ## Correr localmente
@@ -67,12 +68,19 @@ carlos-avila-portfolio/
 
 ## Secciones
 
-- **Hero** - Nombre, titulo, cargo (Community & Public Support Specialist)
-- **Sobre Mi / About Me** - Bio, tags, stats
-- **Servicios / Services** - Landing Pages, React Apps, Full Stack, IA
-- **Stack** - Frontend, Backend, Tools, AI & Automation
-- **Proyectos / Projects** - 4 proyectos destacados
-- **Contacto / Contact** - Email, LinkedIn, GitHub
+- **Hero** - Wanted poster, identidad personal y CTA principal
+- **Mapa interactivo** - Navegacion por islas con barco animado
+- **Bitacora / Logbook** - Perfil, comunidad, IA practica y stack
+- **Proyectos DEV** - Repos con valor para la comunidad
+- **Landing Pages** - Demos comerciales por nicho
+- **Contacto / Contact** - Email, LinkedIn, GitHub y formulario visual
+
+## Licencia
+
+- El codigo fuente esta licenciado bajo **MIT License**.
+- El contenido personal, imagenes, textos, identidad visual, branding y datos de Carlos Avila estan protegidos con **todos los derechos reservados**.
+
+Ver [`LICENSE`](./LICENSE) para mas detalles.
 
 ---
 
