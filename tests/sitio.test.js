@@ -169,3 +169,13 @@ describe('archivos del sitio', () => {
     for (const k of ['Strict-Transport-Security', 'X-Content-Type-Options', 'X-Frame-Options', 'Referrer-Policy', 'Permissions-Policy']) expect(cab[k], k).toBeTruthy()
   })
 })
+
+describe('compatibilidad con la CSP (font-src y img-src \'self\')', () => {
+  it('ninguna hoja de estilo incrusta fuentes o imágenes como data: URI', async () => {
+    const { readdirSync } = await import('node:fs')
+    const css = readdirSync(resolve(dist, '_astro')).filter((f) => f.endsWith('.css'))
+    expect(css.length).toBeGreaterThan(0)
+    const incrustados = css.filter((f) => /url\(\s*["']?data:/.test(readFileSync(resolve(dist, '_astro', f), 'utf8')))
+    expect(incrustados, 'CSS con data: URI (la CSP los bloquea)').toEqual([])
+  })
+})
