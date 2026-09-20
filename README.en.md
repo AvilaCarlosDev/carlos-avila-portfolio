@@ -59,7 +59,7 @@ docs/            design spec and decisions
 
 ## Tests
 
-`npm test` runs 85 tests in three groups:
+`npm test` runs 87 tests in three groups:
 
 - **`i18n.test.js`:** Spanish and English have exactly the same structure, no empty strings, and the figures match.
 - **`contacto.test.js`:** email validation (format, disposable domains, MX record) and `FormData` submission.

@@ -59,7 +59,7 @@ docs/            spec de diseño y decisiones
 
 ## Pruebas
 
-`npm test` ejecuta 85 pruebas en tres grupos:
+`npm test` ejecuta 87 pruebas en tres grupos:
 
 - **`i18n.test.js`:** español e inglés tienen exactamente la misma estructura, sin textos vacíos, y las cifras coinciden.
 - **`contacto.test.js`:** validación del correo (formato, dominios desechables, registro MX) y envío por `FormData`.

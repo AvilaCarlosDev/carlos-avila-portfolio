@@ -243,3 +243,16 @@ describe('quién soy y qué he hecho: contenido verificado', () => {
     })
   }
 })
+
+describe('presentación: una sola llamada a la acción', () => {
+  for (const [archivo, nombre] of [['index.html', 'ES'], ['en/index.html', 'EN']]) {
+    it(`${nombre}: solo "ver proyectos"; GitHub y LinkedIn viven en Contacto`, () => {
+      const doc = parse(leer(archivo))
+      const botones = doc.querySelectorAll('#inicio .cta a')
+      expect(botones.map((a) => a.getAttribute('href'))).toEqual(['#proyectos'])
+      expect(doc.querySelector('#inicio a[href*="github.com"]')).toBeNull()
+      expect(doc.querySelector('#contacto a[href*="github.com/AvilaCarlosDev"]')).not.toBeNull()
+      expect(doc.querySelector('#contacto a[href*="linkedin.com/in/avilacarlosdev"]')).not.toBeNull()
+    })
+  }
+})
