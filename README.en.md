@@ -5,7 +5,7 @@
 [![CI](https://github.com/AvilaCarlosDev/carlos-avila-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/AvilaCarlosDev/carlos-avila-portfolio/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-Portfolio of **Carlos Avila** (developer, community support specialist and senior mentor at 4Geeks Academy). A short site with four blocks: who I am, what I have done (my projects), my downloadable CV and a contact form that only accepts real emails.
+Portfolio of **Carlos Avila** (developer, community support specialist and senior mentor at 4Geeks Academy). A short site with four blocks: who I am, projects, my downloadable CV and a contact form that only accepts real emails.
 
 **Site:** <https://avilacarlosdev.com> · **CV:** [Spanish](public/Carlos-Avila-CV-ES.pdf) · [English](public/Carlos-Avila-CV-EN.pdf)
 
@@ -64,7 +64,7 @@ docs/            design spec and decisions
 
 - **`i18n.test.js`:** Spanish and English have exactly the same structure, no empty strings, and the figures match.
 - **`contacto.test.js`:** email validation (format, disposable domains, MX record) and `FormData` submission.
-- **`cifras.test.js`:** every number in "What I have done" matches `src/data/verificadas.json`, and no old figure is left, and the PDF CV uses the same figures (if `pdftotext` is installed).
+- **`cifras.test.js`:** every number in "Projects" matches `src/data/verificadas.json`, and no old figure is left, and the PDF CV uses the same figures (if `pdftotext` is installed).
 - **`layout.test.js`:** in a real Chrome, on the built site: no horizontal overflow, no broken images and fonts loaded, at mobile (390 px), tablet (820 px) and desktop (1440 px), for all four pages. It needs Chrome or Chromium (`CHROME_PATH` if it is not in the usual location); required in CI.
 - **`sitio.test.js`:** on the built HTML, per page: language, title and description, canonical, reciprocal `hreflang`, Open Graph, a single `h1`, JSON-LD, images with `alt` and local, internal links that exist, footer with copyright; and site-wide: `robots.txt`, `sitemap.xml`, manifest, `security.txt`, unindexed 404, a 1200×630 `og.jpg` and security headers.
 

@@ -13,8 +13,8 @@
         "label": "Who I am"
       },
       {
-        "href": "#que-he-hecho",
-        "label": "What I did"
+        "href": "#proyectos",
+        "label": "Projects"
       },
       {
         "href": "#cv",
@@ -44,7 +44,7 @@
     "portraitAlt": "Black and white portrait of Carlos Avila with arms crossed"
   },
   "proyectos": {
-    "title": "What I have done",
+    "title": "Projects",
     "sub": "Open source projects. All the code is public and every figure is measured in the repository.",
     "github": "View on GitHub",
     "demo": "See demos",
