@@ -105,7 +105,7 @@
       "name": "Name",
       "namePlaceholder": "Your name",
       "email": "Email",
-      "emailPlaceholder": "you@email.com",
+      "emailPlaceholder": "example@example.com",
       "message": "Message",
       "messagePlaceholder": "Tell me how I can help…",
       "send": "Send message",

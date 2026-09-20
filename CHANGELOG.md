@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Fixed / Corregido
+
+- Spanish copy now uses tuteo (Venezuelan Spanish) instead of voseo ("Cuéntame en qué puedo ayudarte", "Escríbeme", "Descarga mi CV"). A test rejects voseo forms. / El español usa tuteo (venezolano) y no voseo; una prueba rechaza esas formas.
+- The CV PDFs use the verified project figures (23 APIs, 342 tests, 94 tests, 15 skills verified byte for byte). / Los CV en PDF usan las cifras verificadas de los proyectos.
+- The email field example is `ejemplo@ejemplo.com` / `example@example.com`. / El ejemplo del campo de correo es `ejemplo@ejemplo.com` / `example@example.com`.
+
 ### Changed / Cambiado
 
 - "What I have done" now means the projects. The career timeline section was removed (it lives in the CV). / "Qué he hecho" son los proyectos. Se quitó la sección de recorrido laboral (está en el CV).

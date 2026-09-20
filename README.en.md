@@ -60,11 +60,11 @@ docs/            design spec and decisions
 
 ## Tests
 
-`npm test` runs 109 tests in five groups:
+`npm test` runs 114 tests in five groups:
 
 - **`i18n.test.js`:** Spanish and English have exactly the same structure, no empty strings, and the figures match.
 - **`contacto.test.js`:** email validation (format, disposable domains, MX record) and `FormData` submission.
-- **`cifras.test.js`:** every number in "What I have done" matches `src/data/verificadas.json`, and no old figure is left.
+- **`cifras.test.js`:** every number in "What I have done" matches `src/data/verificadas.json`, and no old figure is left, and the PDF CV uses the same figures (if `pdftotext` is installed).
 - **`layout.test.js`:** in a real Chrome, on the built site: no horizontal overflow, no broken images and fonts loaded, at mobile (390 px), tablet (820 px) and desktop (1440 px), for all four pages. It needs Chrome or Chromium (`CHROME_PATH` if it is not in the usual location); required in CI.
 - **`sitio.test.js`:** on the built HTML, per page: language, title and description, canonical, reciprocal `hreflang`, Open Graph, a single `h1`, JSON-LD, images with `alt` and local, internal links that exist, footer with copyright; and site-wide: `robots.txt`, `sitemap.xml`, manifest, `security.txt`, unindexed 404, a 1200×630 `og.jpg` and security headers.
 

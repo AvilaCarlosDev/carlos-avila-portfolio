@@ -42,3 +42,13 @@ describe('contenido bilingüe', () => {
     expect(urls(en)).toEqual(urls(es))
   })
 })
+
+describe('español venezolano: tuteo, sin voseo rioplatense', () => {
+  // Carlos es venezolano y habla de tú. Estas formas son del voseo (contame, escribime, podés, vos...).
+  const VOSEO = /\b(vos|contame|escribime|escribile|decime|mirá|probá|completá|usá|descargá|elegí|fijate|podés|tenés|querés|sabés|escribís|leés|acá|dale)\b/i
+
+  it('es.json no contiene formas de voseo', () => {
+    const hits = hojas(es).filter(([, v]) => typeof v === 'string' && VOSEO.test(v)).map(([r, v]) => `${r}: ${v.match(VOSEO)[0]}`)
+    expect(hits).toEqual([])
+  })
+})

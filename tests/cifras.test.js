@@ -1,6 +1,8 @@
 // Las cifras que muestra el sitio deben coincidir con las medidas en los repositorios
 // (src/data/verificadas.json). Nada de números inventados ni desactualizados.
 import { describe, it, expect } from 'vitest'
+import { spawnSync } from 'node:child_process'
+import { resolve } from 'node:path'
 import es from '../src/i18n/es.json'
 import en from '../src/i18n/en.json'
 import verificadas from '../src/data/verificadas.json'
@@ -48,4 +50,18 @@ describe('cifras verificadas de los proyectos', () => {
       for (const i of d.proyectos.items) expect(i.url).toBe(`https://github.com/AvilaCarlosDev/${i.id}`)
     }
   })
+})
+
+const pdftotext = spawnSync('pdftotext', ['-v']).error === undefined
+const textoPdf = (f) => spawnSync('pdftotext', [resolve(import.meta.dirname, '../public', f), '-'], { encoding: 'utf8' }).stdout.replace(/\s+/g, ' ')
+
+describe.skipIf(!pdftotext)('el CV en PDF usa las mismas cifras verificadas', () => {
+  const V2 = verificadas.proyectos
+  for (const f of ['Carlos-Avila-CV-ES.pdf', 'Carlos-Avila-CV-EN.pdf']) {
+    it(`${f}: cifras actuales y ninguna antigua`, () => {
+      const t = textoPdf(f)
+      for (const c of [V2['apis-gratis-es'].apis, V2['apis-gratis-es'].pruebas, V2['mcp-readiness-check'].pruebas, V2['openclaw-skills'].byteAByte]) expect(t, String(c)).toContain(String(c))
+      for (const viejo of [/22 (APIs|free)/, /250/, / 81 /]) expect(t, String(viejo)).not.toMatch(viejo)
+    })
+  }
 })

@@ -257,3 +257,10 @@ describe('presentación: una sola llamada a la acción', () => {
     })
   }
 })
+
+describe('formulario: ejemplos claros en los campos', () => {
+  it.each([['index.html', 'ejemplo@ejemplo.com'], ['en/index.html', 'example@example.com']])('%s: el correo de ejemplo es %s', (archivo, ejemplo) => {
+    const doc = parse(leer(archivo))
+    expect(doc.querySelector('#c-correo').getAttribute('placeholder')).toBe(ejemplo)
+  })
+})
