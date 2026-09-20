@@ -25,7 +25,7 @@
         "label": "Contacto"
       }
     ],
-    "cta": "Escribime",
+    "cta": "Escríbeme",
     "langLabel": "Cambiar idioma",
     "switchTo": {
       "code": "EN",
@@ -88,7 +88,7 @@
   "cv": {
     "title": "Mi CV, al día",
     "sub": "Una página, sin relleno. Disponible en español y en inglés.",
-    "boxTitle": "Descargá mi CV",
+    "boxTitle": "Descarga mi CV",
     "text": "Mi cargo actual, el trabajo con la comunidad de 4Geeks, mis proyectos de código abierto con cifras y mis certificaciones verificables.",
     "btnPrimary": "Descargar en español",
     "btnSecondary": "Download in English",
@@ -100,21 +100,21 @@
   },
   "contacto": {
     "title": "Hablemos.",
-    "sub": "Proyectos, mentoría o una colaboración. Respondo por acá o por GitHub.",
+    "sub": "Proyectos, mentoría o una colaboración. Respondo por aquí o por GitHub.",
     "form": {
       "name": "Nombre",
       "namePlaceholder": "Tu nombre",
       "email": "Correo",
-      "emailPlaceholder": "vos@correo.com",
+      "emailPlaceholder": "ejemplo@ejemplo.com",
       "message": "Mensaje",
-      "messagePlaceholder": "Contame en qué te puedo ayudar…",
+      "messagePlaceholder": "Cuéntame en qué puedo ayudarte…",
       "send": "Enviar mensaje",
       "messages": {
         "enviando": "Enviando…",
         "ok": "¡Listo! Recibí tu mensaje y te respondo pronto.",
-        "error": "No se pudo enviar. Probá de nuevo o escribime por LinkedIn o GitHub.",
-        "invalido": "Completá tu nombre, un correo válido y el mensaje.",
-        "correoFalso": "Ese correo no parece real. Usá un correo con el que pueda responderte."
+        "error": "No se pudo enviar. Prueba de nuevo o escríbeme por LinkedIn o GitHub.",
+        "invalido": "Completa tu nombre, un correo válido y el mensaje.",
+        "correoFalso": "Ese correo no parece real. Usa un correo con el que pueda responderte."
       },
       "privacy": "Tus datos se usan solo para responderte. ",
       "privacyLink": "Política de privacidad",
@@ -151,7 +151,7 @@
         },
         {
           "h": "Qué datos recojo",
-          "p": "Solo los que escribís en el formulario de contacto: nombre, correo y mensaje. El sitio no usa cookies, no tiene analítica ni publicidad y no rastrea a sus visitantes."
+          "p": "Solo los que escribes en el formulario de contacto: nombre, correo y mensaje. El sitio no usa cookies, no tiene analítica ni publicidad y no rastrea a sus visitantes."
         },
         {
           "h": "Para qué los uso",
@@ -163,11 +163,11 @@
         },
         {
           "h": "Cuánto tiempo los conservo",
-          "p": "El tiempo necesario para atender tu consulta y, como máximo, mientras dure una relación profesional posible. Podés pedirme que los borre cuando quieras."
+          "p": "El tiempo necesario para atender tu consulta y, como máximo, mientras dure una relación profesional posible. Puedes pedirme que los borre cuando quieras."
         },
         {
           "h": "Tus derechos",
-          "p": "Podés pedir acceso, corrección o eliminación de tus datos escribiéndome al correo indicado arriba."
+          "p": "Puedes pedir acceso, corrección o eliminación de tus datos escribiéndome al correo indicado arriba."
         }
       ]
     },

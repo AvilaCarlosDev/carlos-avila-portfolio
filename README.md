@@ -60,11 +60,11 @@ docs/            spec de diseño y decisiones
 
 ## Pruebas
 
-`npm test` ejecuta 109 pruebas en cinco grupos:
+`npm test` ejecuta 114 pruebas en cinco grupos:
 
-- **`i18n.test.js`:** español e inglés tienen exactamente la misma estructura, sin textos vacíos, y las cifras coinciden.
+- **`i18n.test.js`:** español e inglés tienen exactamente la misma estructura, sin textos vacíos, y las cifras coinciden. El español es venezolano (tuteo): la prueba rechaza formas de voseo como "contame" o "podés".
 - **`contacto.test.js`:** validación del correo (formato, dominios desechables, registro MX) y envío por `FormData`.
-- **`cifras.test.js`:** cada número de "Qué he hecho" coincide con `src/data/verificadas.json`, y no queda ninguna cifra antigua.
+- **`cifras.test.js`:** cada número de "Qué he hecho" coincide con `src/data/verificadas.json`, no queda ninguna cifra antigua y el CV en PDF usa las mismas cifras (si `pdftotext` está instalado).
 - **`layout.test.js`:** en un Chrome real, sobre el sitio construido: sin desborde horizontal, sin imágenes rotas y con las fuentes cargadas, en móvil (390 px), tableta (820 px) y escritorio (1440 px), para las cuatro páginas. Necesita Chrome o Chromium (`CHROME_PATH` si no está en la ruta habitual); en CI es obligatorio.
 - **`sitio.test.js`:** sobre el HTML ya construido, por página: idioma, título y descripción, canonical, `hreflang` recíproco, Open Graph, un solo `h1`, JSON-LD, imágenes con `alt` y locales, enlaces internos que existen, pie con copyright; y a nivel de sitio: `robots.txt`, `sitemap.xml`, manifest, `security.txt`, 404 sin indexar, `og.jpg` de 1200×630 y cabeceras de seguridad.
 
