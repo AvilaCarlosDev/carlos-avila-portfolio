@@ -1,0 +1,17 @@
+---
+import { Image } from 'astro:assets'
+import firma from '../assets/firma.png'
+const { t } = Astro.props
+const f = t.footer
+---
+<footer class="site-footer">
+  <div class="wrap">
+    <Image src={firma} alt={f.signatureAlt} height={34} />
+    <nav class="foot-links" aria-label="Legal">
+      <a href={f.privacy.href}>{f.privacy.label}</a>
+      <a href={f.sourceHref} rel="noopener">{f.sourceLabel}</a>
+      <a href={f.licenseHref} rel="noopener">{f.license}</a>
+    </nav>
+    <span>{f.rights}</span>
+  </div>
+</footer>

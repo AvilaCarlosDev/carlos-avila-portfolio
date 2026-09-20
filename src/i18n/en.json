@@ -1,0 +1,210 @@
+{
+  "lang": "en",
+  "htmlLang": "en",
+  "meta": {
+    "title": "Avilacarlosdev · From problem to solution",
+    "description": "Carlos Avila: developer, community support specialist and senior mentor at 4Geeks Academy. Open source built in Spanish, tested projects and a downloadable CV."
+  },
+  "nav": {
+    "ariaLabel": "Main navigation",
+    "links": [
+      {
+        "href": "#por-que",
+        "label": "Why me"
+      },
+      {
+        "href": "#proyectos",
+        "label": "Projects"
+      },
+      {
+        "href": "#cv",
+        "label": "CV"
+      },
+      {
+        "href": "#contacto",
+        "label": "Contact"
+      }
+    ],
+    "cta": "Get in touch",
+    "langLabel": "Change language",
+    "switchTo": {
+      "code": "ES",
+      "href": "/",
+      "hreflang": "es",
+      "name": "Español"
+    },
+    "current": "EN"
+  },
+  "hero": {
+    "eyebrow": "Developer · Mentor · Community",
+    "titleBefore": "From problem to",
+    "titleEm": "solution.",
+    "sub": "Developer and community support specialist at 4Geeks Academy. I publish open source and tools in Spanish for Latin American devs.",
+    "ctaProjects": "See projects",
+    "ctaGithub": "GitHub",
+    "portraitAlt": "Black and white portrait of Carlos Avila with arms crossed"
+  },
+  "porque": {
+    "kick": "01 / WHY ME",
+    "title": "Why hire me?",
+    "sub": "Four reasons, each one with something you can verify.",
+    "items": [
+      {
+        "title": "I explain technical topics clearly",
+        "text": "I am a senior mentor at 4Geeks Academy and support students every day. I publish documentation and catalogs in Spanish for the community.",
+        "linkText": "apis-gratis-es",
+        "href": "https://github.com/AvilaCarlosDev/apis-gratis-es"
+      },
+      {
+        "title": "I deliver with tests",
+        "text": "My open source projects are really tested: 81 tests and 94 % coverage in mcp-readiness-check, and over 250 in apis-gratis-es.",
+        "linkText": "mcp-readiness-check",
+        "href": "https://github.com/AvilaCarlosDev/mcp-readiness-check"
+      },
+      {
+        "title": "Other teams accept my code",
+        "text": "I have merged contributions in other people's projects: 6 PRs in pythiaLabs, plus DevSwitch and icon-sprite.",
+        "linkText": "see GitHub",
+        "href": "https://github.com/AvilaCarlosDev"
+      },
+      {
+        "title": "I understand the customer and the problem",
+        "text": "I come from years in sales and customer service and from studying Medicine: I listen, diagnose the real problem and solve it with judgment.",
+        "linkText": "see my CV",
+        "href": "#cv"
+      }
+    ]
+  },
+  "proyectos": {
+    "kick": "02 / OPEN SOURCE",
+    "title": "Featured projects",
+    "sub": "Tools I use and maintain. All the code is public.",
+    "github": "View on GitHub",
+    "items": [
+      {
+        "id": "apis-gratis-es",
+        "description": "Curated catalog of free public APIs for the Spanish-speaking community, with published demos.",
+        "numbers": [
+          "22 APIs",
+          "5 demos",
+          "250+ tests"
+        ],
+        "url": "https://github.com/AvilaCarlosDev/apis-gratis-es",
+        "art": "laptop"
+      },
+      {
+        "id": "mcp-readiness-check",
+        "description": "Command-line tool that checks whether an MCP server is ready for production.",
+        "numbers": [
+          "81 tests",
+          "94 % coverage"
+        ],
+        "url": "https://github.com/AvilaCarlosDev/mcp-readiness-check",
+        "art": "pensando"
+      },
+      {
+        "id": "openclaw-skills",
+        "description": "Collection of skills for AI agents, with the provenance of each one verified.",
+        "numbers": [
+          "37 audited skills"
+        ],
+        "url": "https://github.com/AvilaCarlosDev/openclaw-skills",
+        "art": "celebrando"
+      }
+    ]
+  },
+  "cv": {
+    "kick": "03 / RÉSUMÉ",
+    "title": "My CV, up to date",
+    "sub": "One page, no filler. Available in English and Spanish.",
+    "boxTitle": "Download my CV",
+    "text": "My current role, the community work at 4Geeks, my open source projects with numbers, and my verifiable certifications.",
+    "btnPrimary": "Download in English",
+    "btnSecondary": "Descargar en español",
+    "primaryFile": "/Carlos-Avila-CV-EN.pdf",
+    "secondaryFile": "/Carlos-Avila-CV-ES.pdf",
+    "tag": "PDF · 1 page",
+    "thumbAlt": "Preview of Carlos Avila's CV",
+    "artAlt": "Mini-carlos handing over his CV"
+  },
+  "contacto": {
+    "kick": "04 / CONTACT",
+    "title": "Let's talk.",
+    "sub": "Projects, mentoring or a collaboration. I reply here or on GitHub.",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "you@email.com",
+      "message": "Message",
+      "messagePlaceholder": "Tell me how I can help…",
+      "send": "Send message",
+      "messages": {
+        "enviando": "Sending…",
+        "ok": "Done! I got your message and will reply soon.",
+        "error": "It could not be sent. Try again or reach me on LinkedIn or GitHub.",
+        "invalido": "Please fill in your name, a valid email and the message.",
+        "correoFalso": "That email does not look real. Use one I can reply to."
+      },
+      "privacy": "Your data is only used to reply to you. ",
+      "privacyLink": "Privacy policy",
+      "privacyHref": "/en/privacy/"
+    },
+    "signsAlt": "Mini-carlos holding two signs: GitHub and LinkedIn",
+    "githubLabel": "Carlos on GitHub",
+    "linkedinLabel": "Carlos on LinkedIn"
+  },
+  "footer": {
+    "rights": "© 2026 Avilacarlosdev · Made in Venezuela",
+    "signatureAlt": "CA signature",
+    "privacy": {
+      "label": "Privacy",
+      "href": "/en/privacy/"
+    },
+    "license": "Code under the MIT license",
+    "licenseHref": "https://github.com/AvilaCarlosDev/carlos-avila-portfolio/blob/main/LICENSE",
+    "sourceLabel": "Source code",
+    "sourceHref": "https://github.com/AvilaCarlosDev/carlos-avila-portfolio"
+  },
+  "legal": {
+    "homeLabel": "Back to home",
+    "homeHref": "/en/",
+    "privacidad": {
+      "metaTitle": "Privacy policy · Avilacarlosdev",
+      "metaDescription": "What data this site collects, what it is used for and how to exercise your rights.",
+      "title": "Privacy policy",
+      "updated": "Last updated: September 19, 2026",
+      "sections": [
+        {
+          "h": "Controller",
+          "p": "Carlos Avila (Avilacarlosdev), Venezuela. Contact: avilavaleriocarlos@gmail.com."
+        },
+        {
+          "h": "What data I collect",
+          "p": "Only what you type in the contact form: name, email and message. The site uses no cookies, has no analytics or advertising, and does not track visitors."
+        },
+        {
+          "h": "What I use it for",
+          "p": "Only to reply to your message. I do not sell it or share it with third parties for other purposes."
+        },
+        {
+          "h": "Who processes it",
+          "p": "Submission goes through Web3Forms, which delivers the message to my inbox. Before sending, your browser asks Cloudflare (DNS over HTTPS) whether your email domain receives mail; only the domain (for example, gmail.com) is queried, never your full address."
+        },
+        {
+          "h": "How long I keep it",
+          "p": "As long as needed to handle your request and, at most, for as long as a possible professional relationship lasts. You can ask me to delete it at any time."
+        },
+        {
+          "h": "Your rights",
+          "p": "You can request access, correction or deletion of your data by writing to the email above."
+        }
+      ]
+    },
+    "notFound": {
+      "title": "Page not found",
+      "text": "The page you are looking for does not exist or has moved.",
+      "back": "Back to home"
+    }
+  }
+}

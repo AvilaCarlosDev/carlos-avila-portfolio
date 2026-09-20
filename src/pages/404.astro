@@ -1,0 +1,13 @@
+---
+import Base from '../layouts/Base.astro'
+import es from '../i18n/es.json'
+import en from '../i18n/en.json'
+---
+<Base t={es} path="/404/" title="404 · Avilacarlosdev" description={es.legal.notFound.text} noindex>
+  <main class="legal" style="text-align:center;padding-top:120px">
+    <h1>404</h1>
+    <p>{es.legal.notFound.title}. {es.legal.notFound.text}</p>
+    <p>{en.legal.notFound.title}. {en.legal.notFound.text}</p>
+    <p><a class="btn dark" href="/">{es.legal.notFound.back}</a> <a class="btn line" href="/en/">{en.legal.notFound.back}</a></p>
+  </main>
+</Base>

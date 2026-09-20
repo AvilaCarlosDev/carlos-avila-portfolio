@@ -1,0 +1,210 @@
+{
+  "lang": "es",
+  "htmlLang": "es",
+  "meta": {
+    "title": "Avilacarlosdev · Del problema a la solución",
+    "description": "Carlos Avila: desarrollador, soporte a la comunidad y mentor senior en 4Geeks Academy. Código abierto en español, proyectos con pruebas y CV descargable."
+  },
+  "nav": {
+    "ariaLabel": "Navegación principal",
+    "links": [
+      {
+        "href": "#por-que",
+        "label": "Por qué yo"
+      },
+      {
+        "href": "#proyectos",
+        "label": "Proyectos"
+      },
+      {
+        "href": "#cv",
+        "label": "CV"
+      },
+      {
+        "href": "#contacto",
+        "label": "Contacto"
+      }
+    ],
+    "cta": "Escribime",
+    "langLabel": "Cambiar idioma",
+    "switchTo": {
+      "code": "EN",
+      "href": "/en/",
+      "hreflang": "en",
+      "name": "English"
+    },
+    "current": "ES"
+  },
+  "hero": {
+    "eyebrow": "Desarrollador · Mentor · Comunidad",
+    "titleBefore": "Del problema a la",
+    "titleEm": "solución.",
+    "sub": "Desarrollador y especialista en soporte a la comunidad en 4Geeks Academy. Publico código abierto y herramientas en español para devs de Latinoamérica.",
+    "ctaProjects": "Ver proyectos",
+    "ctaGithub": "GitHub",
+    "portraitAlt": "Retrato de Carlos Avila, en blanco y negro, con los brazos cruzados"
+  },
+  "porque": {
+    "kick": "01 / POR QUÉ YO",
+    "title": "¿Por qué contratarme?",
+    "sub": "Cuatro razones, cada una con algo que podés comprobar.",
+    "items": [
+      {
+        "title": "Explico lo técnico en español claro",
+        "text": "Soy mentor senior en 4Geeks Academy y acompaño a estudiantes a diario. Publico documentación y catálogos en español para la comunidad.",
+        "linkText": "apis-gratis-es",
+        "href": "https://github.com/AvilaCarlosDev/apis-gratis-es"
+      },
+      {
+        "title": "Entrego con pruebas",
+        "text": "Mis proyectos abiertos se prueban de verdad: 81 pruebas y 94 % de cobertura en mcp-readiness-check, más de 250 en apis-gratis-es.",
+        "linkText": "mcp-readiness-check",
+        "href": "https://github.com/AvilaCarlosDev/mcp-readiness-check"
+      },
+      {
+        "title": "Mi código lo aceptan otros equipos",
+        "text": "Tengo contribuciones fusionadas en proyectos ajenos: 6 PRs en pythiaLabs, además de DevSwitch e icon-sprite.",
+        "linkText": "ver GitHub",
+        "href": "https://github.com/AvilaCarlosDev"
+      },
+      {
+        "title": "Entiendo al cliente y al problema",
+        "text": "Vengo de años en ventas y atención al cliente y de estudiar Medicina: escucho, diagnostico el problema real y lo resuelvo con criterio.",
+        "linkText": "ver mi CV",
+        "href": "#cv"
+      }
+    ]
+  },
+  "proyectos": {
+    "kick": "02 / CÓDIGO ABIERTO",
+    "title": "Proyectos destacados",
+    "sub": "Herramientas que uso y mantengo. Todo el código es público.",
+    "github": "Ver en GitHub",
+    "items": [
+      {
+        "id": "apis-gratis-es",
+        "description": "Catálogo curado de APIs públicas y gratuitas para la comunidad hispanohablante, con demos publicadas.",
+        "numbers": [
+          "22 APIs",
+          "5 demos",
+          "250+ pruebas"
+        ],
+        "url": "https://github.com/AvilaCarlosDev/apis-gratis-es",
+        "art": "laptop"
+      },
+      {
+        "id": "mcp-readiness-check",
+        "description": "Herramienta de línea de comandos que diagnostica si un servidor MCP está listo para producción.",
+        "numbers": [
+          "81 pruebas",
+          "94 % de cobertura"
+        ],
+        "url": "https://github.com/AvilaCarlosDev/mcp-readiness-check",
+        "art": "pensando"
+      },
+      {
+        "id": "openclaw-skills",
+        "description": "Colección de skills para agentes de IA, con la procedencia de cada una verificada.",
+        "numbers": [
+          "37 skills auditadas"
+        ],
+        "url": "https://github.com/AvilaCarlosDev/openclaw-skills",
+        "art": "celebrando"
+      }
+    ]
+  },
+  "cv": {
+    "kick": "03 / CURRÍCULUM",
+    "title": "Mi CV, al día",
+    "sub": "Una página, sin relleno. Disponible en español y en inglés.",
+    "boxTitle": "Descargá mi CV",
+    "text": "Mi cargo actual, el trabajo con la comunidad de 4Geeks, mis proyectos de código abierto con cifras y mis certificaciones verificables.",
+    "btnPrimary": "Descargar en español",
+    "btnSecondary": "Download in English",
+    "primaryFile": "/Carlos-Avila-CV-ES.pdf",
+    "secondaryFile": "/Carlos-Avila-CV-EN.pdf",
+    "tag": "PDF · 1 página",
+    "thumbAlt": "Vista previa del CV de Carlos Avila",
+    "artAlt": "Mini-carlos entregando su CV"
+  },
+  "contacto": {
+    "kick": "04 / CONTACTO",
+    "title": "Hablemos.",
+    "sub": "Proyectos, mentoría o una colaboración. Respondo por acá o por GitHub.",
+    "form": {
+      "name": "Nombre",
+      "namePlaceholder": "Tu nombre",
+      "email": "Correo",
+      "emailPlaceholder": "vos@correo.com",
+      "message": "Mensaje",
+      "messagePlaceholder": "Contame en qué te puedo ayudar…",
+      "send": "Enviar mensaje",
+      "messages": {
+        "enviando": "Enviando…",
+        "ok": "¡Listo! Recibí tu mensaje y te respondo pronto.",
+        "error": "No se pudo enviar. Probá de nuevo o escribime por LinkedIn o GitHub.",
+        "invalido": "Completá tu nombre, un correo válido y el mensaje.",
+        "correoFalso": "Ese correo no parece real. Usá un correo con el que pueda responderte."
+      },
+      "privacy": "Tus datos se usan solo para responderte. ",
+      "privacyLink": "Política de privacidad",
+      "privacyHref": "/privacidad/"
+    },
+    "signsAlt": "Mini-carlos sosteniendo dos carteles: GitHub y LinkedIn",
+    "githubLabel": "GitHub de Carlos",
+    "linkedinLabel": "LinkedIn de Carlos"
+  },
+  "footer": {
+    "rights": "© 2026 Avilacarlosdev · Hecho en Venezuela",
+    "signatureAlt": "Firma CA",
+    "privacy": {
+      "label": "Privacidad",
+      "href": "/privacidad/"
+    },
+    "license": "Código bajo licencia MIT",
+    "licenseHref": "https://github.com/AvilaCarlosDev/carlos-avila-portfolio/blob/main/LICENSE",
+    "sourceLabel": "Código fuente",
+    "sourceHref": "https://github.com/AvilaCarlosDev/carlos-avila-portfolio"
+  },
+  "legal": {
+    "homeLabel": "Volver al inicio",
+    "homeHref": "/",
+    "privacidad": {
+      "metaTitle": "Política de privacidad · Avilacarlosdev",
+      "metaDescription": "Qué datos recoge este sitio, para qué se usan y cómo ejercer tus derechos.",
+      "title": "Política de privacidad",
+      "updated": "Última actualización: 19 de septiembre de 2026",
+      "sections": [
+        {
+          "h": "Responsable",
+          "p": "Carlos Avila (Avilacarlosdev), Venezuela. Contacto: avilavaleriocarlos@gmail.com."
+        },
+        {
+          "h": "Qué datos recojo",
+          "p": "Solo los que escribís en el formulario de contacto: nombre, correo y mensaje. El sitio no usa cookies, no tiene analítica ni publicidad y no rastrea a sus visitantes."
+        },
+        {
+          "h": "Para qué los uso",
+          "p": "Únicamente para responder tu mensaje. No los vendo ni los comparto con terceros con otros fines."
+        },
+        {
+          "h": "Quién los procesa",
+          "p": "El envío pasa por Web3Forms, que entrega el mensaje a mi correo. Antes de enviar, el navegador consulta a Cloudflare (DNS sobre HTTPS) si el dominio de tu correo recibe mensajes; solo se consulta el dominio (por ejemplo, gmail.com), nunca tu dirección completa."
+        },
+        {
+          "h": "Cuánto tiempo los conservo",
+          "p": "El tiempo necesario para atender tu consulta y, como máximo, mientras dure una relación profesional posible. Podés pedirme que los borre cuando quieras."
+        },
+        {
+          "h": "Tus derechos",
+          "p": "Podés pedir acceso, corrección o eliminación de tus datos escribiéndome al correo indicado arriba."
+        }
+      ]
+    },
+    "notFound": {
+      "title": "Página no encontrada",
+      "text": "La página que buscás no existe o cambió de lugar.",
+      "back": "Volver al inicio"
+    }
+  }
+}

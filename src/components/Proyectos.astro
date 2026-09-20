@@ -1,0 +1,27 @@
+---
+import { Image } from 'astro:assets'
+import laptop from '../assets/laptop.png'
+import pensando from '../assets/pensando.png'
+import celebrando from '../assets/celebrando.png'
+const { t } = Astro.props
+const p = t.proyectos
+const arte = { laptop, pensando, celebrando }
+---
+<section id="proyectos" class="wrap">
+  <div class="head">
+    <div><div class="kick">{p.kick}</div><h2>{p.title}</h2></div>
+    <p>{p.sub}</p>
+  </div>
+  {p.items.map((it, i) => (
+    <article class="card proj">
+      <div>
+        <span class="n">{String(i + 1).padStart(2, '0')}</span>
+        <h3>{it.id}</h3>
+        <p>{it.description}</p>
+        <div class="nums">{it.numbers.map((n) => <span>{n}</span>)}</div>
+        <div class="row"><a class="btn dark" href={it.url} rel="noopener">{p.github}</a></div>
+      </div>
+      <div class="art"><Image src={arte[it.art]} alt="" width={220} height={250} loading="lazy" /></div>
+    </article>
+  ))}
+</section>
