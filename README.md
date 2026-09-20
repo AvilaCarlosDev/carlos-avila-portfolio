@@ -5,7 +5,7 @@
 [![CI](https://github.com/AvilaCarlosDev/carlos-avila-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/AvilaCarlosDev/carlos-avila-portfolio/actions/workflows/ci.yml)
 [![Licencia: MIT](https://img.shields.io/badge/licencia-MIT-blue.svg)](LICENSE)
 
-Portafolio de **Carlos Avila** (desarrollador, especialista en soporte a la comunidad y mentor senior en 4Geeks Academy). Un sitio corto con cinco bloques: quién soy, qué he hecho, mis proyectos, mi CV descargable y un formulario de contacto que solo acepta correos reales.
+Portafolio de **Carlos Avila** (desarrollador, especialista en soporte a la comunidad y mentor senior en 4Geeks Academy). Un sitio corto con cuatro bloques: quién soy, qué he hecho (mis proyectos), mi CV descargable y un formulario de contacto que solo acepta correos reales.
 
 **Sitio:** <https://avilacarlosdev.com> · **CV:** [español](public/Carlos-Avila-CV-ES.pdf) · [inglés](public/Carlos-Avila-CV-EN.pdf)
 
@@ -47,9 +47,10 @@ npm run preview # sirve dist/ localmente
 ```text
 src/
   i18n/          es.json y en.json: todo el texto del sitio, con la misma estructura
-  components/    Header, Hero, Quien, Trayectoria, Proyectos, Curriculum, Contacto, Footer, Legal
+  components/    Header, Hero, Quien, Proyectos, Curriculum, Contacto, Footer, Legal
   layouts/       Base.astro: SEO, hreflang, Open Graph, JSON-LD
   pages/         index (ES), en/index, privacidad, en/privacy, 404
+  data/          verificadas.json: cifras medidas en cada repositorio, con su comando
   scripts/       contacto.js: validación y envío del formulario
   assets/        imágenes que Astro optimiza
 public/          CV en PDF, favicons, og.jpg, robots, sitemap, manifest, security.txt
@@ -59,12 +60,17 @@ docs/            spec de diseño y decisiones
 
 ## Pruebas
 
-`npm test` ejecuta 99 pruebas en cuatro grupos:
+`npm test` ejecuta 109 pruebas en cinco grupos:
 
 - **`i18n.test.js`:** español e inglés tienen exactamente la misma estructura, sin textos vacíos, y las cifras coinciden.
 - **`contacto.test.js`:** validación del correo (formato, dominios desechables, registro MX) y envío por `FormData`.
+- **`cifras.test.js`:** cada número de "Qué he hecho" coincide con `src/data/verificadas.json`, y no queda ninguna cifra antigua.
 - **`layout.test.js`:** en un Chrome real, sobre el sitio construido: sin desborde horizontal, sin imágenes rotas y con las fuentes cargadas, en móvil (390 px), tableta (820 px) y escritorio (1440 px), para las cuatro páginas. Necesita Chrome o Chromium (`CHROME_PATH` si no está en la ruta habitual); en CI es obligatorio.
 - **`sitio.test.js`:** sobre el HTML ya construido, por página: idioma, título y descripción, canonical, `hreflang` recíproco, Open Graph, un solo `h1`, JSON-LD, imágenes con `alt` y locales, enlaces internos que existen, pie con copyright; y a nivel de sitio: `robots.txt`, `sitemap.xml`, manifest, `security.txt`, 404 sin indexar, `og.jpg` de 1200×630 y cabeceras de seguridad.
+
+## Cifras verificadas
+
+No se publica ningún número sin medirlo. `src/data/verificadas.json` guarda, para cada proyecto, la cifra, el desglose y el **comando** con el que se obtuvo en un clon limpio del repositorio (pruebas, cobertura, APIs, demos y skills). Si un proyecto cambia, se vuelve a medir y se actualiza el archivo; `cifras.test.js` falla si el sitio dice otra cosa.
 
 ## Integración continua
 

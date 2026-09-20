@@ -13,12 +13,8 @@
         "label": "Who I am"
       },
       {
-        "href": "#trayectoria",
+        "href": "#que-he-hecho",
         "label": "What I did"
-      },
-      {
-        "href": "#proyectos",
-        "label": "Projects"
       },
       {
         "href": "#cv",
@@ -48,26 +44,28 @@
     "portraitAlt": "Black and white portrait of Carlos Avila with arms crossed"
   },
   "proyectos": {
-    "title": "Featured projects",
-    "sub": "Tools I use and maintain. All the code is public.",
+    "title": "What I have done",
+    "sub": "Open source projects. All the code is public and every figure is measured in the repository.",
     "github": "View on GitHub",
+    "demo": "See demos",
     "items": [
       {
         "id": "apis-gratis-es",
-        "description": "Curated catalog of free public APIs for the Spanish-speaking community, with published demos.",
+        "description": "Verified catalog of free public APIs for the Spanish-speaking community, with demos that work live.",
         "numbers": [
-          "22 APIs",
+          "23 APIs",
           "5 demos",
-          "250+ tests"
+          "342 tests"
         ],
         "url": "https://github.com/AvilaCarlosDev/apis-gratis-es",
+        "demoUrl": "https://avilacarlosdev.github.io/apis-gratis-es/",
         "art": "laptop"
       },
       {
         "id": "mcp-readiness-check",
-        "description": "Command-line tool that checks whether an MCP server is ready for production.",
+        "description": "Command-line tool in TypeScript: it connects to an MCP server, inspects the tools it exposes, validates their schemas and generates reports in console, JSON and Markdown.",
         "numbers": [
-          "81 tests",
+          "94 tests",
           "94 % coverage"
         ],
         "url": "https://github.com/AvilaCarlosDev/mcp-readiness-check",
@@ -75,9 +73,12 @@
       },
       {
         "id": "openclaw-skills",
-        "description": "Collection of skills for AI agents, with the provenance of each one verified.",
+        "description": "Collection of skills for OpenClaw, in Spanish and English, with the origin of each one recorded and checked in CI.",
         "numbers": [
-          "37 audited skills"
+          "37 skills",
+          "15 verified byte for byte",
+          "20 own · 2 derived",
+          "15 tests"
         ],
         "url": "https://github.com/AvilaCarlosDev/openclaw-skills",
         "art": "celebrando"
@@ -198,6 +199,10 @@
       {
         "label": "Languages",
         "value": "Spanish (native) · English B1 · Italian B1"
+      },
+      {
+        "label": "Education",
+        "value": "Full Stack Developer (4Geeks Academy, 2025) and 16 certificates"
       }
     ],
     "toolsLabel": "What I work with",
@@ -212,67 +217,6 @@
       "Git · GitHub",
       "Docker · Linux",
       "AI and agents (MCP)"
-    ]
-  },
-  "trayectoria": {
-    "title": "What I have done",
-    "sub": "My path, from the counter to the code.",
-    "timeline": [
-      {
-        "period": "May 2026 – now",
-        "role": "Community & Public Support Specialist · Senior Mentor",
-        "org": "4Geeks Academy · part time",
-        "note": "Support for students in the Full Stack program: I answer technical and community questions, mentor them and review projects."
-      },
-      {
-        "period": "Apr 2026 – now",
-        "role": "Customer service",
-        "org": "DocsiApp · weekends",
-        "note": "Customer service on Saturdays and Sundays."
-      },
-      {
-        "period": "Oct 2025 – May 2026",
-        "role": "Community Specialist",
-        "org": "4Geeks Academy · part time",
-        "note": "Managed the digital community and supported students in the Full Stack program."
-      },
-      {
-        "period": "Oct 2021 – now",
-        "role": "Freelance developer",
-        "org": "Remote",
-        "note": "Websites and apps with React, Node.js, Python and PHP/Laravel. Six demo landing pages published on Vercel."
-      },
-      {
-        "period": "2015 – 2017",
-        "role": "Sales manager",
-        "org": "Iltuocarro · Venezuela",
-        "note": "Led commercial operations and team performance; negotiated with clients and suppliers."
-      },
-      {
-        "period": "2005 – 2014",
-        "role": "Sales and customer service",
-        "org": "Family business · Punto Fijo",
-        "note": "From operational roles to management: conflict resolution, customer advice and inventory control."
-      }
-    ],
-    "formacionTitle": "Education",
-    "formacion": [
-      {
-        "title": "4Geeks Academy · Full Stack Developer",
-        "note": "Mar – Dec 2025"
-      },
-      {
-        "title": "16 certificates",
-        "note": "8 from 4Geeks (159 h), 2 from BIG school, Claseflix and more"
-      },
-      {
-        "title": "Lexpin · Programming Bootcamp",
-        "note": "2021 – 2022"
-      },
-      {
-        "title": "UNEFM · Medicine",
-        "note": "Studied until 2021, not completed"
-      }
     ]
   }
 }

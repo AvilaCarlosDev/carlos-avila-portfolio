@@ -13,12 +13,8 @@
         "label": "Quién soy"
       },
       {
-        "href": "#trayectoria",
+        "href": "#que-he-hecho",
         "label": "Qué he hecho"
-      },
-      {
-        "href": "#proyectos",
-        "label": "Proyectos"
       },
       {
         "href": "#cv",
@@ -48,26 +44,28 @@
     "portraitAlt": "Retrato de Carlos Avila, en blanco y negro, con los brazos cruzados"
   },
   "proyectos": {
-    "title": "Proyectos destacados",
-    "sub": "Herramientas que uso y mantengo. Todo el código es público.",
+    "title": "Qué he hecho",
+    "sub": "Proyectos de código abierto. Todo el código es público y cada cifra está medida en el repositorio.",
     "github": "Ver en GitHub",
+    "demo": "Ver demos",
     "items": [
       {
         "id": "apis-gratis-es",
-        "description": "Catálogo curado de APIs públicas y gratuitas para la comunidad hispanohablante, con demos publicadas.",
+        "description": "Catálogo verificado de APIs públicas y gratuitas para la comunidad hispanohablante, con demos que funcionan en vivo.",
         "numbers": [
-          "22 APIs",
+          "23 APIs",
           "5 demos",
-          "250+ pruebas"
+          "342 pruebas"
         ],
         "url": "https://github.com/AvilaCarlosDev/apis-gratis-es",
+        "demoUrl": "https://avilacarlosdev.github.io/apis-gratis-es/",
         "art": "laptop"
       },
       {
         "id": "mcp-readiness-check",
-        "description": "Herramienta de línea de comandos que diagnostica si un servidor MCP está listo para producción.",
+        "description": "Herramienta de línea de comandos en TypeScript: se conecta a un servidor MCP, inspecciona las tools que expone, valida sus esquemas y genera reportes en consola, JSON y Markdown.",
         "numbers": [
-          "81 pruebas",
+          "94 pruebas",
           "94 % de cobertura"
         ],
         "url": "https://github.com/AvilaCarlosDev/mcp-readiness-check",
@@ -75,9 +73,12 @@
       },
       {
         "id": "openclaw-skills",
-        "description": "Colección de skills para agentes de IA, con la procedencia de cada una verificada.",
+        "description": "Colección de skills para OpenClaw, en español e inglés, con el origen de cada una registrado y comprobado en el CI.",
         "numbers": [
-          "37 skills auditadas"
+          "37 skills",
+          "15 verificadas byte a byte",
+          "20 propias · 2 derivadas",
+          "15 pruebas"
         ],
         "url": "https://github.com/AvilaCarlosDev/openclaw-skills",
         "art": "celebrando"
@@ -198,6 +199,10 @@
       {
         "label": "Idiomas",
         "value": "Español (nativo) · Inglés B1 · Italiano B1"
+      },
+      {
+        "label": "Formación",
+        "value": "Full Stack Developer (4Geeks Academy, 2025) y 16 certificados"
       }
     ],
     "toolsLabel": "Con qué trabajo",
@@ -212,67 +217,6 @@
       "Git · GitHub",
       "Docker · Linux",
       "IA y agentes (MCP)"
-    ]
-  },
-  "trayectoria": {
-    "title": "Qué he hecho",
-    "sub": "Mi recorrido, del mostrador al código.",
-    "timeline": [
-      {
-        "period": "May 2026 – hoy",
-        "role": "Community & Public Support Specialist · Senior Mentor",
-        "org": "4Geeks Academy · tiempo parcial",
-        "note": "Soporte a estudiantes del programa Full Stack: resuelvo dudas técnicas y de comunidad, acompaño con mentoría y reviso proyectos."
-      },
-      {
-        "period": "Abr 2026 – hoy",
-        "role": "Atención al cliente",
-        "org": "DocsiApp · fines de semana",
-        "note": "Atención al cliente los sábados y domingos."
-      },
-      {
-        "period": "Oct 2025 – May 2026",
-        "role": "Community Specialist",
-        "org": "4Geeks Academy · tiempo parcial",
-        "note": "Gestión de la comunidad digital y soporte a los estudiantes del programa Full Stack."
-      },
-      {
-        "period": "Oct 2021 – hoy",
-        "role": "Desarrollador freelance",
-        "org": "Remoto",
-        "note": "Sitios y aplicaciones con React, Node.js, Python y PHP/Laravel. Seis landings de demostración publicadas en Vercel."
-      },
-      {
-        "period": "2015 – 2017",
-        "role": "Gerente de ventas",
-        "org": "Iltuocarro · Venezuela",
-        "note": "Dirigí la operación comercial y el rendimiento del equipo; negocié con clientes y proveedores."
-      },
-      {
-        "period": "2005 – 2014",
-        "role": "Ventas y atención al cliente",
-        "org": "Negocio familiar · Punto Fijo",
-        "note": "De roles operativos a la gerencia: resolución de conflictos, asesoría a clientes y control de inventario."
-      }
-    ],
-    "formacionTitle": "Formación",
-    "formacion": [
-      {
-        "title": "4Geeks Academy · Full Stack Developer",
-        "note": "Mar – Dic 2025"
-      },
-      {
-        "title": "16 certificados",
-        "note": "8 de 4Geeks (159 h), 2 de BIG school, Claseflix y más"
-      },
-      {
-        "title": "Lexpin · Bootcamp de Programación",
-        "note": "2021 – 2022"
-      },
-      {
-        "title": "UNEFM · Medicina",
-        "note": "Cursada hasta 2021, no concluida"
-      }
     ]
   }
 }

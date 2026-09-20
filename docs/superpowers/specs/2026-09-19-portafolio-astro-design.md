@@ -8,16 +8,15 @@ Un portafolio corto que **venda**: quién es Carlos, qué ha hecho, su CV y un f
 
 ## Alcance
 
-Una sola página con cinco bloques, en este orden. Es el alcance que Carlos fijó: **quién soy, qué he hecho, los proyectos, el CV y el formulario**.
+Una sola página con cuatro bloques más la presentación. Es el alcance que Carlos fijó: **quién soy, qué he hecho (sus proyectos), el CV y el formulario**.
 
-1. **Presentación:** titular "Del problema a la solución", frase de una línea, botones y retrato.
-2. **Quién soy:** presentación breve, datos (rol actual, ubicación, idiomas) y herramientas.
-3. **Qué he hecho:** recorrido de 6 puestos con fechas y la formación (incluye certificados). Sus fechas coinciden con el CV y LinkedIn.
-4. **Proyectos:** `apis-gratis-es`, `mcp-readiness-check`, `openclaw-skills`, con cifras reales.
-5. **CV:** miniatura y descarga en español e inglés.
-6. **Contacto:** formulario (Web3Forms) y enlaces a GitHub y LinkedIn.
+1. **Presentación:** titular "Del problema a la solución", frase de una línea y retrato.
+2. **Quién soy:** presentación breve, datos (rol actual, ubicación, idiomas, formación) y herramientas.
+3. **Qué he hecho:** los proyectos de código abierto. Solo los mejores y los que están listos para mostrarse: `apis-gratis-es`, `mcp-readiness-check`, `openclaw-skills`. Cada cifra está medida en un clon limpio (`src/data/verificadas.json`) y una prueba obliga al sitio a coincidir.
+4. **CV:** miniatura y descarga en español e inglés.
+5. **Contacto:** formulario (Web3Forms) y enlaces a GitHub y LinkedIn.
 
-**Fuera de alcance (decidido por Carlos):** sección "¿Por qué contratarme?" (fue una recomendación mía que él descartó), sección "Hitos" (duplicaba los proyectos), etiquetas numeradas tipo "01 / SECCIÓN", landings de clientes, blog, panel, animaciones pesadas, más páginas.
+**Fuera de alcance (decidido por Carlos):** recorrido laboral en la página (está en el CV; "qué he hecho" son los proyectos), sección "¿Por qué contratarme?" (fue una recomendación mía que él descartó), sección "Hitos" (duplicaba los proyectos), etiquetas numeradas tipo "01 / SECCIÓN", landings de clientes, blog, panel, animaciones pesadas, más páginas.
 
 ## Decisiones
 

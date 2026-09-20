@@ -7,7 +7,7 @@ const { t } = Astro.props
 const p = t.proyectos
 const arte = { laptop, pensando, celebrando }
 ---
-<section id="proyectos" class="wrap">
+<section id="que-he-hecho" class="wrap">
   <div class="head">
     <div><h2>{p.title}</h2></div>
     <p>{p.sub}</p>
@@ -19,7 +19,7 @@ const arte = { laptop, pensando, celebrando }
         <h3>{it.id}</h3>
         <p>{it.description}</p>
         <div class="nums">{it.numbers.map((n) => <span>{n}</span>)}</div>
-        <div class="row"><a class="btn dark" href={it.url} rel="noopener">{p.github}</a></div>
+        <div class="row"><a class="btn dark" href={it.url} rel="noopener">{p.github}</a>{it.demoUrl && <a class="btn line" href={it.demoUrl} rel="noopener">{p.demo} ↗</a>}</div>
       </div>
       <div class="art"><Image src={arte[it.art]} alt="" height={250} loading="lazy" /></div>
     </article>

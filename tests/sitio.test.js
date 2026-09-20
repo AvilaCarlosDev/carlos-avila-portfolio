@@ -114,8 +114,8 @@ describe('página de inicio: contenido y accesibilidad', () => {
   for (const [archivo, nombre] of [['index.html', 'ES'], ['en/index.html', 'EN']]) {
     it(`${nombre}: secciones, formulario etiquetado, CV descargable y botón de idioma`, () => {
       const doc = parse(leer(archivo))
-      // Alcance acordado por Carlos: quién soy, qué he hecho, proyectos, CV y formulario. Nada más.
-      const ids = ['quien-soy', 'trayectoria', 'proyectos', 'cv', 'contacto']
+      // Alcance acordado por Carlos: quién soy, qué he hecho (los proyectos), CV y formulario. Nada más.
+      const ids = ['quien-soy', 'que-he-hecho', 'cv', 'contacto']
       expect(doc.querySelectorAll('main > section').map((s) => s.id)).toEqual(ids)
       expect(doc.querySelector('#por-que'), 'la sección "por qué contratarme" quedó fuera del alcance').toBeNull()
       expect(doc.querySelectorAll('.kick'), 'sin etiquetas numeradas tipo "01 / SECCIÓN"').toHaveLength(0)
@@ -224,22 +224,23 @@ describe('marco del retrato (ventana estilo Mac)', () => {
   })
 })
 
-describe('quién soy y qué he hecho: contenido verificado', () => {
+describe('quién soy y qué he hecho: contenido', () => {
   for (const [archivo, nombre] of [['index.html', 'ES'], ['en/index.html', 'EN']]) {
-    it(`${nombre}: trayectoria con los 6 puestos y fechas coherentes con el CV`, () => {
-      const doc = parse(leer(archivo))
-      const items = doc.querySelectorAll('#trayectoria .timeline li')
-      expect(items).toHaveLength(6)
-      const texto = doc.querySelector('#trayectoria').text
-      for (const clave of ['4Geeks Academy', 'DocsiApp', 'Iltuocarro', '2021', '2005', '2017']) expect(texto, clave).toContain(clave)
-      expect(doc.querySelectorAll('#trayectoria .formacion li')).toHaveLength(4)
-    })
-
     it(`${nombre}: quién soy incluye rol actual, idiomas y herramientas`, () => {
       const doc = parse(leer(archivo))
       const q = doc.querySelector('#quien-soy').text
       for (const clave of ['4Geeks Academy', 'B1', 'React', 'Python']) expect(q, clave).toContain(clave)
       expect(doc.querySelectorAll('#quien-soy .chips li').length).toBeGreaterThanOrEqual(8)
+    })
+
+    it(`${nombre}: qué he hecho son los 3 proyectos, con GitHub y la demo en vivo de apis-gratis-es`, () => {
+      const doc = parse(leer(archivo))
+      expect(doc.querySelectorAll('#que-he-hecho .proj')).toHaveLength(3)
+      expect(doc.querySelectorAll('#que-he-hecho .proj h3').map((h) => h.text)).toEqual(['apis-gratis-es', 'mcp-readiness-check', 'openclaw-skills'])
+      const demos = doc.querySelectorAll('#que-he-hecho a[href*="github.io"]')
+      expect(demos).toHaveLength(1)
+      expect(demos[0].getAttribute('href')).toBe('https://avilacarlosdev.github.io/apis-gratis-es/')
+      expect(doc.querySelector('#trayectoria')).toBeNull()
     })
   }
 })
@@ -249,7 +250,7 @@ describe('presentación: una sola llamada a la acción', () => {
     it(`${nombre}: solo "ver proyectos"; GitHub y LinkedIn viven en Contacto`, () => {
       const doc = parse(leer(archivo))
       const botones = doc.querySelectorAll('#inicio .cta a')
-      expect(botones.map((a) => a.getAttribute('href'))).toEqual(['#proyectos'])
+      expect(botones.map((a) => a.getAttribute('href'))).toEqual(['#que-he-hecho'])
       expect(doc.querySelector('#inicio a[href*="github.com"]')).toBeNull()
       expect(doc.querySelector('#contacto a[href*="github.com/AvilaCarlosDev"]')).not.toBeNull()
       expect(doc.querySelector('#contacto a[href*="linkedin.com/in/avilacarlosdev"]')).not.toBeNull()
