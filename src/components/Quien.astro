@@ -1,0 +1,17 @@
+---
+const { t } = Astro.props
+const q = t.quien
+---
+<section id="quien-soy" class="wrap">
+  <div class="head"><div><h2>{q.title}</h2></div></div>
+  <div class="about">
+    <div class="about-text">
+      {q.paragraphs.map((p) => <p>{p}</p>)}
+      <h3 class="mini">{q.toolsLabel}</h3>
+      <ul class="chips">{q.tools.map((x) => <li>{x}</li>)}</ul>
+    </div>
+    <dl class="card facts">
+      {q.facts.map((f) => (<div><dt>{f.label}</dt><dd>{f.value}</dd></div>))}
+    </dl>
+  </div>
+</section>

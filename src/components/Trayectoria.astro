@@ -1,0 +1,30 @@
+---
+const { t } = Astro.props
+const y = t.trayectoria
+---
+<section id="trayectoria" class="wrap">
+  <div class="head">
+    <div><h2>{y.title}</h2></div>
+    <p>{y.sub}</p>
+  </div>
+  <div class="path">
+    <ol class="timeline">
+      {y.timeline.map((e) => (
+        <li>
+          <span class="periodo">{e.period}</span>
+          <div>
+            <h3>{e.role}</h3>
+            <p class="org">{e.org}</p>
+            <p>{e.note}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+    <aside class="card formacion-box">
+      <h3 class="mini">{y.formacionTitle}</h3>
+      <ul class="formacion">
+        {y.formacion.map((f) => (<li><b>{f.title}</b><span>{f.note}</span></li>))}
+      </ul>
+    </aside>
+  </div>
+</section>

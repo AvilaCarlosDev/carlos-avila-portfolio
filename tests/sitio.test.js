@@ -114,13 +114,14 @@ describe('página de inicio: contenido y accesibilidad', () => {
   for (const [archivo, nombre] of [['index.html', 'ES'], ['en/index.html', 'EN']]) {
     it(`${nombre}: secciones, formulario etiquetado, CV descargable y botón de idioma`, () => {
       const doc = parse(leer(archivo))
-      // Alcance acordado: quién soy (hero), qué he hecho (proyectos), CV y formulario. Nada más.
-      for (const id of ['proyectos', 'cv', 'contacto']) expect(doc.querySelector(`section#${id}`), id).not.toBeNull()
-      expect(doc.querySelectorAll('main > section')).toHaveLength(3)
+      // Alcance acordado por Carlos: quién soy, qué he hecho, proyectos, CV y formulario. Nada más.
+      const ids = ['quien-soy', 'trayectoria', 'proyectos', 'cv', 'contacto']
+      expect(doc.querySelectorAll('main > section').map((s) => s.id)).toEqual(ids)
       expect(doc.querySelector('#por-que'), 'la sección "por qué contratarme" quedó fuera del alcance').toBeNull()
       expect(doc.querySelectorAll('.kick'), 'sin etiquetas numeradas tipo "01 / SECCIÓN"').toHaveLength(0)
-      expect(doc.querySelector('.site-nav a[href="#por-que"]')).toBeNull()
-      expect(doc.querySelectorAll('.site-nav a').map((a) => a.getAttribute('href'))).toEqual(['#proyectos', '#cv', '#contacto'])
+      expect(doc.querySelectorAll('.site-nav a').map((a) => a.getAttribute('href'))).toEqual(ids.map((i) => `#${i}`))
+      // Cada sección tiene su título (h2)
+      for (const id of ids) expect(doc.querySelector(`section#${id} h2`), id).not.toBeNull()
       for (const campo of doc.querySelectorAll('#form-contacto input:not([name="botcheck"]), #form-contacto textarea')) {
         expect(doc.querySelector(`label[for="${campo.getAttribute('id')}"]`), campo.getAttribute('name')).not.toBeNull()
       }
@@ -207,4 +208,51 @@ describe('imágenes: sin recortes accidentales', () => {
     }
     expect(recortadas, 'imágenes con proporción alterada (recortadas)').toEqual([])
   })
+})
+
+describe('marco del retrato (ventana estilo Mac)', () => {
+  it('los tres puntos usan los colores de cerrar, minimizar y ampliar', async () => {
+    const { readdirSync } = await import('node:fs')
+    const css = readdirSync(resolve(dist, '_astro'))
+      .filter((f) => f.endsWith('.css'))
+      .map((f) => readFileSync(resolve(dist, '_astro', f), 'utf8'))
+      .join('\n')
+      .toLowerCase()
+    for (const color of ['#ff5f57', '#febc2e', '#28c840']) expect(css, color).toContain(color)
+    const puntos = parse(leer('index.html')).querySelectorAll('.frame .bar i')
+    expect(puntos).toHaveLength(3)
+  })
+})
+
+describe('quién soy y qué he hecho: contenido verificado', () => {
+  for (const [archivo, nombre] of [['index.html', 'ES'], ['en/index.html', 'EN']]) {
+    it(`${nombre}: trayectoria con los 6 puestos y fechas coherentes con el CV`, () => {
+      const doc = parse(leer(archivo))
+      const items = doc.querySelectorAll('#trayectoria .timeline li')
+      expect(items).toHaveLength(6)
+      const texto = doc.querySelector('#trayectoria').text
+      for (const clave of ['4Geeks Academy', 'DocsiApp', 'Iltuocarro', '2021', '2005', '2017']) expect(texto, clave).toContain(clave)
+      expect(doc.querySelectorAll('#trayectoria .formacion li')).toHaveLength(4)
+    })
+
+    it(`${nombre}: quién soy incluye rol actual, idiomas y herramientas`, () => {
+      const doc = parse(leer(archivo))
+      const q = doc.querySelector('#quien-soy').text
+      for (const clave of ['4Geeks Academy', 'B1', 'React', 'Python']) expect(q, clave).toContain(clave)
+      expect(doc.querySelectorAll('#quien-soy .chips li').length).toBeGreaterThanOrEqual(8)
+    })
+  }
+})
+
+describe('presentación: una sola llamada a la acción', () => {
+  for (const [archivo, nombre] of [['index.html', 'ES'], ['en/index.html', 'EN']]) {
+    it(`${nombre}: solo "ver proyectos"; GitHub y LinkedIn viven en Contacto`, () => {
+      const doc = parse(leer(archivo))
+      const botones = doc.querySelectorAll('#inicio .cta a')
+      expect(botones.map((a) => a.getAttribute('href'))).toEqual(['#proyectos'])
+      expect(doc.querySelector('#inicio a[href*="github.com"]')).toBeNull()
+      expect(doc.querySelector('#contacto a[href*="github.com/AvilaCarlosDev"]')).not.toBeNull()
+      expect(doc.querySelector('#contacto a[href*="linkedin.com/in/avilacarlosdev"]')).not.toBeNull()
+    })
+  }
 })
