@@ -5,7 +5,7 @@
 [![CI](https://github.com/AvilaCarlosDev/carlos-avila-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/AvilaCarlosDev/carlos-avila-portfolio/actions/workflows/ci.yml)
 [![Licencia: MIT](https://img.shields.io/badge/licencia-MIT-blue.svg)](LICENSE)
 
-Portafolio de **Carlos Avila** (desarrollador, especialista en soporte a la comunidad y mentor senior en 4Geeks Academy). Un sitio corto con cuatro bloques: quién soy, qué he hecho (mis proyectos), mi CV descargable y un formulario de contacto que solo acepta correos reales.
+Portafolio de **Carlos Avila** (desarrollador, especialista en soporte a la comunidad y mentor senior en 4Geeks Academy). Un sitio corto con cuatro bloques: quién soy, proyectos, mi CV descargable y un formulario de contacto que solo acepta correos reales.
 
 **Sitio:** <https://avilacarlosdev.com> · **CV:** [español](public/Carlos-Avila-CV-ES.pdf) · [inglés](public/Carlos-Avila-CV-EN.pdf)
 
@@ -64,7 +64,7 @@ docs/            spec de diseño y decisiones
 
 - **`i18n.test.js`:** español e inglés tienen exactamente la misma estructura, sin textos vacíos, y las cifras coinciden. El español es venezolano (tuteo): la prueba rechaza formas de voseo como "contame" o "podés".
 - **`contacto.test.js`:** validación del correo (formato, dominios desechables, registro MX) y envío por `FormData`.
-- **`cifras.test.js`:** cada número de "Qué he hecho" coincide con `src/data/verificadas.json`, no queda ninguna cifra antigua y el CV en PDF usa las mismas cifras (si `pdftotext` está instalado).
+- **`cifras.test.js`:** cada número de "Proyectos" coincide con `src/data/verificadas.json`, no queda ninguna cifra antigua y el CV en PDF usa las mismas cifras (si `pdftotext` está instalado).
 - **`layout.test.js`:** en un Chrome real, sobre el sitio construido: sin desborde horizontal, sin imágenes rotas y con las fuentes cargadas, en móvil (390 px), tableta (820 px) y escritorio (1440 px), para las cuatro páginas. Necesita Chrome o Chromium (`CHROME_PATH` si no está en la ruta habitual); en CI es obligatorio.
 - **`sitio.test.js`:** sobre el HTML ya construido, por página: idioma, título y descripción, canonical, `hreflang` recíproco, Open Graph, un solo `h1`, JSON-LD, imágenes con `alt` y locales, enlaces internos que existen, pie con copyright; y a nivel de sitio: `robots.txt`, `sitemap.xml`, manifest, `security.txt`, 404 sin indexar, `og.jpg` de 1200×630 y cabeceras de seguridad.
 

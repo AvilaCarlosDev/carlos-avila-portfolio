@@ -13,8 +13,8 @@
         "label": "Quién soy"
       },
       {
-        "href": "#que-he-hecho",
-        "label": "Qué he hecho"
+        "href": "#proyectos",
+        "label": "Proyectos"
       },
       {
         "href": "#cv",
@@ -44,7 +44,7 @@
     "portraitAlt": "Retrato de Carlos Avila, en blanco y negro, con los brazos cruzados"
   },
   "proyectos": {
-    "title": "Qué he hecho",
+    "title": "Proyectos",
     "sub": "Proyectos de código abierto. Todo el código es público y cada cifra está medida en el repositorio.",
     "github": "Ver en GitHub",
     "demo": "Ver demos",
