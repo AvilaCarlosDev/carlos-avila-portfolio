@@ -114,7 +114,13 @@ describe('página de inicio: contenido y accesibilidad', () => {
   for (const [archivo, nombre] of [['index.html', 'ES'], ['en/index.html', 'EN']]) {
     it(`${nombre}: secciones, formulario etiquetado, CV descargable y botón de idioma`, () => {
       const doc = parse(leer(archivo))
-      for (const id of ['por-que', 'proyectos', 'cv', 'contacto']) expect(doc.querySelector(`section#${id}`), id).not.toBeNull()
+      // Alcance acordado: quién soy (hero), qué he hecho (proyectos), CV y formulario. Nada más.
+      for (const id of ['proyectos', 'cv', 'contacto']) expect(doc.querySelector(`section#${id}`), id).not.toBeNull()
+      expect(doc.querySelectorAll('main > section')).toHaveLength(3)
+      expect(doc.querySelector('#por-que'), 'la sección "por qué contratarme" quedó fuera del alcance').toBeNull()
+      expect(doc.querySelectorAll('.kick'), 'sin etiquetas numeradas tipo "01 / SECCIÓN"').toHaveLength(0)
+      expect(doc.querySelector('.site-nav a[href="#por-que"]')).toBeNull()
+      expect(doc.querySelectorAll('.site-nav a').map((a) => a.getAttribute('href'))).toEqual(['#proyectos', '#cv', '#contacto'])
       for (const campo of doc.querySelectorAll('#form-contacto input:not([name="botcheck"]), #form-contacto textarea')) {
         expect(doc.querySelector(`label[for="${campo.getAttribute('id')}"]`), campo.getAttribute('name')).not.toBeNull()
       }
@@ -177,5 +183,28 @@ describe('compatibilidad con la CSP (font-src y img-src \'self\')', () => {
     expect(css.length).toBeGreaterThan(0)
     const incrustados = css.filter((f) => /url\(\s*["']?data:/.test(readFileSync(resolve(dist, '_astro', f), 'utf8')))
     expect(incrustados, 'CSS con data: URI (la CSP los bloquea)').toEqual([])
+  })
+})
+
+describe('imágenes: sin recortes accidentales', () => {
+  it('cada imagen optimizada conserva la proporción de su original (Astro recorta si se fuerzan ancho y alto)', async () => {
+    const sharp = (await import('sharp')).default
+    const { readdirSync } = await import('node:fs')
+    const originales = Object.fromEntries(readdirSync(resolve(import.meta.dirname, '../src/assets')).map((f) => [f.replace(/\.\w+$/, ''), f]))
+    const recortadas = []
+    for (const archivo of ['index.html', 'en/index.html']) {
+      for (const img of parse(leer(archivo)).querySelectorAll('img[src^="/_astro/"]')) {
+        const src = img.getAttribute('src')
+        const nombre = src.split('/').pop().split('.')[0]
+        if (!originales[nombre]) continue
+        const [o, c] = await Promise.all([
+          sharp(resolve(import.meta.dirname, '../src/assets', originales[nombre])).metadata(),
+          sharp(resolve(dist, src.replace(/^\//, ''))).metadata(),
+        ])
+        const dif = Math.abs(o.width / o.height - c.width / c.height) / (o.width / o.height)
+        if (dif > 0.03) recortadas.push(`${nombre}: original ${o.width}x${o.height} → ${c.width}x${c.height}`)
+      }
+    }
+    expect(recortadas, 'imágenes con proporción alterada (recortadas)').toEqual([])
   })
 })

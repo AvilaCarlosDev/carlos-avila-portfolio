@@ -80,18 +80,10 @@ img { max-width: 100%; height: auto; }
 /* Secciones */
 section.wrap { padding-top: 84px; }
 .head { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; margin-bottom: 34px; }
-.kick { font-family: var(--mono); font-size: 12px; color: var(--blue); margin-bottom: 10px; letter-spacing: 0.04em; }
 .head h2 { font-size: clamp(40px, 6vw, 72px); }
 .head p { max-width: 380px; color: var(--mute); margin: 0; font-size: 15px; }
 .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 22px; }
 
-.grid2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-.why { padding: 26px; }
-.why .num { font-family: var(--mono); font-size: 12px; color: var(--blue); }
-.why h3 { font-size: 32px; margin: 8px 0 10px; }
-.why p { color: var(--mute); margin: 0 0 14px; }
-.more { font-family: var(--mono); font-size: 12px; color: var(--blue); }
-.more:hover { text-decoration: underline; }
 
 .proj { position: relative; display: grid; grid-template-columns: 1fr 220px; gap: 20px; align-items: center; overflow: hidden; padding: 30px 30px 0; margin-bottom: 16px; min-height: 250px; }
 .proj .n { font-family: var(--mono); font-size: 12px; color: var(--mute); }
@@ -113,7 +105,7 @@ section.wrap { padding-top: 84px; }
 .cvtxt .btn.dark { background: #fff; color: var(--navy); border-color: #fff; }
 .cvtxt .btn.line { color: #fff; border-color: #4a5f96; }
 .cvtxt .btn.line:hover { background: #1a2a55; }
-.cvpj { position: absolute; right: -10px; bottom: -34px; height: 250px; width: auto; pointer-events: none; filter: drop-shadow(0 10px 14px rgba(0, 0, 0, 0.5)); }
+.cvpj { position: absolute; right: 0; bottom: 0; height: 250px; width: auto; pointer-events: none; filter: drop-shadow(0 10px 14px rgba(0, 0, 0, 0.5)); }
 
 .contact { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 20px; }
 .form label { display: block; font-family: var(--mono); font-size: 11px; color: var(--mute); margin: 14px 0 6px; letter-spacing: 0.05em; text-transform: uppercase; }
@@ -138,7 +130,7 @@ section.wrap { padding-top: 84px; }
 
 @media (max-width: 820px) {
   .site-nav { display: none; }
-  .grid2, .contact { grid-template-columns: 1fr; }
+  .contact { grid-template-columns: 1fr; }
   .proj { grid-template-columns: 1fr; padding-bottom: 0; }
   .proj .art { order: -1; justify-self: end; }
   .proj h3 { font-size: 34px; }

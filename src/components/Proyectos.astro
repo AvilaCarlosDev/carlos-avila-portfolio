@@ -9,7 +9,7 @@ const arte = { laptop, pensando, celebrando }
 ---
 <section id="proyectos" class="wrap">
   <div class="head">
-    <div><div class="kick">{p.kick}</div><h2>{p.title}</h2></div>
+    <div><h2>{p.title}</h2></div>
     <p>{p.sub}</p>
   </div>
   {p.items.map((it, i) => (
@@ -21,7 +21,7 @@ const arte = { laptop, pensando, celebrando }
         <div class="nums">{it.numbers.map((n) => <span>{n}</span>)}</div>
         <div class="row"><a class="btn dark" href={it.url} rel="noopener">{p.github}</a></div>
       </div>
-      <div class="art"><Image src={arte[it.art]} alt="" width={220} height={250} loading="lazy" /></div>
+      <div class="art"><Image src={arte[it.art]} alt="" height={250} loading="lazy" /></div>
     </article>
   ))}
 </section>

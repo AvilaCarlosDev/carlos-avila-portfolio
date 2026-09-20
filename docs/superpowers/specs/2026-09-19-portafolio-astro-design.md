@@ -4,19 +4,18 @@ Fecha: 2026-09-19 · Autor: Carlos Avila · Estado: aprobado por Carlos, en cons
 
 ## Objetivo
 
-Un portafolio corto que **venda**: quién es Carlos, qué ha hecho, por qué contratarlo, su CV y un formulario que funcione. Debe cargar al instante y estar completo en español e inglés.
+Un portafolio corto que **venda**: quién es Carlos, qué ha hecho, su CV y un formulario que funcione. Debe cargar al instante y estar completo en español e inglés.
 
 ## Alcance
 
-Una sola página con cinco bloques, en este orden:
+Una sola página con cuatro bloques, en este orden. Es el alcance que Carlos fijó: **quién soy, qué he hecho, el CV y el formulario**.
 
-1. **Presentación:** titular "Del problema a la solución", frase de una línea, botones, retrato.
-2. **¿Por qué contratarme?:** cuatro razones, cada una con evidencia verificable.
-3. **Proyectos:** `apis-gratis-es`, `mcp-readiness-check`, `openclaw-skills`, con cifras reales.
-4. **CV:** miniatura y descarga en español e inglés.
-5. **Contacto:** formulario (Web3Forms) y enlaces a GitHub y LinkedIn.
+1. **Presentación (quién soy):** titular "Del problema a la solución", frase de una línea, botones, retrato.
+2. **Proyectos (qué he hecho):** `apis-gratis-es`, `mcp-readiness-check`, `openclaw-skills`, con cifras reales.
+3. **CV:** miniatura y descarga en español e inglés.
+4. **Contacto:** formulario (Web3Forms) y enlaces a GitHub y LinkedIn.
 
-**Fuera de alcance (decidido):** sección "Hitos" (duplicaba los proyectos), landings de clientes, blog, panel, animaciones pesadas, más páginas.
+**Fuera de alcance (decidido por Carlos):** sección "¿Por qué contratarme?" (fue una recomendación mía que él descartó), sección "Hitos" (duplicaba los proyectos), etiquetas numeradas tipo "01 / SECCIÓN", landings de clientes, blog, panel, animaciones pesadas, más páginas.
 
 ## Decisiones
 

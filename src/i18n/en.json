@@ -9,10 +9,6 @@
     "ariaLabel": "Main navigation",
     "links": [
       {
-        "href": "#por-que",
-        "label": "Why me"
-      },
-      {
         "href": "#proyectos",
         "label": "Projects"
       },
@@ -44,39 +40,7 @@
     "ctaGithub": "GitHub",
     "portraitAlt": "Black and white portrait of Carlos Avila with arms crossed"
   },
-  "porque": {
-    "kick": "01 / WHY ME",
-    "title": "Why hire me?",
-    "sub": "Four reasons, each one with something you can verify.",
-    "items": [
-      {
-        "title": "I explain technical topics clearly",
-        "text": "I am a senior mentor at 4Geeks Academy and support students every day. I publish documentation and catalogs in Spanish for the community.",
-        "linkText": "apis-gratis-es",
-        "href": "https://github.com/AvilaCarlosDev/apis-gratis-es"
-      },
-      {
-        "title": "I deliver with tests",
-        "text": "My open source projects are really tested: 81 tests and 94 % coverage in mcp-readiness-check, and over 250 in apis-gratis-es.",
-        "linkText": "mcp-readiness-check",
-        "href": "https://github.com/AvilaCarlosDev/mcp-readiness-check"
-      },
-      {
-        "title": "Other teams accept my code",
-        "text": "I have merged contributions in other people's projects: 6 PRs in pythiaLabs, plus DevSwitch and icon-sprite.",
-        "linkText": "see GitHub",
-        "href": "https://github.com/AvilaCarlosDev"
-      },
-      {
-        "title": "I understand the customer and the problem",
-        "text": "I come from years in sales and customer service and from studying Medicine: I listen, diagnose the real problem and solve it with judgment.",
-        "linkText": "see my CV",
-        "href": "#cv"
-      }
-    ]
-  },
   "proyectos": {
-    "kick": "02 / OPEN SOURCE",
     "title": "Featured projects",
     "sub": "Tools I use and maintain. All the code is public.",
     "github": "View on GitHub",
@@ -114,7 +78,6 @@
     ]
   },
   "cv": {
-    "kick": "03 / RÉSUMÉ",
     "title": "My CV, up to date",
     "sub": "One page, no filler. Available in English and Spanish.",
     "boxTitle": "Download my CV",
@@ -128,7 +91,6 @@
     "artAlt": "Mini-carlos handing over his CV"
   },
   "contacto": {
-    "kick": "04 / CONTACT",
     "title": "Let's talk.",
     "sub": "Projects, mentoring or a collaboration. I reply here or on GitHub.",
     "form": {

@@ -9,7 +9,7 @@ const miniatura = t.lang === 'es' ? cvEs : cvEn
 ---
 <section id="cv" class="wrap">
   <div class="head">
-    <div><div class="kick">{c.kick}</div><h2>{c.title}</h2></div>
+    <div><h2>{c.title}</h2></div>
     <p>{c.sub}</p>
   </div>
   <div class="cvbox">
@@ -24,7 +24,7 @@ const miniatura = t.lang === 'es' ? cvEs : cvEn
         <a class="btn dark" href={c.primaryFile} download>⬇ {c.btnPrimary}</a>
         <a class="btn line" href={c.secondaryFile} download>⬇ {c.btnSecondary}</a>
       </div>
-      <Image class="cvpj" src={entrega} alt={c.artAlt} width={154} height={250} loading="lazy" />
+      <Image class="cvpj" src={entrega} alt={c.artAlt} height={250} loading="lazy" />
     </div>
   </div>
 </section>
