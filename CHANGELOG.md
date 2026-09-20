@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Added / Añadido
 
+- Real-browser layout tests (overflow, broken images, fonts) at three widths. / Pruebas de diseño en un navegador real (desborde, imágenes rotas y fuentes) en tres anchos.
+
+### Added / Añadido
+
 - "Who I am" and "What I have done" sections (career timeline and education), in both languages. / Secciones "Quién soy" y "Qué he hecho" (recorrido y formación), en ambos idiomas.
 - Window dots in the portrait frame use the red, yellow and green colors. / Los puntos del marco del retrato usan los colores rojo, amarillo y verde.
 
@@ -20,6 +24,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - The page contains only what was agreed: who I am, what I have done, projects, the CV and the contact form. The "Why hire me" section and the numbered section labels were removed. / La página contiene solo lo acordado: quién soy, qué he hecho, el CV y el formulario. Se quitaron la sección "¿Por qué contratarme?" y las etiquetas numeradas de sección.
 
 ### Fixed / Corregido
+
+- Horizontal overflow on mobile in the new sections: the mobile rules were declared before the base rules and lost. They now live at the end of the stylesheet. / Desborde horizontal en móvil en las secciones nuevas: las reglas de móvil estaban antes que las reglas base y perdían; ahora van al final de la hoja.
 
 - Fonts are no longer inlined as `data:` URIs, which the CSP blocked. / Las fuentes ya no se incrustan como `data:` URI, que la CSP bloqueaba.
 
