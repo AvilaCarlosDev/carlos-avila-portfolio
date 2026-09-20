@@ -9,6 +9,14 @@
     "ariaLabel": "Navegación principal",
     "links": [
       {
+        "href": "#quien-soy",
+        "label": "Quién soy"
+      },
+      {
+        "href": "#trayectoria",
+        "label": "Qué he hecho"
+      },
+      {
         "href": "#proyectos",
         "label": "Proyectos"
       },
@@ -168,5 +176,104 @@
       "text": "La página que buscás no existe o cambió de lugar.",
       "back": "Volver al inicio"
     }
+  },
+  "quien": {
+    "title": "Quién soy",
+    "paragraphs": [
+      "Soy Carlos, desarrollador venezolano. Hoy trabajo en 4Geeks Academy como Community & Public Support Specialist y mentor senior: acompaño a estudiantes de programación y resuelvo sus dudas técnicas.",
+      "Antes de programar pasé años en ventas y atención al cliente y estudié Medicina. De ahí viene mi forma de trabajar: escucho, encuentro el problema real y lo explico con claridad. Publico código abierto en español, con pruebas, y automatizo con IA y agentes."
+    ],
+    "facts": [
+      {
+        "label": "Ahora",
+        "value": "Community & Public Support Specialist · Senior Mentor en 4Geeks Academy"
+      },
+      {
+        "label": "También",
+        "value": "Desarrollador freelance y atención al cliente los fines de semana"
+      },
+      {
+        "label": "Ubicación",
+        "value": "Venezuela"
+      },
+      {
+        "label": "Idiomas",
+        "value": "Español (nativo) · Inglés B1 · Italiano B1"
+      }
+    ],
+    "toolsLabel": "Con qué trabajo",
+    "tools": [
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Node.js",
+      "Python",
+      "PHP · Laravel",
+      "PostgreSQL · Supabase",
+      "Git · GitHub",
+      "Docker · Linux",
+      "IA y agentes (MCP)"
+    ]
+  },
+  "trayectoria": {
+    "title": "Qué he hecho",
+    "sub": "Mi recorrido, del mostrador al código.",
+    "timeline": [
+      {
+        "period": "May 2026 – hoy",
+        "role": "Community & Public Support Specialist · Senior Mentor",
+        "org": "4Geeks Academy · tiempo parcial",
+        "note": "Soporte a estudiantes del programa Full Stack: resuelvo dudas técnicas y de comunidad, acompaño con mentoría y reviso proyectos."
+      },
+      {
+        "period": "Abr 2026 – hoy",
+        "role": "Atención al cliente",
+        "org": "DocsiApp · fines de semana",
+        "note": "Atención al cliente los sábados y domingos."
+      },
+      {
+        "period": "Oct 2025 – May 2026",
+        "role": "Community Specialist",
+        "org": "4Geeks Academy · tiempo parcial",
+        "note": "Gestión de la comunidad digital y soporte a los estudiantes del programa Full Stack."
+      },
+      {
+        "period": "Oct 2021 – hoy",
+        "role": "Desarrollador freelance",
+        "org": "Remoto",
+        "note": "Sitios y aplicaciones con React, Node.js, Python y PHP/Laravel. Seis landings de demostración publicadas en Vercel."
+      },
+      {
+        "period": "2015 – 2017",
+        "role": "Gerente de ventas",
+        "org": "Iltuocarro · Venezuela",
+        "note": "Dirigí la operación comercial y el rendimiento del equipo; negocié con clientes y proveedores."
+      },
+      {
+        "period": "2005 – 2014",
+        "role": "Ventas y atención al cliente",
+        "org": "Negocio familiar · Punto Fijo",
+        "note": "De roles operativos a la gerencia: resolución de conflictos, asesoría a clientes y control de inventario."
+      }
+    ],
+    "formacionTitle": "Formación",
+    "formacion": [
+      {
+        "title": "4Geeks Academy · Full Stack Developer",
+        "note": "Mar – Dic 2025"
+      },
+      {
+        "title": "16 certificados",
+        "note": "8 de 4Geeks (159 h), 2 de BIG school, Claseflix y más"
+      },
+      {
+        "title": "Lexpin · Bootcamp de Programación",
+        "note": "2021 – 2022"
+      },
+      {
+        "title": "UNEFM · Medicina",
+        "note": "Cursada hasta 2021, no concluida"
+      }
+    ]
   }
 }

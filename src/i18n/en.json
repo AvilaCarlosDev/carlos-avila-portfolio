@@ -9,6 +9,14 @@
     "ariaLabel": "Main navigation",
     "links": [
       {
+        "href": "#quien-soy",
+        "label": "Who I am"
+      },
+      {
+        "href": "#trayectoria",
+        "label": "What I did"
+      },
+      {
         "href": "#proyectos",
         "label": "Projects"
       },
@@ -168,5 +176,104 @@
       "text": "The page you are looking for does not exist or has moved.",
       "back": "Back to home"
     }
+  },
+  "quien": {
+    "title": "Who I am",
+    "paragraphs": [
+      "I am Carlos, a Venezuelan developer. Today I work at 4Geeks Academy as a Community & Public Support Specialist and senior mentor: I support programming students and answer their technical questions.",
+      "Before coding I spent years in sales and customer service and studied Medicine. That is where my way of working comes from: I listen, find the real problem and explain it clearly. I publish open source in Spanish, with tests, and automate with AI and agents."
+    ],
+    "facts": [
+      {
+        "label": "Now",
+        "value": "Community & Public Support Specialist · Senior Mentor at 4Geeks Academy"
+      },
+      {
+        "label": "Also",
+        "value": "Freelance developer and weekend customer service"
+      },
+      {
+        "label": "Location",
+        "value": "Venezuela"
+      },
+      {
+        "label": "Languages",
+        "value": "Spanish (native) · English B1 · Italian B1"
+      }
+    ],
+    "toolsLabel": "What I work with",
+    "tools": [
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Node.js",
+      "Python",
+      "PHP · Laravel",
+      "PostgreSQL · Supabase",
+      "Git · GitHub",
+      "Docker · Linux",
+      "AI and agents (MCP)"
+    ]
+  },
+  "trayectoria": {
+    "title": "What I have done",
+    "sub": "My path, from the counter to the code.",
+    "timeline": [
+      {
+        "period": "May 2026 – now",
+        "role": "Community & Public Support Specialist · Senior Mentor",
+        "org": "4Geeks Academy · part time",
+        "note": "Support for students in the Full Stack program: I answer technical and community questions, mentor them and review projects."
+      },
+      {
+        "period": "Apr 2026 – now",
+        "role": "Customer service",
+        "org": "DocsiApp · weekends",
+        "note": "Customer service on Saturdays and Sundays."
+      },
+      {
+        "period": "Oct 2025 – May 2026",
+        "role": "Community Specialist",
+        "org": "4Geeks Academy · part time",
+        "note": "Managed the digital community and supported students in the Full Stack program."
+      },
+      {
+        "period": "Oct 2021 – now",
+        "role": "Freelance developer",
+        "org": "Remote",
+        "note": "Websites and apps with React, Node.js, Python and PHP/Laravel. Six demo landing pages published on Vercel."
+      },
+      {
+        "period": "2015 – 2017",
+        "role": "Sales manager",
+        "org": "Iltuocarro · Venezuela",
+        "note": "Led commercial operations and team performance; negotiated with clients and suppliers."
+      },
+      {
+        "period": "2005 – 2014",
+        "role": "Sales and customer service",
+        "org": "Family business · Punto Fijo",
+        "note": "From operational roles to management: conflict resolution, customer advice and inventory control."
+      }
+    ],
+    "formacionTitle": "Education",
+    "formacion": [
+      {
+        "title": "4Geeks Academy · Full Stack Developer",
+        "note": "Mar – Dec 2025"
+      },
+      {
+        "title": "16 certificates",
+        "note": "8 from 4Geeks (159 h), 2 from BIG school, Claseflix and more"
+      },
+      {
+        "title": "Lexpin · Programming Bootcamp",
+        "note": "2021 – 2022"
+      },
+      {
+        "title": "UNEFM · Medicine",
+        "note": "Studied until 2021, not completed"
+      }
+    ]
   }
 }
