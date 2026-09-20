@@ -7,4 +7,6 @@ export default defineConfig({
   trailingSlash: 'always',
   build: { format: 'directory' },
   compressHTML: true,
+  // La CSP (font-src/img-src 'self') no permite data: URIs: los recursos pequeños se emiten como archivos.
+  vite: { build: { assetsInlineLimit: 0 } },
 })
