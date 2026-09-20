@@ -38,7 +38,7 @@ describe('contenido bilingüe', () => {
   })
 
   it('los enlaces externos son idénticos en ambos idiomas', () => {
-    const urls = (d) => [...d.porque.items.map((i) => i.href), ...d.proyectos.items.map((i) => i.url)]
+    const urls = (d) => d.proyectos.items.map((i) => i.url)
     expect(urls(en)).toEqual(urls(es))
   })
 })

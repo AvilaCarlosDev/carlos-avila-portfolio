@@ -9,10 +9,6 @@
     "ariaLabel": "Navegación principal",
     "links": [
       {
-        "href": "#por-que",
-        "label": "Por qué yo"
-      },
-      {
         "href": "#proyectos",
         "label": "Proyectos"
       },
@@ -44,39 +40,7 @@
     "ctaGithub": "GitHub",
     "portraitAlt": "Retrato de Carlos Avila, en blanco y negro, con los brazos cruzados"
   },
-  "porque": {
-    "kick": "01 / POR QUÉ YO",
-    "title": "¿Por qué contratarme?",
-    "sub": "Cuatro razones, cada una con algo que podés comprobar.",
-    "items": [
-      {
-        "title": "Explico lo técnico en español claro",
-        "text": "Soy mentor senior en 4Geeks Academy y acompaño a estudiantes a diario. Publico documentación y catálogos en español para la comunidad.",
-        "linkText": "apis-gratis-es",
-        "href": "https://github.com/AvilaCarlosDev/apis-gratis-es"
-      },
-      {
-        "title": "Entrego con pruebas",
-        "text": "Mis proyectos abiertos se prueban de verdad: 81 pruebas y 94 % de cobertura en mcp-readiness-check, más de 250 en apis-gratis-es.",
-        "linkText": "mcp-readiness-check",
-        "href": "https://github.com/AvilaCarlosDev/mcp-readiness-check"
-      },
-      {
-        "title": "Mi código lo aceptan otros equipos",
-        "text": "Tengo contribuciones fusionadas en proyectos ajenos: 6 PRs en pythiaLabs, además de DevSwitch e icon-sprite.",
-        "linkText": "ver GitHub",
-        "href": "https://github.com/AvilaCarlosDev"
-      },
-      {
-        "title": "Entiendo al cliente y al problema",
-        "text": "Vengo de años en ventas y atención al cliente y de estudiar Medicina: escucho, diagnostico el problema real y lo resuelvo con criterio.",
-        "linkText": "ver mi CV",
-        "href": "#cv"
-      }
-    ]
-  },
   "proyectos": {
-    "kick": "02 / CÓDIGO ABIERTO",
     "title": "Proyectos destacados",
     "sub": "Herramientas que uso y mantengo. Todo el código es público.",
     "github": "Ver en GitHub",
@@ -114,7 +78,6 @@
     ]
   },
   "cv": {
-    "kick": "03 / CURRÍCULUM",
     "title": "Mi CV, al día",
     "sub": "Una página, sin relleno. Disponible en español y en inglés.",
     "boxTitle": "Descargá mi CV",
@@ -128,7 +91,6 @@
     "artAlt": "Mini-carlos entregando su CV"
   },
   "contacto": {
-    "kick": "04 / CONTACTO",
     "title": "Hablemos.",
     "sub": "Proyectos, mentoría o una colaboración. Respondo por acá o por GitHub.",
     "form": {

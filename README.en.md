@@ -5,7 +5,7 @@
 [![CI](https://github.com/AvilaCarlosDev/carlos-avila-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/AvilaCarlosDev/carlos-avila-portfolio/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-Portfolio of **Carlos Avila** (developer, community support specialist and senior mentor at 4Geeks Academy). A short site that answers three questions: who I am, what I have done and why hire me. It includes a downloadable CV and a contact form that only accepts real emails.
+Portfolio of **Carlos Avila** (developer, community support specialist and senior mentor at 4Geeks Academy). A short site with four things: who I am, what I have done, my downloadable CV and a contact form that only accepts real emails.
 
 **Site:** <https://avilacarlosdev.com> · **CV:** [Spanish](public/Carlos-Avila-CV-ES.pdf) · [English](public/Carlos-Avila-CV-EN.pdf)
 
@@ -47,7 +47,7 @@ npm run preview # serve dist/ locally
 ```text
 src/
   i18n/          es.json and en.json: all site text, with the same structure
-  components/    Header, Hero, Porque, Proyectos, Curriculum, Contacto, Footer, Legal
+  components/    Header, Hero, Proyectos, Curriculum, Contacto, Footer, Legal
   layouts/       Base.astro: SEO, hreflang, Open Graph, JSON-LD
   pages/         index (ES), en/index, privacidad, en/privacy, 404
   scripts/       contacto.js: form validation and submission
@@ -59,7 +59,7 @@ docs/            design spec and decisions
 
 ## Tests
 
-`npm test` runs 78 tests in three groups:
+`npm test` runs 79 tests in three groups:
 
 - **`i18n.test.js`:** Spanish and English have exactly the same structure, no empty strings, and the figures match.
 - **`contacto.test.js`:** email validation (format, disposable domains, MX record) and `FormData` submission.

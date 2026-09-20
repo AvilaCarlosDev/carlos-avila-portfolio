@@ -5,7 +5,7 @@
 [![CI](https://github.com/AvilaCarlosDev/carlos-avila-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/AvilaCarlosDev/carlos-avila-portfolio/actions/workflows/ci.yml)
 [![Licencia: MIT](https://img.shields.io/badge/licencia-MIT-blue.svg)](LICENSE)
 
-Portafolio de **Carlos Avila** (desarrollador, especialista en soporte a la comunidad y mentor senior en 4Geeks Academy). Un sitio corto que responde a tres preguntas: quién soy, qué he hecho y por qué contratarme. Incluye CV descargable y un formulario de contacto que solo acepta correos reales.
+Portafolio de **Carlos Avila** (desarrollador, especialista en soporte a la comunidad y mentor senior en 4Geeks Academy). Un sitio corto con cuatro cosas: quién soy, qué he hecho, mi CV descargable y un formulario de contacto que solo acepta correos reales.
 
 **Sitio:** <https://avilacarlosdev.com> · **CV:** [español](public/Carlos-Avila-CV-ES.pdf) · [inglés](public/Carlos-Avila-CV-EN.pdf)
 
@@ -47,7 +47,7 @@ npm run preview # sirve dist/ localmente
 ```text
 src/
   i18n/          es.json y en.json: todo el texto del sitio, con la misma estructura
-  components/    Header, Hero, Porque, Proyectos, Curriculum, Contacto, Footer, Legal
+  components/    Header, Hero, Proyectos, Curriculum, Contacto, Footer, Legal
   layouts/       Base.astro: SEO, hreflang, Open Graph, JSON-LD
   pages/         index (ES), en/index, privacidad, en/privacy, 404
   scripts/       contacto.js: validación y envío del formulario
@@ -59,7 +59,7 @@ docs/            spec de diseño y decisiones
 
 ## Pruebas
 
-`npm test` ejecuta 78 pruebas en tres grupos:
+`npm test` ejecuta 79 pruebas en tres grupos:
 
 - **`i18n.test.js`:** español e inglés tienen exactamente la misma estructura, sin textos vacíos, y las cifras coinciden.
 - **`contacto.test.js`:** validación del correo (formato, dominios desechables, registro MX) y envío por `FormData`.
