@@ -93,7 +93,7 @@ section.wrap { padding-top: 84px; }
 .proj h3 { font-size: 44px; margin: 6px 0 10px; }
 .proj p { color: var(--mute); margin: 0 0 18px; max-width: 560px; }
 .nums { display: flex; gap: 18px; flex-wrap: wrap; font-family: var(--mono); font-size: 12px; color: var(--blue); padding: 14px 0; border-top: 1px solid var(--line); margin-top: 6px; }
-.proj .row { padding-bottom: 26px; }
+.proj .row { display: flex; gap: 10px; flex-wrap: wrap; padding-bottom: 26px; }
 .proj .art { align-self: end; justify-self: center; position: relative; }
 .proj .art::before { content: ''; position: absolute; left: 50%; bottom: 0; width: 210px; height: 62px; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(closest-side, rgba(88, 225, 255, 0.32), transparent); }
 .proj .art img { position: relative; display: block; max-height: 250px; width: auto; filter: drop-shadow(0 10px 12px rgba(15, 22, 40, 0.22)); }
@@ -144,7 +144,7 @@ section.wrap { padding-top: 84px; }
 .legal .volver { display: inline-block; margin-top: 30px; }
 
 /* Quién soy */
-.about > *, .path > * { min-width: 0; }
+.about > * { min-width: 0; }
 .about { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 28px; align-items: start; }
 .about-text p { margin: 0 0 16px; font-size: 18px; color: #2b2e35; max-width: 640px; }
 .mini { font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mute); margin: 26px 0 12px; }
@@ -154,28 +154,11 @@ section.wrap { padding-top: 84px; }
 .facts dt { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue); }
 .facts dd { margin: 3px 0 0; font-size: 15px; }
 
-/* Qué he hecho */
-.path { display: grid; grid-template-columns: 1.4fr 0.6fr; gap: 28px; align-items: start; }
-.timeline { list-style: none; margin: 0; padding: 0 0 0 22px; position: relative; }
-.timeline::before { content: ''; position: absolute; left: 4px; top: 8px; bottom: 8px; width: 1px; background: var(--line); }
-.timeline li { position: relative; display: grid; grid-template-columns: 150px 1fr; gap: 18px; padding: 0 0 26px; }
-.timeline li::before { content: ''; position: absolute; left: -22px; top: 8px; width: 9px; height: 9px; border-radius: 50%; background: var(--blue); box-shadow: 0 0 0 4px var(--bg); }
-.timeline .periodo { font-family: var(--mono); font-size: 12px; color: var(--mute); padding-top: 4px; }
-.timeline h3 { font-family: var(--sans); font-weight: 700; font-size: 17px; letter-spacing: -0.01em; line-height: 1.25; }
-.timeline .org { margin: 2px 0 6px; font-size: 13.5px; color: var(--blue); }
-.timeline p { margin: 0; color: var(--mute); font-size: 15px; }
-.timeline p.org { color: var(--blue); }
-.formacion-box .mini { margin-top: 0; }
-.formacion { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
-.formacion li { display: grid; gap: 2px; }
-.formacion b { font-size: 15px; }
-.formacion span { font-size: 13px; color: var(--mute); }
 
 /* Móvil y tableta: SIEMPRE al final de la hoja, para ganar a las reglas base de arriba. */
 @media (max-width: 820px) {
   .site-nav { display: none; }
-  .contact, .about, .path { grid-template-columns: 1fr; }
-  .timeline li { grid-template-columns: 1fr; gap: 4px; }
+  .contact, .about { grid-template-columns: 1fr; }
   .proj { grid-template-columns: 1fr; padding-bottom: 0; }
   .proj .art { order: -1; justify-self: end; }
   .proj h3 { font-size: 34px; }

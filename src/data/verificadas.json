@@ -1,0 +1,35 @@
+{
+  "fecha": "2026-09-19",
+  "nota": "Cada cifra que muestra el sitio se midió en un clon limpio del repositorio. Si cambia el proyecto, se vuelve a medir y se actualiza este archivo; tests/cifras.test.js exige que el sitio coincida con él.",
+  "proyectos": {
+    "apis-gratis-es": {
+      "apis": 23,
+      "demos": 5,
+      "pruebas": 342,
+      "detalle": { "verificador (Python, unittest)": 79, "demos (Node, node --test)": 255, "paridad de README (shell)": 8 },
+      "comandos": [
+        "python3 -m unittest discover -s tests -p 'test_*.py'   → Ran 79 tests, OK",
+        "cd demos && node --test \"**/tests/*.test.js\"          → tests 255, pass 255, fail 0",
+        "bash tests/check-parity.test.sh                        → 8 passed, 0 failed",
+        "python3: len(json.load(open('data/apis.json'))['entradas']) → 23"
+      ]
+    },
+    "mcp-readiness-check": {
+      "pruebas": 94,
+      "cobertura": 94,
+      "detalle": { "sentencias %": 93.91, "ramas %": 82.82, "funciones %": 95.69, "líneas %": 94.89 },
+      "comandos": ["npm ci && npm run test:coverage → Test Files 10 passed, Tests 94 passed; Statements 93.91 %"]
+    },
+    "openclaw-skills": {
+      "skills": 37,
+      "byteAByte": 15,
+      "derivadas": 2,
+      "propias": 20,
+      "pruebas": 15,
+      "comandos": [
+        "procedencia.json → 37 entradas: comunidad 15, propia 20, derivada 2",
+        "python3 -m unittest discover -s tests -p 'test_*.py' → Ran 15 tests, OK"
+      ]
+    }
+  }
+}

@@ -5,7 +5,7 @@
 [![CI](https://github.com/AvilaCarlosDev/carlos-avila-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/AvilaCarlosDev/carlos-avila-portfolio/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-Portfolio of **Carlos Avila** (developer, community support specialist and senior mentor at 4Geeks Academy). A short site with five blocks: who I am, what I have done, my projects, my downloadable CV and a contact form that only accepts real emails.
+Portfolio of **Carlos Avila** (developer, community support specialist and senior mentor at 4Geeks Academy). A short site with four blocks: who I am, what I have done (my projects), my downloadable CV and a contact form that only accepts real emails.
 
 **Site:** <https://avilacarlosdev.com> · **CV:** [Spanish](public/Carlos-Avila-CV-ES.pdf) · [English](public/Carlos-Avila-CV-EN.pdf)
 
@@ -47,9 +47,10 @@ npm run preview # serve dist/ locally
 ```text
 src/
   i18n/          es.json and en.json: all site text, with the same structure
-  components/    Header, Hero, Quien, Trayectoria, Proyectos, Curriculum, Contacto, Footer, Legal
+  components/    Header, Hero, Quien, Proyectos, Curriculum, Contacto, Footer, Legal
   layouts/       Base.astro: SEO, hreflang, Open Graph, JSON-LD
   pages/         index (ES), en/index, privacidad, en/privacy, 404
+  data/          verificadas.json: figures measured in each repository, with their command
   scripts/       contacto.js: form validation and submission
   assets/        images that Astro optimizes
 public/          CV PDFs, favicons, og.jpg, robots, sitemap, manifest, security.txt
@@ -59,12 +60,17 @@ docs/            design spec and decisions
 
 ## Tests
 
-`npm test` runs 99 tests in four groups:
+`npm test` runs 109 tests in five groups:
 
 - **`i18n.test.js`:** Spanish and English have exactly the same structure, no empty strings, and the figures match.
 - **`contacto.test.js`:** email validation (format, disposable domains, MX record) and `FormData` submission.
+- **`cifras.test.js`:** every number in "What I have done" matches `src/data/verificadas.json`, and no old figure is left.
 - **`layout.test.js`:** in a real Chrome, on the built site: no horizontal overflow, no broken images and fonts loaded, at mobile (390 px), tablet (820 px) and desktop (1440 px), for all four pages. It needs Chrome or Chromium (`CHROME_PATH` if it is not in the usual location); required in CI.
 - **`sitio.test.js`:** on the built HTML, per page: language, title and description, canonical, reciprocal `hreflang`, Open Graph, a single `h1`, JSON-LD, images with `alt` and local, internal links that exist, footer with copyright; and site-wide: `robots.txt`, `sitemap.xml`, manifest, `security.txt`, unindexed 404, a 1200×630 `og.jpg` and security headers.
+
+## Verified figures
+
+No number is published without measuring it. `src/data/verificadas.json` stores, for each project, the figure, its breakdown and the **command** used to obtain it in a clean clone of the repository (tests, coverage, APIs, demos and skills). If a project changes, it is measured again and the file is updated; `cifras.test.js` fails if the site says something else.
 
 ## Continuous integration
 

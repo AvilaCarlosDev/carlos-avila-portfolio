@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Changed / Cambiado
+
+- "What I have done" now means the projects. The career timeline section was removed (it lives in the CV). / "Qué he hecho" son los proyectos. Se quitó la sección de recorrido laboral (está en el CV).
+- Project figures were re-measured in clean clones and corrected: apis-gratis-es 23 APIs, 5 demos and 342 tests (was 22 and "250+"); mcp-readiness-check 94 tests (was 81); openclaw-skills states that 15 of 37 skills are verified byte for byte. / Las cifras de los proyectos se volvieron a medir en clones limpios y se corrigieron.
+
+### Added / Añadido
+
+- `src/data/verificadas.json` with the command behind every figure, and `tests/cifras.test.js` to keep the site in sync with it. / `src/data/verificadas.json` con el comando de cada cifra y `tests/cifras.test.js` para mantener el sitio sincronizado.
+- A "See demos" button for apis-gratis-es (live on GitHub Pages). / Botón "Ver demos" para apis-gratis-es (en vivo en GitHub Pages).
+
 ### Added / Añadido
 
 - Real-browser layout tests (overflow, broken images, fonts) at three widths. / Pruebas de diseño en un navegador real (desborde, imágenes rotas y fuentes) en tres anchos.
