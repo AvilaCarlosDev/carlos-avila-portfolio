@@ -1,0 +1,72 @@
+---
+import '@fontsource/instrument-serif/400.css'
+import '@fontsource/instrument-serif/400-italic.css'
+import '@fontsource-variable/inter'
+import '@fontsource/jetbrains-mono/500.css'
+import '../styles/global.css'
+
+// alternates: URLs relativas de la misma página en cada idioma, p. ej. { es: '/', en: '/en/' }
+const { t, path, title = t.meta.title, description = t.meta.description, alternates = { es: '/', en: '/en/' }, noindex = false } = Astro.props
+const sitio = Astro.site.origin
+const abs = (p) => new URL(p, sitio).href
+const url = abs(path)
+const og = abs('/og.jpg')
+const persona = {
+  '@type': 'Person',
+  '@id': `${sitio}/#persona`,
+  name: 'Carlos Avila',
+  alternateName: 'Avilacarlosdev',
+  jobTitle: 'Community & Public Support Specialist · Senior Mentor',
+  description: t.meta.description,
+  worksFor: { '@type': 'Organization', name: '4Geeks Academy' },
+  url: sitio,
+  image: og,
+  knowsLanguage: ['es', 'en'],
+  sameAs: ['https://github.com/AvilaCarlosDev', 'https://www.linkedin.com/in/avilacarlosdev'],
+}
+const web = { '@type': 'WebSite', '@id': `${sitio}/#web`, url: sitio, name: 'Avilacarlosdev', inLanguage: ['es', 'en'], publisher: { '@id': `${sitio}/#persona` } }
+const grafo = { '@context': 'https://schema.org', '@graph': [persona, web] }
+---
+<!doctype html>
+<html lang={t.htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Carlos Avila" />
+    <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <link rel="canonical" href={url} />
+    <link rel="alternate" hreflang="es" href={abs(alternates.es)} />
+    <link rel="alternate" hreflang="en" href={abs(alternates.en)} />
+    <link rel="alternate" hreflang="x-default" href={abs(alternates.es)} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Avilacarlosdev" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={url} />
+    <meta property="og:image" content={og} />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={t.hero.portraitAlt} />
+    <meta property="og:locale" content={t.lang === 'es' ? 'es_LA' : 'en_US'} />
+    <meta property="og:locale:alternate" content={t.lang === 'es' ? 'en_US' : 'es_LA'} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={og} />
+    <meta name="twitter:image:alt" content={t.hero.portraitAlt} />
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#f6f5f1" />
+    <script type="application/ld+json" set:html={JSON.stringify(grafo)} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

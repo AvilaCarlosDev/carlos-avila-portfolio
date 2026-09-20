@@ -1,0 +1,23 @@
+---
+const { t, switchHref = t.nav.switchTo.href, home = true } = Astro.props
+const n = t.nav
+const inicio = t.lang === 'es' ? '/' : '/en/'
+const enlace = (l) => (home ? l.href : inicio + l.href)
+---
+<a class="skip" href="#contenido">{t.lang === 'es' ? 'Saltar al contenido' : 'Skip to content'}</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href={inicio} aria-label="Avilacarlosdev">
+      <img src="/favicon-32.png" width="26" height="26" alt="" />
+      Avilacarlosdev
+    </a>
+    <nav class="site-nav" aria-label={n.ariaLabel}>
+      {n.links.map((l) => <a href={enlace(l)}>{l.label}</a>)}
+    </nav>
+    <div class="lang" role="group" aria-label={n.langLabel}>
+      <b aria-current="true">{n.current}</b> /
+      <a href={switchHref} hreflang={n.switchTo.hreflang} lang={n.switchTo.hreflang} title={n.switchTo.name}>{n.switchTo.code}</a>
+    </div>
+    <a class="btn dark sm" href={enlace({ href: '#contacto' })}>{n.cta}</a>
+  </div>
+</header>

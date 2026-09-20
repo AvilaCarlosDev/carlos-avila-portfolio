@@ -1,0 +1,19 @@
+---
+import { Image } from 'astro:assets'
+import retrato from '../assets/retrato.jpg'
+const { t } = Astro.props
+const h = t.hero
+---
+<header class="hero wrap" id="inicio">
+  <span class="eyebrow"><i></i> {h.eyebrow}</span>
+  <h1>{h.titleBefore} <em>{h.titleEm}</em></h1>
+  <p>{h.sub}</p>
+  <div class="cta">
+    <a class="btn dark" href="#proyectos">{h.ctaProjects} →</a>
+    <a class="btn line" href="https://github.com/AvilaCarlosDev" rel="noopener">{h.ctaGithub}</a>
+  </div>
+  <div class="frame">
+    <div class="bar"><i></i><i></i><i></i><span style="margin-left:8px">avilacarlosdev.com</span></div>
+    <Image src={retrato} alt={h.portraitAlt} widths={[640, 900, 1200]} sizes="(max-width: 940px) 100vw, 900px" loading="eager" fetchpriority="high" />
+  </div>
+</header>

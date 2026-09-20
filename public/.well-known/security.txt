@@ -1,0 +1,5 @@
+Contact: mailto:avilavaleriocarlos@gmail.com
+Expires: 2027-09-19T00:00:00.000Z
+Preferred-Languages: es, en
+Canonical: https://avilacarlosdev.com/.well-known/security.txt
+Policy: https://github.com/AvilaCarlosDev/carlos-avila-portfolio/blob/main/SECURITY.md
