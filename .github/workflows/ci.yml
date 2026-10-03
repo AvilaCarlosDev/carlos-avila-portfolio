@@ -27,4 +27,6 @@ jobs:
       - name: Pruebas
         run: npm test
       - name: Auditoría de dependencias (producción)
-        run: npm audit --omit=dev --audit-level=high
+        # Excepción temporal: GHSA-ch52-4w7c-c8xp (http-cache-semantics, sin parche upstream).
+        # Quitar el --allowlist cuando exista versión corregida.
+        run: npx --yes audit-ci@7.1.0 --high --skip-dev --allowlist GHSA-ch52-4w7c-c8xp
