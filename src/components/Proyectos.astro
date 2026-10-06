@@ -6,6 +6,7 @@ import celebrando from '../assets/celebrando.png'
 const { t } = Astro.props
 const p = t.proyectos
 const arte = { laptop, pensando, celebrando }
+const dm = p.demos
 ---
 <section id="proyectos" class="wrap">
   <div class="head">
@@ -24,4 +25,19 @@ const arte = { laptop, pensando, celebrando }
       <div class="art"><Image src={arte[it.art]} alt="" height={250} loading="lazy" /></div>
     </article>
   ))}
+  <div class="demos">
+    <div class="demos-head">
+      <h3>{dm.title}</h3>
+      <p>{dm.sub}</p>
+    </div>
+    <ul class="demo-grid">
+      {dm.items.map((it) => (
+        <li class="card demo">
+          <h4>{it.name}</h4>
+          <p>{it.description}</p>
+          <div class="row"><a class="btn dark sm" href={it.demoUrl} rel="noopener">{dm.live} ↗</a><a class="btn line sm" href={it.url} rel="noopener">{dm.code}</a></div>
+        </li>
+      ))}
+    </ul>
+  </div>
 </section>
