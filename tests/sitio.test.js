@@ -236,7 +236,9 @@ describe('quién soy y proyectos: contenido', () => {
     it(`${nombre}: proyectos son los 3 proyectos, con GitHub y la demo en vivo de apis-gratis-es`, () => {
       const doc = parse(leer(archivo))
       expect(doc.querySelectorAll('#proyectos .proj')).toHaveLength(3)
-      expect(doc.querySelectorAll('#proyectos .proj h3').map((h) => h.text)).toEqual(['apis-gratis-es', 'mcp-readiness-check', 'openclaw-skills'])
+      expect(doc.querySelectorAll('#proyectos .proj h3').map((h) => h.text)).toEqual(['polaris-local-ai', 'mcp-readiness-check', 'apis-gratis-es'])
+      expect(doc.querySelectorAll('#proyectos .demo')).toHaveLength(6)
+      expect(doc.querySelectorAll('#proyectos .demo a[href*="vercel.app"]')).toHaveLength(6)
       const demos = doc.querySelectorAll('#proyectos a[href*="github.io"]')
       expect(demos).toHaveLength(1)
       expect(demos[0].getAttribute('href')).toBe('https://avilacarlosdev.github.io/apis-gratis-es/')

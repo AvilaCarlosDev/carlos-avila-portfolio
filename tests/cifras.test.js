@@ -10,7 +10,6 @@ import verificadas from '../src/data/verificadas.json'
 const V = verificadas.proyectos
 const numeros = (textos) => textos.join(' ').match(/\d+/g)?.map(Number) ?? []
 const item = (d, id) => d.proyectos.items.find((i) => i.id === id)
-const todo = (d, id) => [...item(d, id).numbers, item(d, id).description]
 
 describe('cifras verificadas de los proyectos', () => {
   for (const [nombre, d] of [['ES', es], ['EN', en]]) {
@@ -27,11 +26,10 @@ describe('cifras verificadas de los proyectos', () => {
       expect(Math.round(V['mcp-readiness-check'].detalle['sentencias %'])).toBe(V['mcp-readiness-check'].cobertura)
     })
 
-    it(`${nombre}: openclaw-skills distingue las verificadas byte a byte de las derivadas y propias`, () => {
-      const o = V['openclaw-skills']
-      expect(o.byteAByte + o.derivadas + o.propias).toBe(o.skills)
-      const n = numeros(todo(d, 'openclaw-skills'))
-      for (const cifra of [o.skills, o.byteAByte, o.derivadas, o.propias, o.pruebas]) expect(n, String(cifra)).toContain(cifra)
+    it(`${nombre}: polaris-local-ai muestra 6 modelos de texto y visión, 2 de imagen y 25 pruebas`, () => {
+      const o = V['polaris-local-ai']
+      const n = numeros(item(d, 'polaris-local-ai').numbers)
+      expect(n).toEqual([o.modelosTextoVision, o.modelosImagen, o.pruebas])
     })
 
     it(`${nombre}: no queda ninguna cifra antigua o inventada`, () => {
@@ -46,8 +44,19 @@ describe('cifras verificadas de los proyectos', () => {
 
   it('los proyectos de la página son exactamente los tres elegidos, con enlace a su repositorio', () => {
     for (const d of [es, en]) {
-      expect(d.proyectos.items.map((i) => i.id)).toEqual(['apis-gratis-es', 'mcp-readiness-check', 'openclaw-skills'])
+      expect(d.proyectos.items.map((i) => i.id)).toEqual(['polaris-local-ai', 'mcp-readiness-check', 'apis-gratis-es'])
       for (const i of d.proyectos.items) expect(i.url).toBe(`https://github.com/AvilaCarlosDev/${i.id}`)
+    }
+  })
+
+  it('las demos para negocios son las seis landings, con demo en vivo y repositorio', () => {
+    const rubros = ['delivery', 'barberia', 'deportes', 'ferreteria', 'floristeria', 'taxi']
+    for (const d of [es, en]) {
+      expect(d.proyectos.demos.items.map((i) => i.id)).toEqual(rubros.map((r) => `landing-${r}-demo`))
+      for (const [k, i] of d.proyectos.demos.items.entries()) {
+        expect(i.url).toBe(`https://github.com/AvilaCarlosDev/${i.id}`)
+        expect(i.demoUrl).toBe(`https://agencia-web-${rubros[k]}-demo.vercel.app/`)
+      }
     }
   })
 })
