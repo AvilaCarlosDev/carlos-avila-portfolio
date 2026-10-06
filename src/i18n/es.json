@@ -50,16 +50,15 @@
     "demo": "Ver demos",
     "items": [
       {
-        "id": "apis-gratis-es",
-        "description": "Catálogo verificado de APIs públicas y gratuitas para la comunidad hispanohablante, con demos que funcionan en vivo.",
+        "id": "polaris-local-ai",
+        "description": "Stack de IA local para una AMD RX 580 de 8 GB: un router compatible con la API de OpenAI que sirve modelos de texto, visión e imagen sobre Vulkan, sin nube y con benchmarks medidos en el propio equipo.",
         "numbers": [
-          "23 APIs",
-          "5 demos",
-          "342 pruebas"
+          "6 modelos de texto y visión",
+          "2 modelos de imagen",
+          "25 pruebas"
         ],
-        "url": "https://github.com/AvilaCarlosDev/apis-gratis-es",
-        "demoUrl": "https://avilacarlosdev.github.io/apis-gratis-es/",
-        "art": "laptop"
+        "url": "https://github.com/AvilaCarlosDev/polaris-local-ai",
+        "art": "celebrando"
       },
       {
         "id": "mcp-readiness-check",
@@ -72,18 +71,68 @@
         "art": "pensando"
       },
       {
-        "id": "openclaw-skills",
-        "description": "Colección de skills para OpenClaw, en español e inglés, con el origen de cada una registrado y comprobado en el CI.",
+        "id": "apis-gratis-es",
+        "description": "Catálogo verificado de APIs públicas y gratuitas para la comunidad hispanohablante, con demos que funcionan en vivo.",
         "numbers": [
-          "37 skills",
-          "15 verificadas byte a byte",
-          "20 propias · 2 derivadas",
-          "15 pruebas"
+          "23 APIs",
+          "5 demos",
+          "342 pruebas"
         ],
-        "url": "https://github.com/AvilaCarlosDev/openclaw-skills",
-        "art": "celebrando"
+        "url": "https://github.com/AvilaCarlosDev/apis-gratis-es",
+        "demoUrl": "https://avilacarlosdev.github.io/apis-gratis-es/",
+        "art": "laptop"
       }
-    ]
+    ],
+    "demos": {
+      "title": "Demos para negocios",
+      "sub": "Landings de ejemplo para negocios locales. Cada una está publicada y se puede recorrer.",
+      "live": "Ver demo",
+      "code": "Código",
+      "items": [
+        {
+          "id": "landing-delivery-demo",
+          "name": "Delivery",
+          "description": "Marketplace de delivery: restaurantes, combos, seguimiento de pedido y pedidos por WhatsApp.",
+          "url": "https://github.com/AvilaCarlosDev/landing-delivery-demo",
+          "demoUrl": "https://agencia-web-delivery-demo.vercel.app/"
+        },
+        {
+          "id": "landing-barberia-demo",
+          "name": "Barbería",
+          "description": "Barbería premium: servicios filtrables, barberos, membresías y reservas por WhatsApp.",
+          "url": "https://github.com/AvilaCarlosDev/landing-barberia-demo",
+          "demoUrl": "https://agencia-web-barberia-demo.vercel.app/"
+        },
+        {
+          "id": "landing-deportes-demo",
+          "name": "Tienda deportiva",
+          "description": "Tienda deportiva: catálogo filtrable, ofertas y asesoría por WhatsApp.",
+          "url": "https://github.com/AvilaCarlosDev/landing-deportes-demo",
+          "demoUrl": "https://agencia-web-deportes-demo.vercel.app/"
+        },
+        {
+          "id": "landing-ferreteria-demo",
+          "name": "Ferretería",
+          "description": "Ferretería industrial: catálogo técnico, paquetes de obra y cotización por WhatsApp.",
+          "url": "https://github.com/AvilaCarlosDev/landing-ferreteria-demo",
+          "demoUrl": "https://agencia-web-ferreteria-demo.vercel.app/"
+        },
+        {
+          "id": "landing-floristeria-demo",
+          "name": "Floristería",
+          "description": "Floristería boutique: colección por ocasión, servicios y pedidos por WhatsApp.",
+          "url": "https://github.com/AvilaCarlosDev/landing-floristeria-demo",
+          "demoUrl": "https://agencia-web-floristeria-demo.vercel.app/"
+        },
+        {
+          "id": "landing-taxi-demo",
+          "name": "Taxi",
+          "description": "Servicio de taxi y transfer: cotizador, tarifas, conductores y reservas por WhatsApp.",
+          "url": "https://github.com/AvilaCarlosDev/landing-taxi-demo",
+          "demoUrl": "https://agencia-web-taxi-demo.vercel.app/"
+        }
+      ]
+    }
   },
   "cv": {
     "title": "Mi CV, al día",
