@@ -20,7 +20,18 @@
       "detalle": { "sentencias %": 93.91, "ramas %": 82.82, "funciones %": 95.69, "líneas %": 94.89 },
       "comandos": ["npm ci && npm run test:coverage → Test Files 10 passed, Tests 94 passed; Statements 93.91 %"]
     },
+    "polaris-local-ai": {
+      "modelosTextoVision": 6,
+      "modelosImagen": 2,
+      "pruebas": 25,
+      "medido": "2026-10-06",
+      "comandos": [
+        "pytest -q → 25 passed",
+        "router.py: MODELS → 6 ids de texto y visión; IMG_MODELS → 2 ids de imagen (sd15, sd35)"
+      ]
+    },
     "openclaw-skills": {
+      "nota": "Ya no se muestra en el sitio (repositorio archivado). Se conserva porque el CV en PDF todavía cita estas cifras.",
       "skills": 37,
       "byteAByte": 15,
       "derivadas": 2,
