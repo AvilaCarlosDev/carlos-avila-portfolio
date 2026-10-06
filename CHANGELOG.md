@@ -14,11 +14,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Changed / Cambiado
 
+- The projects section now shows polaris-local-ai, mcp-readiness-check and apis-gratis-es. openclaw-skills was removed because its repository is archived; its figures stay in `verificadas.json` only because the CV PDFs still cite them. / La sección de proyectos muestra polaris-local-ai, mcp-readiness-check y apis-gratis-es. Se quitó openclaw-skills porque su repositorio está archivado; sus cifras siguen en `verificadas.json` solo porque los CV en PDF todavía las citan.
 - "What I have done" now means the projects. The career timeline section was removed (it lives in the CV). / "Qué he hecho" son los proyectos. Se quitó la sección de recorrido laboral (está en el CV).
 - Project figures were re-measured in clean clones and corrected: apis-gratis-es 23 APIs, 5 demos and 342 tests (was 22 and "250+"); mcp-readiness-check 94 tests (was 81); openclaw-skills states that 15 of 37 skills are verified byte for byte. / Las cifras de los proyectos se volvieron a medir en clones limpios y se corrigieron.
 
 ### Added / Añadido
 
+- "Demos for businesses" block inside the projects section: the six landing demos, each with its live site and repository. / Bloque "Demos para negocios" dentro de proyectos: las seis landings demo, cada una con su sitio en vivo y su repositorio.
+- polaris-local-ai figures measured in a clean clone (6 text and vision models, 2 image models, 25 tests). / Cifras de polaris-local-ai medidas en un clon limpio.
 - `src/data/verificadas.json` with the command behind every figure, and `tests/cifras.test.js` to keep the site in sync with it. / `src/data/verificadas.json` con el comando de cada cifra y `tests/cifras.test.js` para mantener el sitio sincronizado.
 - A "See demos" button for apis-gratis-es (live on GitHub Pages). / Botón "Ver demos" para apis-gratis-es (en vivo en GitHub Pages).
 
