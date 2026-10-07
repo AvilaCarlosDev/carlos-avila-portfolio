@@ -13,9 +13,11 @@ const item = (d, id) => d.proyectos.items.find((i) => i.id === id)
 
 describe('cifras verificadas de los proyectos', () => {
   for (const [nombre, d] of [['ES', es], ['EN', en]]) {
-    it(`${nombre}: apis-gratis-es muestra 23 APIs, 5 demos y 342 pruebas`, () => {
+    it(`${nombre}: apis-gratis-es muestra 23 APIs verificadas, 1777 en el directorio, 5 demos y 351 pruebas`, () => {
       const n = numeros(item(d, 'apis-gratis-es').numbers)
-      expect(n).toEqual([V['apis-gratis-es'].apis, V['apis-gratis-es'].demos, V['apis-gratis-es'].pruebas])
+      expect(n).toEqual([V['apis-gratis-es'].apis, V['apis-gratis-es'].directorio, V['apis-gratis-es'].demos, V['apis-gratis-es'].pruebas])
+      // El directorio no está verificado: el sitio no puede presentarlo como si lo estuviera.
+      expect(item(d, 'apis-gratis-es').numbers[1]).toMatch(d.lang === 'es' ? /sin verificar/ : /unverified/)
       const suma = Object.values(V['apis-gratis-es'].detalle).reduce((a, b) => a + b, 0)
       expect(suma).toBe(V['apis-gratis-es'].pruebas)
     })
@@ -32,7 +34,7 @@ describe('cifras verificadas de los proyectos', () => {
       expect(n).toEqual([o.modelosTextoVision, o.modelosImagen, o.pruebas])
     })
 
-    it(`${nombre}: Forja muestra 93 pruebas, 45 pruebas de permisos y 6 migraciones`, () => {
+    it(`${nombre}: Forja muestra 160 pruebas, 109 pruebas de permisos y 13 migraciones`, () => {
       const o = V.Forja
       const n = numeros(item(d, 'Forja').numbers)
       expect(n).toEqual([o.pruebas, o.pruebasPermisos, o.migraciones])
@@ -71,12 +73,14 @@ describe('cifras verificadas de los proyectos', () => {
 const pdftotext = spawnSync('pdftotext', ['-v']).error === undefined
 const textoPdf = (f) => spawnSync('pdftotext', [resolve(import.meta.dirname, '../public', f), '-'], { encoding: 'utf8' }).stdout.replace(/\s+/g, ' ')
 
-describe.skipIf(!pdftotext)('el CV en PDF usa las mismas cifras verificadas', () => {
-  const V2 = verificadas.proyectos
+// El CV en PDF se genera aparte y cita las cifras de su propia fecha (verificadas.cv). Si se
+// regenera, se actualiza verificadas.cv y esta prueba lo comprueba.
+describe.skipIf(!pdftotext)('el CV en PDF cita las cifras registradas para el CV', () => {
+  const C = verificadas.cv
   for (const f of ['Carlos-Avila-CV-ES.pdf', 'Carlos-Avila-CV-EN.pdf']) {
-    it(`${f}: cifras actuales y ninguna antigua`, () => {
+    it(`${f}: cifras del CV (${C.fecha}) y ninguna antigua`, () => {
       const t = textoPdf(f)
-      for (const c of [V2['apis-gratis-es'].apis, V2['apis-gratis-es'].pruebas, V2['mcp-readiness-check'].pruebas, V2['openclaw-skills'].byteAByte]) expect(t, String(c)).toContain(String(c))
+      for (const c of Object.values(C.cifras)) expect(t, String(c)).toContain(String(c))
       for (const viejo of [/22 (APIs|free)/, /250/, / 81 /]) expect(t, String(viejo)).not.toMatch(viejo)
     })
   }

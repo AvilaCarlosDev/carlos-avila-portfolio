@@ -3,36 +3,46 @@
   "nota": "Cada cifra que muestra el sitio se midió en un clon limpio del repositorio. Si cambia el proyecto, se vuelve a medir y se actualiza este archivo; tests/cifras.test.js exige que el sitio coincida con él.",
   "proyectos": {
     "Forja": {
-      "pruebas": 93,
-      "pruebasPermisos": 45,
-      "migraciones": 6,
+      "pruebas": 160,
+      "pruebasPermisos": 109,
+      "migraciones": 13,
       "detallePermisos": {
         "0002 perfil": 13,
         "0005 gimnasios, vínculo y medidas": 24,
-        "0006 Google y rol": 8
+        "0006 Google y rol": 8,
+        "0007 finanzas": 12,
+        "0008 finanzas Pro": 8,
+        "0009 dietas": 11,
+        "0010 avisos": 6,
+        "0011 límite Free": 9,
+        "0012 rutinas asignadas": 10,
+        "0013 perfil privado": 8
       },
       "medido": "2026-10-07",
-      "nota": "Solo pruebas propias de Forja: la app hereda ~3.160 pruebas de openGym que no se cuentan aquí.",
+      "nota": "Solo pruebas propias de Forja: la app hereda ~3.180 pruebas de openGym que no se cuentan aquí.",
       "comandos": [
-        "cd frontend && npx vitest run src/lib/forja- src/views/forja → Test Files 8 passed, Tests 93 passed",
-        "supabase/tests/*.test.sql en Supabase real → 13 de 13, 24 de 24, 8 de 8 pruebas OK",
-        "ls supabase/migrations | grep '^000[1-9]_forja' → 6"
+        "cd frontend && npx vitest run src/lib/forja- src/views/forja → Test Files 17 passed, Tests 160 passed",
+        "node supabase/tests/run-local.mjs → 10 archivos OK (13+24+8+12+8+11+6+9+10+8 = 109); 0008–0013 también en Supabase real",
+        "ls supabase/migrations | grep -cE '^00[0-9][0-9]_forja' → 13"
       ]
     },
     "apis-gratis-es": {
       "apis": 23,
+      "directorio": 1777,
       "demos": 5,
-      "pruebas": 342,
+      "pruebas": 351,
+      "medido": "2026-10-07",
       "detalle": {
-        "verificador (Python, unittest)": 79,
+        "verificador, catálogo y directorio (Python, unittest)": 88,
         "demos (Node, node --test)": 255,
         "paridad de README (shell)": 8
       },
       "comandos": [
-        "python3 -m unittest discover -s tests -p 'test_*.py'   → Ran 79 tests, OK",
+        "python3 -m unittest discover -s tests -p 'test_*.py'   → Ran 88 tests, OK",
         "cd demos && node --test \"**/tests/*.test.js\"          → tests 255, pass 255, fail 0",
         "bash tests/check-parity.test.sh                        → 8 passed, 0 failed",
-        "python3: len(json.load(open('data/apis.json'))['entradas']) → 23"
+        "python3: len(json.load(open('data/apis.json'))['entradas']) → 23",
+        "python3: len(json.load(open('data/directorio.json'))['entradas']) → 1777 (sin verificar, a partir de public-apis)"
       ]
     },
     "mcp-readiness-check": {
@@ -69,6 +79,16 @@
         "procedencia.json → 37 entradas: comunidad 15, propia 20, derivada 2",
         "python3 -m unittest discover -s tests -p 'test_*.py' → Ran 15 tests, OK"
       ]
+    }
+  },
+  "cv": {
+    "fecha": "2026-09-20",
+    "nota": "Cifras que cita el CV en PDF (public/Carlos-Avila-CV-*.pdf), generado aparte. Al regenerar el CV con las cifras de 'proyectos', actualizar este bloque.",
+    "cifras": {
+      "apis-gratis-es APIs": 23,
+      "apis-gratis-es pruebas": 342,
+      "mcp-readiness-check pruebas": 94,
+      "openclaw-skills verificadas byte a byte": 15
     }
   }
 }

@@ -52,16 +52,16 @@
     "items": [
       {
         "id": "Forja",
-        "description": "App para entrenadores personales y sus clientes, en producción: gimnasios de Punto Fijo, vínculo entrenador–cliente con notificaciones, medidas que maneja el coach y app instalable. React + Supabase con seguridad por fila.",
+        "description": "App para entrenadores personales y sus clientes, en producción: el coach asigna rutinas con la animación de cada ejercicio, arma la dieta, carga medidas, ve la evolución y lleva sus cobros; el cliente recibe avisos y entrena lo que le toca. React + Supabase con seguridad por fila.",
         "numbers": [
-          "93 pruebas",
-          "45 pruebas de permisos",
-          "6 migraciones"
+          "160 pruebas",
+          "109 pruebas de permisos",
+          "13 migraciones"
         ],
         "url": "https://github.com/AvilaCarlosDev/Forja",
         "demoUrl": "https://forja-trainer.vercel.app/",
         "shot": "forja",
-        "shotAlt": "Forja en la computadora y en el teléfono: ficha de una clienta con sus medidas y la pantalla de entrada"
+        "shotAlt": "Forja en el teléfono: rutinas que el coach asigna a su clienta, gráfica de evolución del peso con la meta y la dieta con sus comidas"
       },
       {
         "id": "polaris-local-ai",
@@ -88,11 +88,12 @@
       },
       {
         "id": "apis-gratis-es",
-        "description": "Catálogo verificado de APIs públicas y gratuitas para la comunidad hispanohablante, con demos que funcionan en vivo.",
+        "description": "Catálogo verificado de APIs públicas y gratuitas para la comunidad hispanohablante, con demos que funcionan en vivo y un directorio ampliado (sin verificar) a partir de public-apis.",
         "numbers": [
-          "23 APIs",
+          "23 APIs verificadas",
+          "1777 en el directorio, sin verificar",
           "5 demos",
-          "342 pruebas"
+          "351 pruebas"
         ],
         "url": "https://github.com/AvilaCarlosDev/apis-gratis-es",
         "demoUrl": "https://avilacarlosdev.github.io/apis-gratis-es/",
