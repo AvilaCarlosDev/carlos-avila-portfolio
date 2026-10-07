@@ -52,16 +52,16 @@
     "items": [
       {
         "id": "Forja",
-        "description": "App for personal trainers and their clients, in production: gyms in Punto Fijo, trainer–client link with notifications, measurements managed by the coach and an installable app. React + Supabase with row-level security.",
+        "description": "App for personal trainers and their clients, in production: the coach assigns routines with an animation of each exercise, builds the diet, logs measurements, tracks progress and keeps the payments; the client gets notified and trains what is due. React + Supabase with row-level security.",
         "numbers": [
-          "93 tests",
-          "45 permission tests",
-          "6 migrations"
+          "160 tests",
+          "109 permission tests",
+          "13 migrations"
         ],
         "url": "https://github.com/AvilaCarlosDev/Forja",
         "demoUrl": "https://forja-trainer.vercel.app/",
         "shot": "forja",
-        "shotAlt": "Forja on a computer and a phone: a client's file with her measurements and the sign-in screen"
+        "shotAlt": "Forja on a phone: routines a coach assigns to her client, a weight progress chart with the goal and the diet with its meals"
       },
       {
         "id": "polaris-local-ai",

@@ -34,7 +34,7 @@ describe('cifras verificadas de los proyectos', () => {
       expect(n).toEqual([o.modelosTextoVision, o.modelosImagen, o.pruebas])
     })
 
-    it(`${nombre}: Forja muestra 93 pruebas, 45 pruebas de permisos y 6 migraciones`, () => {
+    it(`${nombre}: Forja muestra 160 pruebas, 109 pruebas de permisos y 13 migraciones`, () => {
       const o = V.Forja
       const n = numeros(item(d, 'Forja').numbers)
       expect(n).toEqual([o.pruebas, o.pruebasPermisos, o.migraciones])

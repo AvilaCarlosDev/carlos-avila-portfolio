@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Fixed / Corregido
 
+- Forja re-measured (2026-10-07): 160 tests, 109 permission tests and 13 migrations (was 93, 45 and 6). New copy for assigned routines, diet, progress and payments, and a new screenshot with three phone screens. / Forja medida de nuevo: 160 pruebas, 109 de permisos y 13 migraciones (antes 93, 45 y 6). Texto nuevo con rutinas asignadas, dieta, evolución y cobros, y captura nueva con tres pantallas del teléfono.
 - apis-gratis-es figures re-measured in a clean clone (2026-10-07): 23 verified APIs, 1777 in the extended directory (unverified, from public-apis), 5 demos and 351 tests (88 Python + 255 Node + 8 parity; was 342). / Cifras de apis-gratis-es medidas de nuevo: 23 APIs verificadas, 1777 en el directorio ampliado (sin verificar), 5 demos y 351 pruebas (antes 342).
 - The CV PDF check now compares against `verificadas.cv`, the figures the PDF actually cites (2026-09-20), so the site can show current numbers until the CV is regenerated. / La prueba del CV en PDF compara contra `verificadas.cv`, las cifras que cita el PDF, hasta que se regenere.
 
