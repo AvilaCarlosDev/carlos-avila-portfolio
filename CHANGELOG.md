@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Fixed / Corregido
+
+- apis-gratis-es figures re-measured in a clean clone (2026-10-07): 23 verified APIs, 1777 in the extended directory (unverified, from public-apis), 5 demos and 351 tests (88 Python + 255 Node + 8 parity; was 342). / Cifras de apis-gratis-es medidas de nuevo: 23 APIs verificadas, 1777 en el directorio ampliado (sin verificar), 5 demos y 351 pruebas (antes 342).
+- The CV PDF check now compares against `verificadas.cv`, the figures the PDF actually cites (2026-09-20), so the site can show current numbers until the CV is regenerated. / La prueba del CV en PDF compara contra `verificadas.cv`, las cifras que cita el PDF, hasta que se regenere.
+
 ### Added / Añadido
 
 - Forja as the featured project: live app, verified figures (93 tests, 45 permission tests, 6 migrations) and a desktop + phone screenshot. / Forja como proyecto destacado: app en vivo, cifras verificadas y captura en PC y teléfono.
