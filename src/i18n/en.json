@@ -88,11 +88,12 @@
       },
       {
         "id": "apis-gratis-es",
-        "description": "Verified catalog of free public APIs for the Spanish-speaking community, with demos that work live.",
+        "description": "Verified catalog of free public APIs for the Spanish-speaking community, with live demos and an extended directory (unverified) built from public-apis.",
         "numbers": [
-          "23 APIs",
+          "23 verified APIs",
+          "1777 in the directory, unverified",
           "5 demos",
-          "342 tests"
+          "351 tests"
         ],
         "url": "https://github.com/AvilaCarlosDev/apis-gratis-es",
         "demoUrl": "https://avilacarlosdev.github.io/apis-gratis-es/",

@@ -21,18 +21,21 @@
     },
     "apis-gratis-es": {
       "apis": 23,
+      "directorio": 1777,
       "demos": 5,
-      "pruebas": 342,
+      "pruebas": 351,
+      "medido": "2026-10-07",
       "detalle": {
-        "verificador (Python, unittest)": 79,
+        "verificador, catálogo y directorio (Python, unittest)": 88,
         "demos (Node, node --test)": 255,
         "paridad de README (shell)": 8
       },
       "comandos": [
-        "python3 -m unittest discover -s tests -p 'test_*.py'   → Ran 79 tests, OK",
+        "python3 -m unittest discover -s tests -p 'test_*.py'   → Ran 88 tests, OK",
         "cd demos && node --test \"**/tests/*.test.js\"          → tests 255, pass 255, fail 0",
         "bash tests/check-parity.test.sh                        → 8 passed, 0 failed",
-        "python3: len(json.load(open('data/apis.json'))['entradas']) → 23"
+        "python3: len(json.load(open('data/apis.json'))['entradas']) → 23",
+        "python3: len(json.load(open('data/directorio.json'))['entradas']) → 1777 (sin verificar, a partir de public-apis)"
       ]
     },
     "mcp-readiness-check": {
@@ -69,6 +72,16 @@
         "procedencia.json → 37 entradas: comunidad 15, propia 20, derivada 2",
         "python3 -m unittest discover -s tests -p 'test_*.py' → Ran 15 tests, OK"
       ]
+    }
+  },
+  "cv": {
+    "fecha": "2026-09-20",
+    "nota": "Cifras que cita el CV en PDF (public/Carlos-Avila-CV-*.pdf), generado aparte. Al regenerar el CV con las cifras de 'proyectos', actualizar este bloque.",
+    "cifras": {
+      "apis-gratis-es APIs": 23,
+      "apis-gratis-es pruebas": 342,
+      "mcp-readiness-check pruebas": 94,
+      "openclaw-skills verificadas byte a byte": 15
     }
   }
 }

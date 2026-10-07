@@ -88,11 +88,12 @@
       },
       {
         "id": "apis-gratis-es",
-        "description": "Catálogo verificado de APIs públicas y gratuitas para la comunidad hispanohablante, con demos que funcionan en vivo.",
+        "description": "Catálogo verificado de APIs públicas y gratuitas para la comunidad hispanohablante, con demos que funcionan en vivo y un directorio ampliado (sin verificar) a partir de public-apis.",
         "numbers": [
-          "23 APIs",
+          "23 APIs verificadas",
+          "1777 en el directorio, sin verificar",
           "5 demos",
-          "342 pruebas"
+          "351 pruebas"
         ],
         "url": "https://github.com/AvilaCarlosDev/apis-gratis-es",
         "demoUrl": "https://avilacarlosdev.github.io/apis-gratis-es/",
