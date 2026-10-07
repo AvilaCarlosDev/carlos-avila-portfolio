@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Changed / Cambiado
+
+- polaris-local-ai now shows its animated floating island (the repository's own 3D scene) instead of a terminal screenshot. It is a 470 KB WebM/MP4 loop (the original animated WebP weighed 1.4 MB) that is not downloaded until the card is on screen, pauses when it leaves and stays still with reduced motion. / polaris-local-ai muestra su isla flotante animada en vez de una captura de terminal: video de 470 KB (el WebP animado original pesaba 1,4 MB) que no se descarga hasta que la tarjeta aparece, se pausa al salir y queda quieto con movimiento reducido.
+
 ### Added / Añadido
 
 - Forja as the featured project: live app, verified figures (93 tests, 45 permission tests, 6 migrations) and a desktop + phone screenshot. / Forja como proyecto destacado: app en vivo, cifras verificadas y captura en PC y teléfono.
