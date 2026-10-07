@@ -239,10 +239,19 @@ describe('quién soy y proyectos: contenido', () => {
       expect(doc.querySelectorAll('#proyectos .proj h3').map((h) => h.text)).toEqual(['Forja', 'polaris-local-ai', 'mcp-readiness-check', 'apis-gratis-es'])
       // Cada proyecto se ve con una captura del producto, con texto alternativo descriptivo.
       for (const card of doc.querySelectorAll('#proyectos .proj')) {
-        const img = card.querySelector('.shot img')
-        expect(img, card.querySelector('h3').text).not.toBeNull()
-        expect(img.getAttribute('alt').length, card.querySelector('h3').text).toBeGreaterThan(15)
+        const media = card.querySelector('.shot img, .shot video')
+        expect(media, card.querySelector('h3').text).not.toBeNull()
+        const nombre = media.getAttribute('alt') ?? media.getAttribute('aria-label') ?? ''
+        expect(nombre.length, card.querySelector('h3').text).toBeGreaterThan(15)
       }
+      // polaris-local-ai se ve con su isla animada: video liviano que no se descarga hasta que hace falta.
+      const isla = doc.querySelector('#proyectos .proj video.anim')
+      expect(isla, 'video de la isla').not.toBeNull()
+      for (const a of ['muted', 'loop', 'playsinline']) expect(isla.hasAttribute(a), a).toBe(true)
+      expect(isla.getAttribute('preload')).toBe('none')
+      expect(isla.hasAttribute('autoplay'), 'arranca por script solo si se ve y sin movimiento reducido').toBe(false)
+      expect(existe(isla.getAttribute('poster'))).toBe(true)
+      for (const src of isla.querySelectorAll('source').map((x) => x.getAttribute('src'))) expect(existe(src), src).toBe(true)
       expect(doc.querySelector('#proyectos .proj a[href="https://forja-trainer.vercel.app/"]'), 'Forja en vivo').not.toBeNull()
       expect(doc.querySelectorAll('#proyectos .demo')).toHaveLength(6)
       expect(doc.querySelectorAll('#proyectos .demo .btn[href*="vercel.app"]')).toHaveLength(6)

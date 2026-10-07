@@ -72,8 +72,8 @@
           "25 pruebas"
         ],
         "url": "https://github.com/AvilaCarlosDev/polaris-local-ai",
-        "shot": "polaris-local-ai",
-        "shotAlt": "Terminal de polaris-local-ai: respuesta del modelo local por la API compatible con OpenAI e imagen generada en la propia GPU"
+        "shotAlt": "Isla flotante en vóxeles, animada: la escena 3D de polaris-local-ai con agua, palmeras y un faro",
+        "video": "isla"
       },
       {
         "id": "mcp-readiness-check",
