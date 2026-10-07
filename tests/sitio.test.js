@@ -17,7 +17,7 @@ const PAGINAS = [
 ]
 
 beforeAll(() => {
-  if (!existsSync(dist)) throw new Error('Falta dist/: ejecutá `npm run build` antes de las pruebas.')
+  if (!existsSync(dist)) throw new Error('Falta dist/: ejecuta `npm run build` antes de las pruebas.')
 })
 
 describe.each(PAGINAS)('$path', ({ archivo, path, lang, otro }) => {
@@ -233,12 +233,19 @@ describe('quién soy y proyectos: contenido', () => {
       expect(doc.querySelectorAll('#quien-soy .chips li').length).toBeGreaterThanOrEqual(8)
     })
 
-    it(`${nombre}: proyectos son los 3 proyectos, con GitHub y la demo en vivo de apis-gratis-es`, () => {
+    it(`${nombre}: proyectos son los 4 proyectos, con GitHub, captura real y demos en vivo`, () => {
       const doc = parse(leer(archivo))
-      expect(doc.querySelectorAll('#proyectos .proj')).toHaveLength(3)
-      expect(doc.querySelectorAll('#proyectos .proj h3').map((h) => h.text)).toEqual(['polaris-local-ai', 'mcp-readiness-check', 'apis-gratis-es'])
+      expect(doc.querySelectorAll('#proyectos .proj')).toHaveLength(4)
+      expect(doc.querySelectorAll('#proyectos .proj h3').map((h) => h.text)).toEqual(['Forja', 'polaris-local-ai', 'mcp-readiness-check', 'apis-gratis-es'])
+      // Cada proyecto se ve con una captura del producto, con texto alternativo descriptivo.
+      for (const card of doc.querySelectorAll('#proyectos .proj')) {
+        const img = card.querySelector('.shot img')
+        expect(img, card.querySelector('h3').text).not.toBeNull()
+        expect(img.getAttribute('alt').length, card.querySelector('h3').text).toBeGreaterThan(15)
+      }
+      expect(doc.querySelector('#proyectos .proj a[href="https://forja-trainer.vercel.app/"]'), 'Forja en vivo').not.toBeNull()
       expect(doc.querySelectorAll('#proyectos .demo')).toHaveLength(6)
-      expect(doc.querySelectorAll('#proyectos .demo a[href*="vercel.app"]')).toHaveLength(6)
+      expect(doc.querySelectorAll('#proyectos .demo .btn[href*="vercel.app"]')).toHaveLength(6)
       const demos = doc.querySelectorAll('#proyectos a[href*="github.io"]')
       expect(demos).toHaveLength(1)
       expect(demos[0].getAttribute('href')).toBe('https://avilacarlosdev.github.io/apis-gratis-es/')
@@ -247,12 +254,13 @@ describe('quién soy y proyectos: contenido', () => {
   }
 })
 
-describe('presentación: una sola llamada a la acción', () => {
+// Dos públicos (pedido de Carlos, 2026-10-07): quien contrata talento y el negocio que necesita una web.
+describe('presentación: dos llamadas a la acción', () => {
   for (const [archivo, nombre] of [['index.html', 'ES'], ['en/index.html', 'EN']]) {
-    it(`${nombre}: solo "ver proyectos"; GitHub y LinkedIn viven en Contacto`, () => {
+    it(`${nombre}: "ver proyectos" y "webs para tu negocio"; GitHub y LinkedIn viven en Contacto`, () => {
       const doc = parse(leer(archivo))
       const botones = doc.querySelectorAll('#inicio .cta a')
-      expect(botones.map((a) => a.getAttribute('href'))).toEqual(['#proyectos'])
+      expect(botones.map((a) => a.getAttribute('href'))).toEqual(['#proyectos', '#negocios'])
       expect(doc.querySelector('#inicio a[href*="github.com"]')).toBeNull()
       expect(doc.querySelector('#contacto a[href*="github.com/AvilaCarlosDev"]')).not.toBeNull()
       expect(doc.querySelector('#contacto a[href*="linkedin.com/in/avilacarlosdev"]')).not.toBeNull()
@@ -264,5 +272,44 @@ describe('formulario: ejemplos claros en los campos', () => {
   it.each([['index.html', 'ejemplo@ejemplo.com'], ['en/index.html', 'example@example.com']])('%s: el correo de ejemplo es %s', (archivo, ejemplo) => {
     const doc = parse(leer(archivo))
     expect(doc.querySelector('#c-correo').getAttribute('placeholder')).toBe(ejemplo)
+  })
+})
+
+const WA = 'https://wa.me/584246223267'
+
+describe('webs para negocios: demos que venden', () => {
+  for (const [archivo, nombre] of [['index.html', 'ES'], ['en/index.html', 'EN']]) {
+    it(`${nombre}: bloque #negocios con las 6 demos en miniatura, el proceso y WhatsApp`, () => {
+      const doc = parse(leer(archivo))
+      const bloque = doc.querySelector('#proyectos #negocios')
+      expect(bloque, 'el bloque vive dentro de Proyectos, no como sección nueva').not.toBeNull()
+      const demos = bloque.querySelectorAll('.demo')
+      expect(demos).toHaveLength(6)
+      for (const d of demos) expect(d.querySelector('img')?.getAttribute('alt')?.length ?? 0, d.querySelector('h4').text).toBeGreaterThan(10)
+      expect(bloque.querySelectorAll('.pasos li')).toHaveLength(3)
+      const wa = bloque.querySelector(`a[href^="${WA}"]`)
+      expect(wa, 'botón de WhatsApp para cotizar').not.toBeNull()
+      expect(wa.getAttribute('rel')).toMatch(/noopener/)
+    })
+
+    it(`${nombre}: contacto ofrece WhatsApp además del formulario`, () => {
+      const doc = parse(leer(archivo))
+      expect(doc.querySelector(`#contacto a[href^="${WA}"]`)).not.toBeNull()
+    })
+  }
+})
+
+describe('accesibilidad y redacción', () => {
+  it('la miniatura del CV nombra lo que muestra (nombre accesible contiene el texto visible)', () => {
+    for (const archivo of ['index.html', 'en/index.html']) {
+      const a = parse(leer(archivo)).querySelector('a.thumb')
+      const visible = a.querySelector('.tag').text.trim()
+      expect(a.getAttribute('aria-label')).toContain(visible)
+    }
+  })
+
+  it('el español usa tú, sin voseo', async () => {
+    const es = JSON.stringify((await import('../src/i18n/es.json')).default)
+    expect(es).not.toMatch(/\b(buscás|tenés|podés|querés|sabés|escribí|ejecutá|mirá)\b/)
   })
 })

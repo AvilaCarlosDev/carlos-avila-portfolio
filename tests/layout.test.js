@@ -48,6 +48,9 @@ describe.skipIf(!CHROME)('diseño en un navegador real', () => {
         const r = await pagina.evaluate(() => {
           const vw = innerWidth
           const ofensores = [...document.querySelectorAll('body *')]
+            // Lo que vive dentro de un contenedor con desplazamiento propio (el carrusel de demos en el
+            // teléfono) puede quedar fuera de la vista a propósito: no ensancha la página.
+            .filter((e) => { for (let a = e.parentElement; a && a !== document.body; a = a.parentElement) if (/(auto|scroll|hidden)/.test(getComputedStyle(a).overflowX)) return false; return true })
             .filter((e) => { const b = e.getBoundingClientRect(); return b.width > 0 && b.right > vw + 1 })
             .slice(0, 5)
             .map((e) => `${e.tagName.toLowerCase()}.${String(e.className).split(' ')[0]}`)
