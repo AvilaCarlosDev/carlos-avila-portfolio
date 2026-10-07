@@ -3,7 +3,7 @@
   "htmlLang": "en",
   "meta": {
     "title": "Avilacarlosdev · From problem to solution",
-    "description": "Carlos Avila: developer, community support specialist and senior mentor at 4Geeks Academy. Open source built in Spanish, tested projects and a downloadable CV."
+    "description": "Carlos Avila, full stack developer in Venezuela: apps and websites for teams and businesses. Mentor at 4Geeks Academy. Tested projects and CV."
   },
   "nav": {
     "ariaLabel": "Main navigation",
@@ -36,19 +36,56 @@
     "current": "EN"
   },
   "hero": {
-    "eyebrow": "Developer · Mentor · Community",
+    "eyebrow": "Full stack developer · Venezuela",
     "titleBefore": "From problem to",
     "titleEm": "solution.",
-    "sub": "Developer and community support specialist at 4Geeks Academy. I publish open source and tools in Spanish for Latin American devs.",
+    "sub": "I build apps and websites that solve real problems. For teams looking for a developer and for businesses that need to sell online.",
     "ctaProjects": "See projects",
-    "portraitAlt": "Black and white portrait of Carlos Avila with arms crossed"
+    "portraitAlt": "Black and white portrait of Carlos Avila with arms crossed",
+    "ctaBusiness": "Websites for your business"
   },
   "proyectos": {
     "title": "Projects",
-    "sub": "Open source projects. All the code is public and every figure is measured in the repository.",
+    "sub": "Open source and live products. Every figure is measured in its repository.",
     "github": "View on GitHub",
     "demo": "See demos",
     "items": [
+      {
+        "id": "Forja",
+        "description": "App for personal trainers and their clients, in production: gyms in Punto Fijo, trainer–client link with notifications, measurements managed by the coach and an installable app. React + Supabase with row-level security.",
+        "numbers": [
+          "93 tests",
+          "45 permission tests",
+          "6 migrations"
+        ],
+        "url": "https://github.com/AvilaCarlosDev/Forja",
+        "demoUrl": "https://forja-trainer.vercel.app/",
+        "shot": "forja",
+        "shotAlt": "Forja on a computer and a phone: a client's file with her measurements and the sign-in screen"
+      },
+      {
+        "id": "polaris-local-ai",
+        "description": "Local AI stack for an AMD RX 580 with 8 GB: an OpenAI-compatible router that serves text, vision and image models over Vulkan, with no cloud and benchmarks measured on the machine itself.",
+        "numbers": [
+          "6 text and vision models",
+          "2 image models",
+          "25 tests"
+        ],
+        "url": "https://github.com/AvilaCarlosDev/polaris-local-ai",
+        "shot": "polaris-local-ai",
+        "shotAlt": "polaris-local-ai terminal: the local model answering through the OpenAI-compatible API and an image generated on the GPU"
+      },
+      {
+        "id": "mcp-readiness-check",
+        "description": "Command-line tool in TypeScript: it connects to an MCP server, inspects the tools it exposes, validates their schemas and generates reports in console, JSON and Markdown.",
+        "numbers": [
+          "94 tests",
+          "94 % coverage"
+        ],
+        "url": "https://github.com/AvilaCarlosDev/mcp-readiness-check",
+        "shot": "mcp-readiness-check",
+        "shotAlt": "mcp-readiness-check report in the terminal: 13 checks passed against an example MCP server"
+      },
       {
         "id": "apis-gratis-es",
         "description": "Verified catalog of free public APIs for the Spanish-speaking community, with demos that work live.",
@@ -59,31 +96,88 @@
         ],
         "url": "https://github.com/AvilaCarlosDev/apis-gratis-es",
         "demoUrl": "https://avilacarlosdev.github.io/apis-gratis-es/",
-        "art": "laptop"
-      },
-      {
-        "id": "mcp-readiness-check",
-        "description": "Command-line tool in TypeScript: it connects to an MCP server, inspects the tools it exposes, validates their schemas and generates reports in console, JSON and Markdown.",
-        "numbers": [
-          "94 tests",
-          "94 % coverage"
-        ],
-        "url": "https://github.com/AvilaCarlosDev/mcp-readiness-check",
-        "art": "pensando"
-      },
-      {
-        "id": "openclaw-skills",
-        "description": "Collection of skills for OpenClaw, in Spanish and English, with the origin of each one recorded and checked in CI.",
-        "numbers": [
-          "37 skills",
-          "15 verified byte for byte",
-          "20 own · 2 derived",
-          "15 tests"
-        ],
-        "url": "https://github.com/AvilaCarlosDev/openclaw-skills",
-        "art": "celebrando"
+        "shot": "apis-gratis-es",
+        "shotAlt": "apis-gratis-es demos page: store, weather, holidays, location, encyclopedia and API catalog"
       }
-    ]
+    ],
+    "demos": {
+      "title": "Websites for businesses",
+      "sub": "Do you run a business? I build websites like these, ready to take orders and bookings through WhatsApp. These demos are live: try them.",
+      "live": "View demo",
+      "code": "Code",
+      "items": [
+        {
+          "id": "landing-delivery-demo",
+          "name": "Delivery",
+          "description": "Delivery marketplace: restaurants, combos, order tracking and orders over WhatsApp.",
+          "url": "https://github.com/AvilaCarlosDev/landing-delivery-demo",
+          "demoUrl": "https://agencia-web-delivery-demo.vercel.app/",
+          "thumb": "delivery",
+          "thumbAlt": "Delivery demo: restaurant search, active order and coupon"
+        },
+        {
+          "id": "landing-barberia-demo",
+          "name": "Barbershop",
+          "description": "Premium barbershop: filterable services, barbers, memberships and bookings over WhatsApp.",
+          "url": "https://github.com/AvilaCarlosDev/landing-barberia-demo",
+          "demoUrl": "https://agencia-web-barberia-demo.vercel.app/",
+          "thumb": "barberia",
+          "thumbAlt": "Barbershop demo: home page with booking through WhatsApp"
+        },
+        {
+          "id": "landing-deportes-demo",
+          "name": "Sports store",
+          "description": "Sports store: filterable catalog, offers and advice over WhatsApp.",
+          "url": "https://github.com/AvilaCarlosDev/landing-deportes-demo",
+          "demoUrl": "https://agencia-web-deportes-demo.vercel.app/",
+          "thumb": "deportes",
+          "thumbAlt": "Sports store demo: featured collection and advice through WhatsApp"
+        },
+        {
+          "id": "landing-ferreteria-demo",
+          "name": "Hardware store",
+          "description": "Industrial hardware store: technical catalog, construction bundles and quotes over WhatsApp.",
+          "url": "https://github.com/AvilaCarlosDev/landing-ferreteria-demo",
+          "demoUrl": "https://agencia-web-ferreteria-demo.vercel.app/",
+          "thumb": "ferreteria",
+          "thumbAlt": "Hardware store demo: technical catalog and quick quote"
+        },
+        {
+          "id": "landing-floristeria-demo",
+          "name": "Flower shop",
+          "description": "Boutique flower shop: collection by occasion, services and orders over WhatsApp.",
+          "url": "https://github.com/AvilaCarlosDev/landing-floristeria-demo",
+          "demoUrl": "https://agencia-web-floristeria-demo.vercel.app/",
+          "thumb": "floristeria",
+          "thumbAlt": "Flower shop demo: home page with collection and flower orders"
+        },
+        {
+          "id": "landing-taxi-demo",
+          "name": "Taxi",
+          "description": "Taxi and transfer service: quote calculator, rates, drivers and bookings over WhatsApp.",
+          "url": "https://github.com/AvilaCarlosDev/landing-taxi-demo",
+          "demoUrl": "https://agencia-web-taxi-demo.vercel.app/",
+          "thumb": "taxi",
+          "thumbAlt": "Taxi demo: trip quote with origin, destination and fare"
+        }
+      ],
+      "id": "negocios",
+      "includesLabel": "What's included",
+      "includes": [
+        "Design tailored to your brand, on phone and desktop",
+        "Orders, bookings or quotes straight to your WhatsApp",
+        "Fast and clear on any phone"
+      ],
+      "stepsLabel": "How we work",
+      "steps": [
+        "Tell me about your business on WhatsApp",
+        "I show you a proposal and we adjust it together",
+        "We publish it and you start getting customers"
+      ],
+      "cta": "Get a quote on WhatsApp",
+      "ctaText": "Hi Carlos, I saw your portfolio and I'd like a website for my business."
+    },
+    "demoForja": "Open the app"
   },
   "cv": {
     "title": "My CV, up to date",
@@ -96,11 +190,12 @@
     "secondaryFile": "/Carlos-Avila-CV-ES.pdf",
     "tag": "PDF · 1 page",
     "thumbAlt": "Preview of Carlos Avila's CV",
-    "artAlt": "Mini-carlos handing over his CV"
+    "artAlt": "Mini-carlos handing over his CV",
+    "thumbLabel": "Download in English"
   },
   "contacto": {
     "title": "Let's talk.",
-    "sub": "Projects, mentoring or a collaboration. I reply here or on GitHub.",
+    "sub": "Projects, jobs, a website for your business or a collaboration. Write to me here or on WhatsApp.",
     "form": {
       "name": "Name",
       "namePlaceholder": "Your name",
@@ -122,7 +217,10 @@
     },
     "signsAlt": "Mini-carlos holding two signs: GitHub and LinkedIn",
     "githubLabel": "Carlos on GitHub",
-    "linkedinLabel": "Carlos on LinkedIn"
+    "linkedinLabel": "Carlos on LinkedIn",
+    "whatsapp": "Message me on WhatsApp",
+    "whatsappNote": "+58 424 622 3267 · I reply the same day",
+    "whatsappText": "Hi Carlos, I saw your portfolio."
   },
   "footer": {
     "rights": "© 2026 Avilacarlosdev · Made in Venezuela",
@@ -190,7 +288,7 @@
       },
       {
         "label": "Also",
-        "value": "Freelance developer and weekend customer service"
+        "value": "Freelance developer: apps and websites for businesses"
       },
       {
         "label": "Location",
@@ -218,5 +316,6 @@
       "Docker · Linux",
       "AI and agents (MCP)"
     ]
-  }
+  },
+  "whatsapp": "https://wa.me/584246223267"
 }

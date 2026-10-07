@@ -5,14 +5,17 @@ const { t } = Astro.props
 const h = t.hero
 ---
 <header class="hero wrap" id="inicio">
-  <span class="eyebrow"><i></i> {h.eyebrow}</span>
-  <h1>{h.titleBefore} <em>{h.titleEm}</em></h1>
-  <p>{h.sub}</p>
-  <div class="cta">
-    <a class="btn dark" href="#proyectos">{h.ctaProjects} →</a>
+  <div class="hero-text">
+    <span class="eyebrow"><i></i> {h.eyebrow}</span>
+    <h1>{h.titleBefore} <em>{h.titleEm}</em></h1>
+    <p>{h.sub}</p>
+    <div class="cta">
+      <a class="btn dark" href="#proyectos">{h.ctaProjects} →</a>
+      <a class="btn line" href="#negocios">{h.ctaBusiness}</a>
+    </div>
   </div>
   <div class="frame">
     <div class="bar"><i></i><i></i><i></i><span style="margin-left:8px">avilacarlosdev.com</span></div>
-    <Image src={retrato} alt={h.portraitAlt} widths={[640, 900, 1200]} sizes="(max-width: 940px) 100vw, 900px" loading="eager" fetchpriority="high" />
+    <Image src={retrato} alt={h.portraitAlt} widths={[480, 720, 960]} sizes="(max-width: 940px) 100vw, 460px" loading="eager" fetchpriority="high" />
   </div>
 </header>

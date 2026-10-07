@@ -24,6 +24,10 @@ const LI = 'M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-
       <button class="btn dark" type="submit">{f.send}</button>
       <p class="estado" data-estado role="status" aria-live="polite"></p>
       <p class="privacidad">{f.privacy} <a href={f.privacyHref}>{f.privacyLink}</a>.</p>
+      <div class="wa-alt">
+        <a class="btn wa" href={`${t.whatsapp}?text=${encodeURIComponent(c.whatsappText)}`} target="_blank" rel="noopener">{c.whatsapp}</a>
+        <span>{c.whatsappNote}</span>
+      </div>
     </form>
     <aside class="neon">
       <div class="holder">

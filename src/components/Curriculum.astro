@@ -13,7 +13,7 @@ const miniatura = t.lang === 'es' ? cvEs : cvEn
     <p>{c.sub}</p>
   </div>
   <div class="cvbox">
-    <a class="thumb" href={c.primaryFile} download aria-label={c.btnPrimary}>
+    <a class="thumb" href={c.primaryFile} download aria-label={`${c.thumbLabel} · ${c.tag}`}>
       <Image src={miniatura} alt={c.thumbAlt} widths={[320, 600]} sizes="300px" loading="lazy" />
       <span class="tag">{c.tag}</span>
     </a>
