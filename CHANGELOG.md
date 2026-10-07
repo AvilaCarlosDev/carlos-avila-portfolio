@@ -6,6 +6,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Added / Añadido
+
+- Forja as the featured project: live app, verified figures (93 tests, 45 permission tests, 6 migrations) and a desktop + phone screenshot. / Forja como proyecto destacado: app en vivo, cifras verificadas y captura en PC y teléfono.
+- Every project card shows a real screenshot of the product instead of an illustration. / Cada proyecto muestra una captura real del producto en vez de una ilustración.
+- "Websites for businesses" block (inside Projects): the 6 demos with live thumbnails, what is included, a 3-step process and a WhatsApp quote button. On phones the demos are a swipeable carousel. / Bloque "Webs para negocios" dentro de Proyectos: las 6 demos con miniatura, qué incluye, el proceso en 3 pasos y botón de WhatsApp; en el teléfono, carrusel deslizable.
+- WhatsApp contact (+58 424 622 3267) next to the form. / Contacto por WhatsApp junto al formulario.
+
+### Changed / Cambiado
+
+- Hero in two columns with a clear value proposition for both audiences (teams hiring and businesses) and two calls to action: "See projects" and "Websites for your business". / Hero a dos columnas, con propuesta de valor para los dos públicos y dos llamadas a la acción.
+- "Also" fact now reads "Freelance developer: apps and websites for businesses". / El dato "También" ahora dice "Desarrollador freelance: apps y webs para negocios".
+
+### Fixed / Corregido
+
+- 404 page used voseo ("buscás"); a test now checks the whole Spanish copy. / La 404 usaba voseo; una prueba revisa todo el texto en español.
+- The CV thumbnail's accessible name now contains its visible text (Lighthouse label-content-name-mismatch). / El nombre accesible de la miniatura del CV contiene su texto visible.
+- Layout test ignores items inside intentional scroll containers; page-level horizontal overflow is still checked. / La prueba de diseño ignora lo que está dentro de un carrusel; el desborde de la página se sigue verificando.
+
 ### Fixed / Corregido
 
 - Spanish copy now uses tuteo (Venezuelan Spanish) instead of voseo ("Cuéntame en qué puedo ayudarte", "Escríbeme", "Descarga mi CV"). A test rejects voseo forms. / El español usa tuteo (venezolano) y no voseo; una prueba rechaza esas formas.

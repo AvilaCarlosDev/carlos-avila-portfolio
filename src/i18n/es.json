@@ -3,7 +3,7 @@
   "htmlLang": "es",
   "meta": {
     "title": "Avilacarlosdev · Del problema a la solución",
-    "description": "Carlos Avila: desarrollador, soporte a la comunidad y mentor senior en 4Geeks Academy. Código abierto en español, proyectos con pruebas y CV descargable."
+    "description": "Carlos Avila, desarrollador full stack en Venezuela: apps y webs para empresas y negocios. Mentor en 4Geeks Academy. Proyectos con pruebas y CV."
   },
   "nav": {
     "ariaLabel": "Navegación principal",
@@ -36,19 +36,33 @@
     "current": "ES"
   },
   "hero": {
-    "eyebrow": "Desarrollador · Mentor · Comunidad",
+    "eyebrow": "Desarrollador full stack · Venezuela",
     "titleBefore": "Del problema a la",
     "titleEm": "solución.",
-    "sub": "Desarrollador y especialista en soporte a la comunidad en 4Geeks Academy. Publico código abierto y herramientas en español para devs de Latinoamérica.",
+    "sub": "Construyo apps y webs que resuelven problemas reales. Para equipos que buscan un desarrollador y para negocios que necesitan vender en línea.",
     "ctaProjects": "Ver proyectos",
-    "portraitAlt": "Retrato de Carlos Avila, en blanco y negro, con los brazos cruzados"
+    "portraitAlt": "Retrato de Carlos Avila, en blanco y negro, con los brazos cruzados",
+    "ctaBusiness": "Webs para tu negocio"
   },
   "proyectos": {
     "title": "Proyectos",
-    "sub": "Proyectos de código abierto. Todo el código es público y cada cifra está medida en el repositorio.",
+    "sub": "Código abierto y productos en línea. Cada cifra está medida en su repositorio.",
     "github": "Ver en GitHub",
     "demo": "Ver demos",
     "items": [
+      {
+        "id": "Forja",
+        "description": "App para entrenadores personales y sus clientes, en producción: gimnasios de Punto Fijo, vínculo entrenador–cliente con notificaciones, medidas que maneja el coach y app instalable. React + Supabase con seguridad por fila.",
+        "numbers": [
+          "93 pruebas",
+          "45 pruebas de permisos",
+          "6 migraciones"
+        ],
+        "url": "https://github.com/AvilaCarlosDev/Forja",
+        "demoUrl": "https://forja-trainer.vercel.app/",
+        "shot": "forja",
+        "shotAlt": "Forja en la computadora y en el teléfono: ficha de una clienta con sus medidas y la pantalla de entrada"
+      },
       {
         "id": "polaris-local-ai",
         "description": "Stack de IA local para una AMD RX 580 de 8 GB: un router compatible con la API de OpenAI que sirve modelos de texto, visión e imagen sobre Vulkan, sin nube y con benchmarks medidos en el propio equipo.",
@@ -58,7 +72,8 @@
           "25 pruebas"
         ],
         "url": "https://github.com/AvilaCarlosDev/polaris-local-ai",
-        "art": "celebrando"
+        "shot": "polaris-local-ai",
+        "shotAlt": "Terminal de polaris-local-ai: respuesta del modelo local por la API compatible con OpenAI e imagen generada en la propia GPU"
       },
       {
         "id": "mcp-readiness-check",
@@ -68,7 +83,8 @@
           "94 % de cobertura"
         ],
         "url": "https://github.com/AvilaCarlosDev/mcp-readiness-check",
-        "art": "pensando"
+        "shot": "mcp-readiness-check",
+        "shotAlt": "Reporte de mcp-readiness-check en la terminal: 13 comprobaciones superadas sobre un servidor MCP de ejemplo"
       },
       {
         "id": "apis-gratis-es",
@@ -80,12 +96,13 @@
         ],
         "url": "https://github.com/AvilaCarlosDev/apis-gratis-es",
         "demoUrl": "https://avilacarlosdev.github.io/apis-gratis-es/",
-        "art": "laptop"
+        "shot": "apis-gratis-es",
+        "shotAlt": "Página de demos de apis-gratis-es: tienda, clima, feriados, ubicación, enciclopedia y catálogo de APIs"
       }
     ],
     "demos": {
-      "title": "Demos para negocios",
-      "sub": "Landings de ejemplo para negocios locales. Cada una está publicada y se puede recorrer.",
+      "title": "Webs para negocios",
+      "sub": "¿Tienes un negocio? Te hago una web como estas, lista para recibir pedidos y reservas por WhatsApp. Estas son demos publicadas: recórrelas.",
       "live": "Ver demo",
       "code": "Código",
       "items": [
@@ -94,45 +111,73 @@
           "name": "Delivery",
           "description": "Marketplace de delivery: restaurantes, combos, seguimiento de pedido y pedidos por WhatsApp.",
           "url": "https://github.com/AvilaCarlosDev/landing-delivery-demo",
-          "demoUrl": "https://agencia-web-delivery-demo.vercel.app/"
+          "demoUrl": "https://agencia-web-delivery-demo.vercel.app/",
+          "thumb": "delivery",
+          "thumbAlt": "Demo de delivery: buscador de restaurantes, pedido activo y cupón"
         },
         {
           "id": "landing-barberia-demo",
           "name": "Barbería",
           "description": "Barbería premium: servicios filtrables, barberos, membresías y reservas por WhatsApp.",
           "url": "https://github.com/AvilaCarlosDev/landing-barberia-demo",
-          "demoUrl": "https://agencia-web-barberia-demo.vercel.app/"
+          "demoUrl": "https://agencia-web-barberia-demo.vercel.app/",
+          "thumb": "barberia",
+          "thumbAlt": "Demo de barbería: portada con agenda y reserva por WhatsApp"
         },
         {
           "id": "landing-deportes-demo",
           "name": "Tienda deportiva",
           "description": "Tienda deportiva: catálogo filtrable, ofertas y asesoría por WhatsApp.",
           "url": "https://github.com/AvilaCarlosDev/landing-deportes-demo",
-          "demoUrl": "https://agencia-web-deportes-demo.vercel.app/"
+          "demoUrl": "https://agencia-web-deportes-demo.vercel.app/",
+          "thumb": "deportes",
+          "thumbAlt": "Demo de tienda deportiva: colección destacada y asesoría por WhatsApp"
         },
         {
           "id": "landing-ferreteria-demo",
           "name": "Ferretería",
           "description": "Ferretería industrial: catálogo técnico, paquetes de obra y cotización por WhatsApp.",
           "url": "https://github.com/AvilaCarlosDev/landing-ferreteria-demo",
-          "demoUrl": "https://agencia-web-ferreteria-demo.vercel.app/"
+          "demoUrl": "https://agencia-web-ferreteria-demo.vercel.app/",
+          "thumb": "ferreteria",
+          "thumbAlt": "Demo de ferretería: catálogo técnico y cotización rápida"
         },
         {
           "id": "landing-floristeria-demo",
           "name": "Floristería",
           "description": "Floristería boutique: colección por ocasión, servicios y pedidos por WhatsApp.",
           "url": "https://github.com/AvilaCarlosDev/landing-floristeria-demo",
-          "demoUrl": "https://agencia-web-floristeria-demo.vercel.app/"
+          "demoUrl": "https://agencia-web-floristeria-demo.vercel.app/",
+          "thumb": "floristeria",
+          "thumbAlt": "Demo de floristería: portada con colección y pedidos de flores"
         },
         {
           "id": "landing-taxi-demo",
           "name": "Taxi",
           "description": "Servicio de taxi y transfer: cotizador, tarifas, conductores y reservas por WhatsApp.",
           "url": "https://github.com/AvilaCarlosDev/landing-taxi-demo",
-          "demoUrl": "https://agencia-web-taxi-demo.vercel.app/"
+          "demoUrl": "https://agencia-web-taxi-demo.vercel.app/",
+          "thumb": "taxi",
+          "thumbAlt": "Demo de taxi: cotizador de viaje con origen, destino y tarifa"
         }
-      ]
-    }
+      ],
+      "id": "negocios",
+      "includesLabel": "Qué incluye",
+      "includes": [
+        "Diseño a la medida de tu marca, en móvil y computadora",
+        "Pedidos, reservas o cotizaciones directo a tu WhatsApp",
+        "Rápida y clara en cualquier teléfono"
+      ],
+      "stepsLabel": "Cómo trabajamos",
+      "steps": [
+        "Me cuentas tu negocio por WhatsApp",
+        "Te muestro una propuesta y la ajustamos juntos",
+        "La publicamos y empiezas a recibir clientes"
+      ],
+      "cta": "Cotiza por WhatsApp",
+      "ctaText": "Hola Carlos, vi tu portafolio y quiero una web para mi negocio."
+    },
+    "demoForja": "Abrir la app"
   },
   "cv": {
     "title": "Mi CV, al día",
@@ -145,11 +190,12 @@
     "secondaryFile": "/Carlos-Avila-CV-EN.pdf",
     "tag": "PDF · 1 página",
     "thumbAlt": "Vista previa del CV de Carlos Avila",
-    "artAlt": "Mini-carlos entregando su CV"
+    "artAlt": "Mini-carlos entregando su CV",
+    "thumbLabel": "Descargar en español"
   },
   "contacto": {
     "title": "Hablemos.",
-    "sub": "Proyectos, mentoría o una colaboración. Respondo por aquí o por GitHub.",
+    "sub": "Proyectos, empleo, una web para tu negocio o una colaboración. Escríbeme por aquí o por WhatsApp.",
     "form": {
       "name": "Nombre",
       "namePlaceholder": "Tu nombre",
@@ -171,7 +217,10 @@
     },
     "signsAlt": "Mini-carlos sosteniendo dos carteles: GitHub y LinkedIn",
     "githubLabel": "GitHub de Carlos",
-    "linkedinLabel": "LinkedIn de Carlos"
+    "linkedinLabel": "LinkedIn de Carlos",
+    "whatsapp": "Escríbeme por WhatsApp",
+    "whatsappNote": "+58 424 622 3267 · respondo en el día",
+    "whatsappText": "Hola Carlos, vi tu portafolio."
   },
   "footer": {
     "rights": "© 2026 Avilacarlosdev · Hecho en Venezuela",
@@ -222,7 +271,7 @@
     },
     "notFound": {
       "title": "Página no encontrada",
-      "text": "La página que buscás no existe o cambió de lugar.",
+      "text": "La página que buscas no existe o cambió de lugar.",
       "back": "Volver al inicio"
     }
   },
@@ -239,7 +288,7 @@
       },
       {
         "label": "También",
-        "value": "Desarrollador freelance y atención al cliente los fines de semana"
+        "value": "Desarrollador freelance: apps y webs para negocios"
       },
       {
         "label": "Ubicación",
@@ -267,5 +316,6 @@
       "Docker · Linux",
       "IA y agentes (MCP)"
     ]
-  }
+  },
+  "whatsapp": "https://wa.me/584246223267"
 }
