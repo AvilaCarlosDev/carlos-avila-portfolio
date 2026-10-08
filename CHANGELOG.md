@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Changed / Cambiado
 
+- The apis-gratis-es card now shows the current published home page (map + weather hero), the same capture used in the GitHub profile, instead of the old demos grid. / La tarjeta de apis-gratis-es muestra ahora la portada publicada actual (mapa y clima), la misma captura que se usa en el perfil de GitHub, en vez de la cuadrícula de demos anterior.
 - mcp-readiness-check was removed from featured projects because it is not published on NPM yet; its figures stay in `verificadas.json` only because the CV PDFs still cite them. The section now shows Forja, polaris-local-ai and apis-gratis-es. / mcp-readiness-check salió de proyectos destacados porque todavía no está inscrito en NPM; sus cifras siguen en `verificadas.json` solo porque los CV en PDF todavía las citan. La sección muestra Forja, polaris-local-ai y apis-gratis-es.
 - polaris-local-ai now shows its animated floating island (the repository's own 3D scene) instead of a terminal screenshot. It is a 470 KB WebM/MP4 loop (the original animated WebP weighed 1.4 MB) that is not downloaded until the card is on screen, pauses when it leaves and stays still with reduced motion. / polaris-local-ai muestra su isla flotante animada en vez de una captura de terminal: video de 470 KB (el WebP animado original pesaba 1,4 MB) que no se descarga hasta que la tarjeta aparece, se pausa al salir y queda quieto con movimiento reducido.
 
