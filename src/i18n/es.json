@@ -76,17 +76,6 @@
         "video": "isla"
       },
       {
-        "id": "mcp-readiness-check",
-        "description": "Herramienta de línea de comandos en TypeScript: se conecta a un servidor MCP, inspecciona las tools que expone, valida sus esquemas y genera reportes en consola, JSON y Markdown.",
-        "numbers": [
-          "94 pruebas",
-          "94 % de cobertura"
-        ],
-        "url": "https://github.com/AvilaCarlosDev/mcp-readiness-check",
-        "shot": "mcp-readiness-check",
-        "shotAlt": "Reporte de mcp-readiness-check en la terminal: 13 comprobaciones superadas sobre un servidor MCP de ejemplo"
-      },
-      {
         "id": "apis-gratis-es",
         "description": "Catálogo verificado de APIs públicas y gratuitas para la comunidad hispanohablante, con demos que funcionan en vivo y un directorio ampliado (sin verificar) a partir de public-apis.",
         "numbers": [

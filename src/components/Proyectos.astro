@@ -1,7 +1,6 @@
 ---
 import { Image } from 'astro:assets'
 import forja from '../assets/proyectos/forja.jpg'
-import mcp from '../assets/proyectos/mcp-readiness-check.jpg'
 import apis from '../assets/proyectos/apis-gratis-es.jpg'
 import delivery from '../assets/demos/delivery.jpg'
 import barberia from '../assets/demos/barberia.jpg'
@@ -11,7 +10,7 @@ import floristeria from '../assets/demos/floristeria.jpg'
 import taxi from '../assets/demos/taxi.jpg'
 const { t } = Astro.props
 const p = t.proyectos
-const capturas = { forja, 'mcp-readiness-check': mcp, 'apis-gratis-es': apis }
+const capturas = { forja, 'apis-gratis-es': apis }
 const miniaturas = { delivery, barberia, deportes, ferreteria, floristeria, taxi }
 const dm = p.demos
 const wa = `${t.whatsapp}?text=${encodeURIComponent(dm.ctaText)}`
