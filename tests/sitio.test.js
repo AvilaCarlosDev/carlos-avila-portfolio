@@ -233,10 +233,10 @@ describe('quién soy y proyectos: contenido', () => {
       expect(doc.querySelectorAll('#quien-soy .chips li').length).toBeGreaterThanOrEqual(8)
     })
 
-    it(`${nombre}: proyectos son los 4 proyectos, con GitHub, captura real y demos en vivo`, () => {
+    it(`${nombre}: proyectos son los 3 proyectos, con GitHub, captura real y demos en vivo`, () => {
       const doc = parse(leer(archivo))
-      expect(doc.querySelectorAll('#proyectos .proj')).toHaveLength(4)
-      expect(doc.querySelectorAll('#proyectos .proj h3').map((h) => h.text)).toEqual(['Forja', 'polaris-local-ai', 'mcp-readiness-check', 'apis-gratis-es'])
+      expect(doc.querySelectorAll('#proyectos .proj')).toHaveLength(3)
+      expect(doc.querySelectorAll('#proyectos .proj h3').map((h) => h.text)).toEqual(['Forja', 'polaris-local-ai', 'apis-gratis-es'])
       // Cada proyecto se ve con una captura del producto, con texto alternativo descriptivo.
       for (const card of doc.querySelectorAll('#proyectos .proj')) {
         const media = card.querySelector('.shot img, .shot video')

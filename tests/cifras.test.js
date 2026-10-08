@@ -22,12 +22,6 @@ describe('cifras verificadas de los proyectos', () => {
       expect(suma).toBe(V['apis-gratis-es'].pruebas)
     })
 
-    it(`${nombre}: mcp-readiness-check muestra 94 pruebas y 94 % de cobertura`, () => {
-      const n = numeros(item(d, 'mcp-readiness-check').numbers)
-      expect(n).toEqual([V['mcp-readiness-check'].pruebas, V['mcp-readiness-check'].cobertura])
-      expect(Math.round(V['mcp-readiness-check'].detalle['sentencias %'])).toBe(V['mcp-readiness-check'].cobertura)
-    })
-
     it(`${nombre}: polaris-local-ai muestra 6 modelos de texto y visión, 2 de imagen y 25 pruebas`, () => {
       const o = V['polaris-local-ai']
       const n = numeros(item(d, 'polaris-local-ai').numbers)
@@ -51,9 +45,9 @@ describe('cifras verificadas de los proyectos', () => {
     expect(new Date(verificadas.fecha).getTime()).toBeLessThanOrEqual(Date.now())
   })
 
-  it('los proyectos de la página son exactamente los cuatro elegidos, con enlace a su repositorio', () => {
+  it('los proyectos de la página son exactamente los tres elegidos, con enlace a su repositorio', () => {
     for (const d of [es, en]) {
-      expect(d.proyectos.items.map((i) => i.id)).toEqual(['Forja', 'polaris-local-ai', 'mcp-readiness-check', 'apis-gratis-es'])
+      expect(d.proyectos.items.map((i) => i.id)).toEqual(['Forja', 'polaris-local-ai', 'apis-gratis-es'])
       for (const i of d.proyectos.items) expect(i.url).toBe(`https://github.com/AvilaCarlosDev/${i.id}`)
     }
   })

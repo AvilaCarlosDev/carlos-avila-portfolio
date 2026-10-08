@@ -46,6 +46,7 @@
       ]
     },
     "mcp-readiness-check": {
+      "nota": "Ya no se muestra en el sitio (todavía no está inscrito en NPM). Se conserva porque el CV en PDF todavía cita estas cifras.",
       "pruebas": 94,
       "cobertura": 94,
       "detalle": {
