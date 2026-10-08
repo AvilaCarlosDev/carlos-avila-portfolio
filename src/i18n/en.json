@@ -108,55 +108,55 @@
       "code": "Code",
       "items": [
         {
-          "id": "landing-delivery-demo",
+          "id": "web-delivery-demo",
           "name": "Delivery",
           "description": "Delivery marketplace: restaurants, combos, order tracking and orders over WhatsApp.",
-          "url": "https://github.com/AvilaCarlosDev/landing-delivery-demo",
+          "url": "https://github.com/AvilaCarlosDev/web-delivery-demo",
           "demoUrl": "https://agencia-web-delivery-demo.vercel.app/",
           "thumb": "delivery",
           "thumbAlt": "Delivery demo: restaurant search, active order and coupon"
         },
         {
-          "id": "landing-barberia-demo",
+          "id": "web-barberia-demo",
           "name": "Barbershop",
           "description": "Premium barbershop: filterable services, barbers, memberships and bookings over WhatsApp.",
-          "url": "https://github.com/AvilaCarlosDev/landing-barberia-demo",
+          "url": "https://github.com/AvilaCarlosDev/web-barberia-demo",
           "demoUrl": "https://agencia-web-barberia-demo.vercel.app/",
           "thumb": "barberia",
           "thumbAlt": "Barbershop demo: home page with booking through WhatsApp"
         },
         {
-          "id": "landing-deportes-demo",
+          "id": "web-deportes-demo",
           "name": "Sports store",
           "description": "Sports store: filterable catalog, offers and advice over WhatsApp.",
-          "url": "https://github.com/AvilaCarlosDev/landing-deportes-demo",
+          "url": "https://github.com/AvilaCarlosDev/web-deportes-demo",
           "demoUrl": "https://agencia-web-deportes-demo.vercel.app/",
           "thumb": "deportes",
           "thumbAlt": "Sports store demo: featured collection and advice through WhatsApp"
         },
         {
-          "id": "landing-ferreteria-demo",
+          "id": "web-ferreteria-demo",
           "name": "Hardware store",
           "description": "Industrial hardware store: technical catalog, construction bundles and quotes over WhatsApp.",
-          "url": "https://github.com/AvilaCarlosDev/landing-ferreteria-demo",
+          "url": "https://github.com/AvilaCarlosDev/web-ferreteria-demo",
           "demoUrl": "https://agencia-web-ferreteria-demo.vercel.app/",
           "thumb": "ferreteria",
           "thumbAlt": "Hardware store demo: technical catalog and quick quote"
         },
         {
-          "id": "landing-floristeria-demo",
+          "id": "web-floristeria-demo",
           "name": "Flower shop",
           "description": "Boutique flower shop: collection by occasion, services and orders over WhatsApp.",
-          "url": "https://github.com/AvilaCarlosDev/landing-floristeria-demo",
+          "url": "https://github.com/AvilaCarlosDev/web-floristeria-demo",
           "demoUrl": "https://agencia-web-floristeria-demo.vercel.app/",
           "thumb": "floristeria",
           "thumbAlt": "Flower shop demo: home page with collection and flower orders"
         },
         {
-          "id": "landing-taxi-demo",
+          "id": "web-taxi-demo",
           "name": "Taxi",
           "description": "Taxi and transfer service: quote calculator, rates, drivers and bookings over WhatsApp.",
-          "url": "https://github.com/AvilaCarlosDev/landing-taxi-demo",
+          "url": "https://github.com/AvilaCarlosDev/web-taxi-demo",
           "demoUrl": "https://agencia-web-taxi-demo.vercel.app/",
           "thumb": "taxi",
           "thumbAlt": "Taxi demo: trip quote with origin, destination and fare"

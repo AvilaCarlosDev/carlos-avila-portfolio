@@ -108,55 +108,55 @@
       "code": "Código",
       "items": [
         {
-          "id": "landing-delivery-demo",
+          "id": "web-delivery-demo",
           "name": "Delivery",
           "description": "Marketplace de delivery: restaurantes, combos, seguimiento de pedido y pedidos por WhatsApp.",
-          "url": "https://github.com/AvilaCarlosDev/landing-delivery-demo",
+          "url": "https://github.com/AvilaCarlosDev/web-delivery-demo",
           "demoUrl": "https://agencia-web-delivery-demo.vercel.app/",
           "thumb": "delivery",
           "thumbAlt": "Demo de delivery: buscador de restaurantes, pedido activo y cupón"
         },
         {
-          "id": "landing-barberia-demo",
+          "id": "web-barberia-demo",
           "name": "Barbería",
           "description": "Barbería premium: servicios filtrables, barberos, membresías y reservas por WhatsApp.",
-          "url": "https://github.com/AvilaCarlosDev/landing-barberia-demo",
+          "url": "https://github.com/AvilaCarlosDev/web-barberia-demo",
           "demoUrl": "https://agencia-web-barberia-demo.vercel.app/",
           "thumb": "barberia",
           "thumbAlt": "Demo de barbería: portada con agenda y reserva por WhatsApp"
         },
         {
-          "id": "landing-deportes-demo",
+          "id": "web-deportes-demo",
           "name": "Tienda deportiva",
           "description": "Tienda deportiva: catálogo filtrable, ofertas y asesoría por WhatsApp.",
-          "url": "https://github.com/AvilaCarlosDev/landing-deportes-demo",
+          "url": "https://github.com/AvilaCarlosDev/web-deportes-demo",
           "demoUrl": "https://agencia-web-deportes-demo.vercel.app/",
           "thumb": "deportes",
           "thumbAlt": "Demo de tienda deportiva: colección destacada y asesoría por WhatsApp"
         },
         {
-          "id": "landing-ferreteria-demo",
+          "id": "web-ferreteria-demo",
           "name": "Ferretería",
           "description": "Ferretería industrial: catálogo técnico, paquetes de obra y cotización por WhatsApp.",
-          "url": "https://github.com/AvilaCarlosDev/landing-ferreteria-demo",
+          "url": "https://github.com/AvilaCarlosDev/web-ferreteria-demo",
           "demoUrl": "https://agencia-web-ferreteria-demo.vercel.app/",
           "thumb": "ferreteria",
           "thumbAlt": "Demo de ferretería: catálogo técnico y cotización rápida"
         },
         {
-          "id": "landing-floristeria-demo",
+          "id": "web-floristeria-demo",
           "name": "Floristería",
           "description": "Floristería boutique: colección por ocasión, servicios y pedidos por WhatsApp.",
-          "url": "https://github.com/AvilaCarlosDev/landing-floristeria-demo",
+          "url": "https://github.com/AvilaCarlosDev/web-floristeria-demo",
           "demoUrl": "https://agencia-web-floristeria-demo.vercel.app/",
           "thumb": "floristeria",
           "thumbAlt": "Demo de floristería: portada con colección y pedidos de flores"
         },
         {
-          "id": "landing-taxi-demo",
+          "id": "web-taxi-demo",
           "name": "Taxi",
           "description": "Servicio de taxi y transfer: cotizador, tarifas, conductores y reservas por WhatsApp.",
-          "url": "https://github.com/AvilaCarlosDev/landing-taxi-demo",
+          "url": "https://github.com/AvilaCarlosDev/web-taxi-demo",
           "demoUrl": "https://agencia-web-taxi-demo.vercel.app/",
           "thumb": "taxi",
           "thumbAlt": "Demo de taxi: cotizador de viaje con origen, destino y tarifa"
