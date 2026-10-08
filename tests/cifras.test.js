@@ -58,10 +58,10 @@ describe('cifras verificadas de los proyectos', () => {
     }
   })
 
-  it('las demos para negocios son las seis landings, con demo en vivo y repositorio', () => {
+  it('las webs para negocios son las seis demos publicadas, con repositorio correcto', () => {
     const rubros = ['delivery', 'barberia', 'deportes', 'ferreteria', 'floristeria', 'taxi']
     for (const d of [es, en]) {
-      expect(d.proyectos.demos.items.map((i) => i.id)).toEqual(rubros.map((r) => `landing-${r}-demo`))
+      expect(d.proyectos.demos.items.map((i) => i.id)).toEqual(rubros.map((r) => `web-${r}-demo`))
       for (const [k, i] of d.proyectos.demos.items.entries()) {
         expect(i.url).toBe(`https://github.com/AvilaCarlosDev/${i.id}`)
         expect(i.demoUrl).toBe(`https://agencia-web-${rubros[k]}-demo.vercel.app/`)
