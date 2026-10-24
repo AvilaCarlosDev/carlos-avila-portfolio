@@ -274,7 +274,12 @@
           "h": "Your rights",
           "p": "You can request access, correction or deletion of your data by writing to the email above."
         }
-      ]
+      ],
+      "analitica": {
+        "recojo": "What you type in the contact form (name, email and message) and, only if you accept the analytics notice, usage statistics recorded by Google Analytics: pages viewed, approximate country, device and where you came from. If you decline or do not answer, Google Analytics is not loaded.",
+        "h": "Analytics (Google Analytics)",
+        "p": "I use Google Analytics 4 only with your permission, to learn which pages interest people and how visitors arrive. It sets Google cookies and I do not use it for personalized advertising. To change your choice, clear this site's data in your browser and the notice will appear again."
+      }
     },
     "notFound": {
       "title": "Page not found",
@@ -332,5 +337,12 @@
       "AI and agents (MCP)"
     ]
   },
-  "whatsapp": "https://wa.me/584246223267"
+  "whatsapp": "https://wa.me/584246223267",
+  "consentimiento": {
+    "label": "Analytics notice",
+    "text": "May I measure visits with Google Analytics? It only turns on if you accept.",
+    "link": "Learn more",
+    "accept": "Accept",
+    "reject": "Decline"
+  }
 }

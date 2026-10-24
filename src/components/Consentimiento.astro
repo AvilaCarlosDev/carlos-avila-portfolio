@@ -1,0 +1,17 @@
+---
+// Aviso de analítica. Solo se incluye si hay un ID de GA4 (PUBLIC_GA_ID); sin él, el sitio no rastrea nada.
+const { t, id } = Astro.props
+const c = t.consentimiento
+---
+<div class="consentimiento" data-ga={id} role="region" aria-label={c.label} hidden>
+  <p>{c.text} <a href={t.footer.privacy.href}>{c.link}</a></p>
+  <div class="acciones">
+    <button type="button" class="btn line sm" data-rechazar>{c.reject}</button>
+    <button type="button" class="btn dark sm" data-aceptar>{c.accept}</button>
+  </div>
+</div>
+<script>
+  import { iniciar } from '../scripts/consentimiento.js'
+  const aviso = document.querySelector('.consentimiento')
+  if (aviso) iniciar(aviso, aviso.dataset.ga)
+</script>

@@ -208,3 +208,14 @@ section.wrap { padding-top: 84px; }
   .cvpj { display: none; }
   .hero { padding-top: 40px; }
 }
+
+/* Aviso de analítica: discreto, abajo a la izquierda, sin tapar el contenido en el teléfono */
+.consentimiento {
+  position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 60; max-width: 420px;
+  background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px;
+  box-shadow: 0 8px 28px rgba(17, 18, 20, 0.12); font-size: 14px;
+}
+.consentimiento[hidden] { display: none; }
+.consentimiento p { margin: 0 0 10px; }
+.consentimiento a { color: var(--blue); text-decoration: underline; }
+.consentimiento .acciones { display: flex; gap: 8px; justify-content: flex-end; }
