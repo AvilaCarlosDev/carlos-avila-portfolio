@@ -13,7 +13,7 @@ const item = (d, id) => d.proyectos.items.find((i) => i.id === id)
 
 describe('cifras verificadas de los proyectos', () => {
   for (const [nombre, d] of [['ES', es], ['EN', en]]) {
-    it(`${nombre}: apis-gratis-es muestra 23 APIs verificadas, 1777 en el directorio, 5 demos y 351 pruebas`, () => {
+    it(`${nombre}: apis-gratis-es muestra 23 APIs verificadas, 1777 en el directorio, 5 demos y 373 pruebas`, () => {
       const n = numeros(item(d, 'apis-gratis-es').numbers)
       expect(n).toEqual([V['apis-gratis-es'].apis, V['apis-gratis-es'].directorio, V['apis-gratis-es'].demos, V['apis-gratis-es'].pruebas])
       // El directorio no está verificado: el sitio no puede presentarlo como si lo estuviera.

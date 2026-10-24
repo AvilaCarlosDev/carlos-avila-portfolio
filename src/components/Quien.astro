@@ -9,6 +9,7 @@ const q = t.quien
       {q.paragraphs.map((p) => <p>{p}</p>)}
       <h3 class="mini">{q.toolsLabel}</h3>
       <ul class="chips">{q.tools.map((x) => <li>{x}</li>)}</ul>
+      <a class="btn line cv-rapido" href={t.cv.primaryFile} download>{q.cvCta} ↓</a>
     </div>
     <dl class="card facts">
       {q.facts.map((f) => (<div><dt>{f.label}</dt><dd>{f.value}</dd></div>))}

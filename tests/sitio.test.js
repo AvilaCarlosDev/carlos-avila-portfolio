@@ -127,9 +127,10 @@ describe('página de inicio: contenido y accesibilidad', () => {
       }
       expect(doc.querySelector('#form-contacto').getAttribute('data-messages')).toContain('correoFalso')
       const descargas = doc.querySelectorAll('a[download]').map((a) => a.getAttribute('href'))
-      // miniatura + botón principal (idioma de la página) y botón secundario (el otro idioma)
+      // enlace rápido en «Quién soy» + miniatura + botón principal (idioma de la página) y botón secundario (el otro idioma)
       const [principal, secundario] = nombre === 'ES' ? ['ES', 'EN'] : ['EN', 'ES']
-      expect(descargas.sort()).toEqual([`/Carlos-Avila-CV-${principal}.pdf`, `/Carlos-Avila-CV-${principal}.pdf`, `/Carlos-Avila-CV-${secundario}.pdf`].sort())
+      expect(descargas.sort()).toEqual([`/Carlos-Avila-CV-${principal}.pdf`, `/Carlos-Avila-CV-${principal}.pdf`, `/Carlos-Avila-CV-${principal}.pdf`, `/Carlos-Avila-CV-${secundario}.pdf`].sort())
+      expect(doc.querySelector('#quien-soy a[download]')?.getAttribute('href')).toBe(`/Carlos-Avila-CV-${principal}.pdf`)
       const cambio = doc.querySelector('.lang a')
       expect(cambio.getAttribute('href')).toBe(archivo === 'index.html' ? '/en/' : '/')
     })
@@ -299,6 +300,14 @@ describe('webs para negocios: demos que venden', () => {
       const wa = bloque.querySelector(`a[href^="${WA}"]`)
       expect(wa, 'botón de WhatsApp para cotizar').not.toBeNull()
       expect(wa.getAttribute('rel')).toMatch(/noopener/)
+    })
+
+    it(`${nombre}: caso real del Dr. Eddy Hernández antes de las demos y correo visible en contacto`, () => {
+      const doc = parse(leer(archivo))
+      const cliente = doc.querySelector('#negocios .cliente')
+      expect(cliente?.text).toContain('Dr. Eddy Hernández')
+      expect(cliente.text, 'sin cifras de resultados inventadas').not.toMatch(/%|\d+ pacientes/)
+      expect(doc.querySelector('#contacto a[href="mailto:contacto@avilacarlosdev.com"]')).not.toBeNull()
     })
 
     it(`${nombre}: contacto ofrece WhatsApp además del formulario`, () => {
