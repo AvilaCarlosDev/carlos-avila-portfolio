@@ -374,3 +374,13 @@ describe('páginas de servicio y de caso', () => {
     expect(html).toContain(`${v.migraciones} migraciones`)
   })
 })
+
+describe('apps para el teléfono: solo PWA, sin prometer tiendas', () => {
+  it('la página de servicio ofrece apps instalables y no promete Play Store ni App Store', () => {
+    for (const archivo of ['web-para-negocios/index.html', 'en/websites-for-business/index.html']) {
+      const html = leer(archivo)
+      expect(html).toMatch(/Android y iPhone|Android and iPhone/)
+      expect(html).not.toMatch(/Play Store|App Store/)
+    }
+  })
+})
