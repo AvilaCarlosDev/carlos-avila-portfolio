@@ -2,7 +2,7 @@
   "lang": "en",
   "htmlLang": "en",
   "meta": {
-    "title": "Avilacarlosdev · From problem to solution",
+    "title": "Carlos Avila · Full stack developer, homelab and local AI",
     "description": "Carlos Avila, Full Stack Developer · AI in Venezuela: websites and apps with React, Node and Supabase for businesses that want more clients. CV."
   },
   "nav": {
@@ -37,9 +37,9 @@
   },
   "hero": {
     "eyebrow": "Full Stack Developer · AI · Venezuela",
-    "titleBefore": "From problem to",
-    "titleEm": "solution.",
-    "sub": "I build websites and apps with React, Node.js and Supabase, tested and in production, and I run my own servers and local AI. For companies hiring a remote developer and for businesses that want customers on WhatsApp.",
+    "titleBefore": "I run my own servers, local AI and apps.",
+    "titleEm": "Then I try to break them.",
+    "sub": "I build websites and apps with React, Node.js and Supabase, tested and in production. For companies hiring a remote developer and for businesses that want customers on WhatsApp.",
     "ctaProjects": "See projects",
     "portraitAlt": "Black and white portrait of Carlos Avila with arms crossed",
     "ctaBusiness": "I need a website for my business"
