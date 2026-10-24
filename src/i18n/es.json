@@ -181,9 +181,17 @@
           "Calculadora de IMC"
         ]
       },
-      "priceNote": "Te digo el precio por WhatsApp después de escuchar lo que necesitas."
+      "priceNote": "Te digo el precio por WhatsApp después de escuchar lo que necesitas.",
+      "more": {
+        "label": "Más sobre webs para negocios",
+        "href": "/web-para-negocios/"
+      }
     },
-    "demoForja": "Abrir la app"
+    "demoForja": "Abrir la app",
+    "caso": {
+      "label": "Ver el caso de Forja",
+      "href": "/casos/forja/"
+    }
   },
   "cv": {
     "title": "Mi CV, al día",
@@ -344,5 +352,110 @@
     "link": "Más información",
     "accept": "Aceptar",
     "reject": "Rechazar"
+  },
+  "paginas": {
+    "webNegocios": {
+      "path": "/web-para-negocios/",
+      "metaTitle": "Páginas web para negocios en Venezuela · Avilacarlosdev",
+      "metaDescription": "Webs para negocios que traen clientes por WhatsApp: cada contacto queda guardado, mides tus anuncios y carga rápido en el teléfono. Hecho en Punto Fijo.",
+      "eyebrow": "Servicio · Webs para negocios",
+      "title": "Una web para tu negocio que te traiga clientes por WhatsApp",
+      "lead": "Soy Carlos, developer en Punto Fijo, Falcón. Hago webs para negocios de Venezuela y Latinoamérica con un objetivo claro: que la gente que te encuentra te escriba.",
+      "sections": [
+        {
+          "h": "Qué incluye",
+          "p": "Cada web sale con lo necesario para recibir y medir contactos:",
+          "list": [
+            "Botón de WhatsApp para pedidos, reservas, citas o cotizaciones",
+            "Formulario que guarda cada contacto y te avisa por correo",
+            "Medición de tus anuncios de Meta, para saber cuáles te traen clientes",
+            "Protección contra spam en el formulario",
+            "Diseño a la medida de tu marca, rápido en cualquier teléfono"
+          ]
+        },
+        {
+          "h": "Demos por rubro",
+          "p": "Publiqué demos de delivery, barbería, tienda deportiva, ferretería, floristería y taxi, cada una con pedidos o reservas por WhatsApp. Puedes recorrerlas en mi portafolio.",
+          "list": []
+        },
+        {
+          "h": "Un cliente real",
+          "p": "Dr. Eddy Hernández, cirujano bariátrico en Punto Fijo. Estoy pasando su web de WordPress a React. Antes de abrir WhatsApp, el paciente llena un formulario corto: el contacto queda guardado y al doctor le llega un aviso por correo, sin exponer su número. Incluye una página de gracias para medir sus anuncios de Meta y una calculadora de IMC.",
+          "list": []
+        },
+        {
+          "h": "Cómo trabajamos",
+          "p": "Tres pasos, todo por WhatsApp:",
+          "list": [
+            "Me cuentas por WhatsApp tu negocio y qué quieres lograr",
+            "Te muestro una propuesta y la ajustamos juntos",
+            "La publicamos, conectamos tu WhatsApp y te explico cómo ver los contactos que llegan"
+          ]
+        },
+        {
+          "h": "¿Cuánto cuesta?",
+          "p": "Te digo el precio por WhatsApp después de escuchar lo que necesitas.",
+          "list": []
+        },
+        {
+          "h": "¿Trabajas fuera de Falcón?",
+          "p": "Sí. Trabajo remoto con negocios de cualquier ciudad de Venezuela o de otro país.",
+          "list": []
+        }
+      ],
+      "link": {
+        "label": "Ver las demos",
+        "href": "/#negocios"
+      },
+      "cta": "Cotiza por WhatsApp",
+      "ctaText": "Hola Carlos, vi tu portafolio y quiero una web para mi negocio."
+    },
+    "forja": {
+      "path": "/casos/forja/",
+      "metaTitle": "Forja: app para entrenadores personales · Avilacarlosdev",
+      "metaDescription": "Caso de Forja, la app que hice para entrenadores personales: rutinas, dieta, medidas y cobros con React y Supabase. En producción y con 160 pruebas.",
+      "eyebrow": "Caso · Producto propio",
+      "title": "Forja, la app para entrenadores personales",
+      "lead": "Forja es mi producto y está en producción. Con ella, un entrenador personal lleva a todos sus clientes desde el teléfono: qué entrena cada uno, qué come, cómo avanza y quién le debe.",
+      "sections": [
+        {
+          "h": "Qué hace",
+          "p": "El entrenador y su cliente usan la misma app, cada uno con lo suyo:",
+          "list": [
+            "El coach asigna rutinas con la animación de cada ejercicio",
+            "Arma la dieta de cada cliente",
+            "Carga medidas y ve la evolución en gráficas",
+            "Lleva sus cobros",
+            "El cliente recibe avisos y entrena lo que le toca",
+            "Se instala en el teléfono como una app (PWA)"
+          ]
+        },
+        {
+          "h": "Cómo está hecha",
+          "p": "React en el frente y Supabase con seguridad por fila detrás: cada persona solo puede ver sus propios datos, y eso lo comprueban pruebas automáticas.",
+          "list": [
+            "160 pruebas propias",
+            "109 pruebas de permisos",
+            "13 migraciones de base de datos"
+          ]
+        },
+        {
+          "h": "Planes",
+          "p": "Gratis hasta 5 clientes. El plan Pro no tiene límite de clientes.",
+          "list": []
+        },
+        {
+          "h": "Qué te dice de mi trabajo",
+          "p": "Puedo llevar una app de la idea a producción: diseño, base de datos, permisos, pruebas y publicación. Si tienes un negocio que necesita su propia app, este es el tipo de trabajo que hago.",
+          "list": []
+        }
+      ],
+      "link": {
+        "label": "Abrir la app",
+        "href": "https://forja-trainer.vercel.app/"
+      },
+      "cta": "Hablemos de tu app",
+      "ctaText": "Hola Carlos, vi el caso de Forja y quiero hablar de una app."
+    }
   }
 }
