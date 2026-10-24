@@ -288,7 +288,7 @@ describe('formulario: ejemplos claros en los campos', () => {
   })
 })
 
-const WA = 'https://wa.me/584246223267'
+const WA = 'https://wa.me/13464919344'
 
 describe('webs para negocios: demos que venden', () => {
   for (const [archivo, nombre] of [['index.html', 'ES'], ['en/index.html', 'EN']]) {
@@ -382,5 +382,13 @@ describe('apps para el teléfono: solo PWA, sin prometer tiendas', () => {
       expect(html).toMatch(/Android y iPhone|Android and iPhone/)
       expect(html).not.toMatch(/Play Store|App Store/)
     }
+  })
+})
+
+describe('WhatsApp Business', () => {
+  it('el número visible junto al botón es el de WhatsApp Business', () => {
+    expect(leer('index.html')).toContain('+1 346 491 9344')
+    expect(leer('en/index.html')).toContain('+1 346 491 9344')
+    expect(leer('index.html')).not.toContain('584246223267')
   })
 })
