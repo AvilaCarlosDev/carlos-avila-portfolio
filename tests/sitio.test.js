@@ -14,6 +14,10 @@ const PAGINAS = [
   { archivo: 'en/index.html', path: '/en/', lang: 'en', otro: '/' },
   { archivo: 'privacidad/index.html', path: '/privacidad/', lang: 'es', otro: '/en/privacy/' },
   { archivo: 'en/privacy/index.html', path: '/en/privacy/', lang: 'en', otro: '/privacidad/' },
+  { archivo: 'web-para-negocios/index.html', path: '/web-para-negocios/', lang: 'es', otro: '/en/websites-for-business/' },
+  { archivo: 'en/websites-for-business/index.html', path: '/en/websites-for-business/', lang: 'en', otro: '/web-para-negocios/' },
+  { archivo: 'casos/forja/index.html', path: '/casos/forja/', lang: 'es', otro: '/en/case-studies/forja/' },
+  { archivo: 'en/case-studies/forja/index.html', path: '/en/case-studies/forja/', lang: 'en', otro: '/casos/forja/' },
 ]
 
 beforeAll(() => {
@@ -137,10 +141,10 @@ describe('página de inicio: contenido y accesibilidad', () => {
 })
 
 describe('archivos del sitio', () => {
-  it('robots.txt apunta al sitemap y el sitemap lista las 4 páginas con hreflang', () => {
+  it('robots.txt apunta al sitemap y el sitemap lista todas las páginas con hreflang', () => {
     expect(leer('robots.txt')).toMatch(/Sitemap:\s*https:\/\/avilacarlosdev\.com\/sitemap\.xml/)
     const xml = leer('sitemap.xml')
-    for (const p of ['/', '/en/', '/privacidad/', '/en/privacy/']) expect(xml).toContain(`<loc>${SITIO}${p}</loc>`)
+    for (const { path } of PAGINAS) expect(xml).toContain(`<loc>${SITIO}${path}</loc>`)
     expect(xml).toContain('hreflang="en"')
   })
 
@@ -343,5 +347,30 @@ describe.skipIf(process.env.PUBLIC_GA_ID)('privacidad: sin ID de Google no hay r
   it('la política sigue diciendo que el sitio no usa cookies', () => {
     expect(leer('privacidad/index.html')).toContain('no usa cookies')
     expect(leer('en/privacy/index.html')).toContain('uses no cookies')
+  })
+})
+
+describe('páginas de servicio y de caso', () => {
+  it('la portada enlaza a la página de servicio y al caso de Forja en cada idioma', () => {
+    const es = parse(leer('index.html'))
+    const en = parse(leer('en/index.html'))
+    expect(es.querySelector('#negocios a[href="/web-para-negocios/"]')).not.toBeNull()
+    expect(es.querySelector('#proyectos a[href="/casos/forja/"]')).not.toBeNull()
+    expect(en.querySelector('#negocios a[href="/en/websites-for-business/"]')).not.toBeNull()
+    expect(en.querySelector('#proyectos a[href="/en/case-studies/forja/"]')).not.toBeNull()
+  })
+
+  it.each(['web-para-negocios/index.html', 'en/websites-for-business/index.html', 'casos/forja/index.html', 'en/case-studies/forja/index.html'])('%s tiene un h1 y llamada a WhatsApp arriba y al final', (archivo) => {
+    const doc = parse(leer(archivo))
+    expect(doc.querySelectorAll('h1')).toHaveLength(1)
+    expect(doc.querySelectorAll(`main a[href^="${WA}"]`)).toHaveLength(2)
+  })
+
+  it('las cifras del caso de Forja coinciden con las medidas', async () => {
+    const v = (await import('../src/data/verificadas.json')).default.proyectos.Forja
+    const html = leer('casos/forja/index.html')
+    expect(html).toContain(`${v.pruebas} pruebas propias`)
+    expect(html).toContain(`${v.pruebasPermisos} pruebas de permisos`)
+    expect(html).toContain(`${v.migraciones} migraciones`)
   })
 })

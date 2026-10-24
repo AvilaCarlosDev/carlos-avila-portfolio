@@ -1,0 +1,37 @@
+---
+// Página de contenido (servicio o caso): título, entrada, secciones y llamada a WhatsApp.
+// Cada página existe en los dos idiomas; `clave` elige el contenido en t.paginas.
+import { Image } from 'astro:assets'
+import Base from '../layouts/Base.astro'
+import Header from './Header.astro'
+import Footer from './Footer.astro'
+const { t, clave, otro, imagen, imagenAlt } = Astro.props
+const pg = t.paginas[clave]
+const alternates = t.lang === 'es' ? { es: pg.path, en: otro } : { es: otro, en: pg.path }
+const wa = `${t.whatsapp}?text=${encodeURIComponent(pg.ctaText)}`
+const externo = pg.link.href.startsWith('http')
+---
+<Base t={t} path={pg.path} title={pg.metaTitle} description={pg.metaDescription} alternates={alternates}>
+  <Header t={t} switchHref={otro} home={false} />
+  <main id="contenido" class="pagina">
+    <p class="eyebrow">{pg.eyebrow}</p>
+    <h1>{pg.title}</h1>
+    <p class="entrada">{pg.lead}</p>
+    <div class="acciones">
+      <a class="btn wa" href={wa} target="_blank" rel="noopener">{pg.cta}</a>
+      <a class="btn line" href={pg.link.href} rel={externo ? 'noopener' : undefined}>{pg.link.label}{externo ? ' ↗' : ' →'}</a>
+    </div>
+    {imagen && <Image class="captura" src={imagen} alt={imagenAlt} widths={[480, 760]} sizes="(max-width: 820px) 100vw, 720px" />}
+    {pg.sections.map((s) => (
+      <section>
+        <h2>{s.h}</h2>
+        <p>{s.p}</p>
+        {s.list.length > 0 && <ul>{s.list.map((x) => <li>{x}</li>)}</ul>}
+      </section>
+    ))}
+    <div class="acciones final">
+      <a class="btn wa" href={wa} target="_blank" rel="noopener">{pg.cta}</a>
+    </div>
+  </main>
+  <Footer t={t} />
+</Base>

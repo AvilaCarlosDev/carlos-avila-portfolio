@@ -32,7 +32,7 @@ afterAll(async () => {
   await new Promise((r) => (servidor ? servidor.close(r) : r()))
 })
 
-const PAGINAS = ['/', '/en/', '/privacidad/', '/en/privacy/']
+const PAGINAS = ['/', '/en/', '/privacidad/', '/en/privacy/', '/web-para-negocios/', '/en/websites-for-business/', '/casos/forja/', '/en/case-studies/forja/']
 const ANCHOS = [{ nombre: 'móvil', width: 390, height: 844 }, { nombre: 'tableta', width: 820, height: 1100 }, { nombre: 'escritorio', width: 1440, height: 900 }]
 
 describe.skipIf(!CHROME)('diseño en un navegador real', () => {

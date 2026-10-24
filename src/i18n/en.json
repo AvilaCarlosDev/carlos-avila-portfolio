@@ -181,9 +181,17 @@
           "BMI calculator"
         ]
       },
-      "priceNote": "I'll quote you on WhatsApp once I understand what you need."
+      "priceNote": "I'll quote you on WhatsApp once I understand what you need.",
+      "more": {
+        "label": "More about websites for business",
+        "href": "/en/websites-for-business/"
+      }
     },
-    "demoForja": "Open the app"
+    "demoForja": "Open the app",
+    "caso": {
+      "label": "Read the Forja case study",
+      "href": "/en/case-studies/forja/"
+    }
   },
   "cv": {
     "title": "My CV, up to date",
@@ -344,5 +352,110 @@
     "link": "Learn more",
     "accept": "Accept",
     "reject": "Decline"
+  },
+  "paginas": {
+    "webNegocios": {
+      "path": "/en/websites-for-business/",
+      "metaTitle": "Websites for small businesses · Avilacarlosdev",
+      "metaDescription": "Websites that bring customers through WhatsApp: every lead is saved, your ads are measured and it loads fast on any phone. Built from Venezuela, remote.",
+      "eyebrow": "Service · Websites for business",
+      "title": "A website for your business that brings customers through WhatsApp",
+      "lead": "I am Carlos, a developer in Punto Fijo, Venezuela. I build websites for businesses in Venezuela and Latin America with one clear goal: people who find you, message you.",
+      "sections": [
+        {
+          "h": "What is included",
+          "p": "Every site ships with what you need to receive and measure leads:",
+          "list": [
+            "WhatsApp button for orders, bookings, appointments or quotes",
+            "A form that saves every lead and emails you",
+            "Tracking for your Meta ads, so you know which ones bring customers",
+            "Spam protection on the form",
+            "Design tailored to your brand, fast on any phone"
+          ]
+        },
+        {
+          "h": "Demos by industry",
+          "p": "I published demos for delivery, a barbershop, a sports store, a hardware store, a florist and a taxi service, each with orders or bookings through WhatsApp. You can browse them on my portfolio.",
+          "list": []
+        },
+        {
+          "h": "A real client",
+          "p": "Dr. Eddy Hernández, bariatric surgeon in Punto Fijo. I'm moving his website from WordPress to React. Before WhatsApp opens, the patient fills in a short form: the lead is saved and the doctor gets an email alert, without exposing his number. It includes a thank-you page to measure his Meta ads and a BMI calculator.",
+          "list": []
+        },
+        {
+          "h": "How we work",
+          "p": "Three steps, all over WhatsApp:",
+          "list": [
+            "Tell me on WhatsApp about your business and your goal",
+            "I show you a proposal and we adjust it together",
+            "We publish it, connect your WhatsApp and I show you how to see the leads you get"
+          ]
+        },
+        {
+          "h": "How much does it cost?",
+          "p": "I'll quote you on WhatsApp once I understand what you need.",
+          "list": []
+        },
+        {
+          "h": "Do you work outside Venezuela?",
+          "p": "Yes. I work remotely with businesses in any city or country.",
+          "list": []
+        }
+      ],
+      "link": {
+        "label": "See the demos",
+        "href": "/en/#negocios"
+      },
+      "cta": "Get a quote on WhatsApp",
+      "ctaText": "Hi Carlos, I saw your portfolio and I'd like a website for my business."
+    },
+    "forja": {
+      "path": "/en/case-studies/forja/",
+      "metaTitle": "Forja: an app for personal trainers · Avilacarlosdev",
+      "metaDescription": "Case study of Forja, the app I built for personal trainers: workouts, diet, measurements and payments with React and Supabase. In production, 160 tests.",
+      "eyebrow": "Case study · My own product",
+      "title": "Forja, the app for personal trainers",
+      "lead": "Forja is my product and it is in production. A personal trainer runs every client from their phone: what each one trains, what they eat, how they progress and who owes a payment.",
+      "sections": [
+        {
+          "h": "What it does",
+          "p": "Trainer and client use the same app, each with their own view:",
+          "list": [
+            "The coach assigns workouts with an animation of each exercise",
+            "Builds each client's diet",
+            "Logs measurements and sees progress in charts",
+            "Tracks payments",
+            "The client gets notifications and trains what is due",
+            "Installs on the phone like an app (PWA)"
+          ]
+        },
+        {
+          "h": "How it is built",
+          "p": "React on the front and Supabase with row level security behind it: each person can only see their own data, and automated tests check it.",
+          "list": [
+            "160 tests of its own",
+            "109 permission tests",
+            "13 database migrations"
+          ]
+        },
+        {
+          "h": "Plans",
+          "p": "Free for up to 5 clients. The Pro plan has no client limit.",
+          "list": []
+        },
+        {
+          "h": "What it says about my work",
+          "p": "I can take an app from idea to production: design, database, permissions, tests and release. If your business needs its own app, this is the kind of work I do.",
+          "list": []
+        }
+      ],
+      "link": {
+        "label": "Open the app",
+        "href": "https://forja-trainer.vercel.app/"
+      },
+      "cta": "Let's talk about your app",
+      "ctaText": "Hi Carlos, I saw the Forja case study and want to talk about an app."
+    }
   }
 }
