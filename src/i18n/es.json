@@ -3,7 +3,7 @@
   "htmlLang": "es",
   "meta": {
     "title": "Avilacarlosdev · Del problema a la solución",
-    "description": "Carlos Avila, Full Stack Developer con IA en Venezuela: webs y apps para negocios que quieren más clientes, con React, Node y Supabase. Proyectos y CV."
+    "description": "Carlos Avila, Full Stack Developer · IA en Venezuela: webs y apps con React, Node y Supabase para negocios que quieren más clientes. Proyectos y CV."
   },
   "nav": {
     "ariaLabel": "Navegación principal",
@@ -39,10 +39,10 @@
     "eyebrow": "Full Stack Developer · IA · Venezuela",
     "titleBefore": "Del problema a la",
     "titleEm": "solución.",
-    "sub": "Construyo apps y webs que resuelven problemas reales. Para equipos que buscan un desarrollador y para negocios que necesitan vender en línea.",
+    "sub": "Construyo webs y apps con React, Node.js y Supabase, con pruebas y en producción. Para empresas que buscan un developer remoto y para negocios que quieren recibir clientes por WhatsApp.",
     "ctaProjects": "Ver proyectos",
     "portraitAlt": "Retrato de Carlos Avila, en blanco y negro, con los brazos cruzados",
-    "ctaBusiness": "Webs para tu negocio"
+    "ctaBusiness": "Quiero una web para mi negocio"
   },
   "proyectos": {
     "title": "Proyectos",
@@ -82,7 +82,7 @@
           "23 APIs verificadas",
           "1777 en el directorio, sin verificar",
           "5 demos",
-          "351 pruebas"
+          "373 pruebas"
         ],
         "url": "https://github.com/AvilaCarlosDev/apis-gratis-es",
         "demoUrl": "https://avilacarlosdev.github.io/apis-gratis-es/",
@@ -92,7 +92,7 @@
     ],
     "demos": {
       "title": "Webs para negocios",
-      "sub": "¿Tienes un negocio? Te hago una web como estas, lista para recibir pedidos y reservas por WhatsApp. Estas son demos publicadas: recórrelas.",
+      "sub": "¿Tienes un negocio? Te hago una web pensada para que te escriban clientes por WhatsApp. Estas son demos publicadas por rubro: recórrelas.",
       "live": "Ver demo",
       "code": "Código",
       "items": [
@@ -154,18 +154,34 @@
       "id": "negocios",
       "includesLabel": "Qué incluye",
       "includes": [
-        "Diseño a la medida de tu marca, en móvil y computadora",
-        "Pedidos, reservas o cotizaciones directo a tu WhatsApp",
-        "Rápida y clara en cualquier teléfono"
+        "Botón de WhatsApp para pedidos, reservas, citas o cotizaciones",
+        "Formulario que guarda cada contacto y te avisa por correo",
+        "Medición de tus anuncios de Meta, para saber cuáles te traen clientes",
+        "Protección contra spam en el formulario",
+        "Diseño a la medida de tu marca, rápido en cualquier teléfono"
       ],
       "stepsLabel": "Cómo trabajamos",
       "steps": [
-        "Me cuentas tu negocio por WhatsApp",
+        "Me cuentas por WhatsApp tu negocio y qué quieres lograr",
         "Te muestro una propuesta y la ajustamos juntos",
-        "La publicamos y empiezas a recibir clientes"
+        "La publicamos, conectamos tu WhatsApp y te explico cómo ver los contactos que llegan"
       ],
       "cta": "Cotiza por WhatsApp",
-      "ctaText": "Hola Carlos, vi tu portafolio y quiero una web para mi negocio."
+      "ctaText": "Hola Carlos, vi tu portafolio y quiero una web para mi negocio.",
+      "cliente": {
+        "label": "Cliente",
+        "status": "En migración · próximo lanzamiento",
+        "name": "Dr. Eddy Hernández · cirujano bariátrico · Punto Fijo",
+        "description": "Estoy pasando su web de WordPress a React. Antes de abrir WhatsApp, el paciente llena un formulario corto: el contacto queda guardado y al doctor le llega un aviso por correo, sin exponer su número. Incluye una página de gracias para medir sus anuncios de Meta y una calculadora de IMC.",
+        "features": [
+          "Formulario con protección antispam",
+          "WhatsApp sin exponer el número",
+          "Página de gracias para medir anuncios de Meta",
+          "Contactos guardados y aviso por correo",
+          "Calculadora de IMC"
+        ]
+      },
+      "priceNote": "Te digo el precio por WhatsApp después de escuchar lo que necesitas."
     },
     "demoForja": "Abrir la app"
   },
@@ -173,7 +189,7 @@
     "title": "Mi CV, al día",
     "sub": "Una página, sin relleno. Disponible en español y en inglés.",
     "boxTitle": "Descarga mi CV",
-    "text": "Mi cargo actual, el trabajo con la comunidad de 4Geeks, mis proyectos de código abierto con cifras y mis certificaciones verificables.",
+    "text": "Mi trabajo como developer freelance, el caso del Dr. Eddy Hernández, Forja, mis proyectos de código abierto con cifras y mis certificaciones verificables.",
     "btnPrimary": "Descargar en español",
     "btnSecondary": "Download in English",
     "primaryFile": "/Carlos-Avila-CV-ES.pdf",
@@ -185,7 +201,7 @@
   },
   "contacto": {
     "title": "Hablemos.",
-    "sub": "Proyectos, empleo, una web para tu negocio o una colaboración. Escríbeme por aquí o por WhatsApp.",
+    "sub": "¿Contratas? Escríbeme al correo o por LinkedIn. ¿Tienes un negocio? Cuéntamelo por WhatsApp y te digo qué haría.",
     "form": {
       "name": "Nombre",
       "namePlaceholder": "Tu nombre",
@@ -210,7 +226,8 @@
     "linkedinLabel": "LinkedIn de Carlos",
     "whatsapp": "Escríbeme por WhatsApp",
     "whatsappNote": "+58 424 622 3267 · respondo en el día",
-    "whatsappText": "Hola Carlos, vi tu portafolio."
+    "whatsappText": "Hola Carlos, vi tu portafolio.",
+    "email": "contacto@avilacarlosdev.com"
   },
   "footer": {
     "rights": "© 2026 Avilacarlosdev · Hecho en Venezuela",
@@ -274,15 +291,23 @@
     "facts": [
       {
         "label": "Ahora",
-        "value": "Developer freelance: webs y apps para negocios"
+        "value": "Developer freelance desde 2021: webs y apps para negocios"
       },
       {
         "label": "También",
-        "value": "Equipo de 4Geeks Academy, con estudiantes de programación"
+        "value": "Mentor técnico en 4Geeks Academy: depuración, Git y revisión de proyectos de estudiantes Full Stack"
+      },
+      {
+        "label": "Busco",
+        "value": "Puesto remoto como Full Stack Developer"
+      },
+      {
+        "label": "Código abierto",
+        "value": "373 pruebas en apis-gratis-es · 94 % de cobertura en mcp-readiness-check · PRs aceptados en pythiaLabs"
       },
       {
         "label": "Ubicación",
-        "value": "Venezuela"
+        "value": "Punto Fijo, Venezuela · trabajo remoto (UTC−4)"
       },
       {
         "label": "Idiomas",
@@ -305,7 +330,8 @@
       "Git · GitHub",
       "Docker · Linux",
       "IA y agentes (MCP)"
-    ]
+    ],
+    "cvCta": "Descargar CV (PDF, 1 página)"
   },
   "whatsapp": "https://wa.me/584246223267"
 }

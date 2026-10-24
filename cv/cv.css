@@ -1,0 +1,43 @@
+/* CV de una página A4. Se genera a PDF con cv/generar.sh (Chromium sin interfaz). */
+@font-face { font-family: Inter; src: url(../node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2) format('woff2'); font-weight: 100 900; }
+@font-face { font-family: JB; src: url(../node_modules/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-500-normal.woff2) format('woff2'); font-weight: 500; }
+@font-face { font-family: JB; src: url(../node_modules/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-700-normal.woff2) format('woff2'); font-weight: 700; }
+
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { font-family: Inter, sans-serif; color: #111214; font-size: 8.6pt; line-height: 1.38; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.hoja { width: 210mm; height: 297mm; display: grid; grid-template-columns: 1fr 62mm; overflow: hidden; }
+.principal { padding: 12mm 8mm 10mm 13mm; }
+.lateral { background: #0f1628; color: #dfe5f2; padding: 12mm 8mm 10mm 8mm; }
+
+h1 { font-size: 24pt; line-height: 1; margin: 0 0 2mm; letter-spacing: -0.02em; font-weight: 800; }
+.titulo { color: #2b4bff; font-weight: 700; font-size: 10.5pt; margin: 0 0 2mm; }
+.contacto { font-family: JB; font-size: 7.2pt; color: #565a63; margin: 0 0 1mm; }
+.contacto a { color: inherit; text-decoration: none; }
+
+h2 { font-family: JB; font-weight: 700; font-size: 7.6pt; letter-spacing: 0.12em; text-transform: uppercase; color: #2b4bff; margin: 4.2mm 0 1.6mm; padding-bottom: 0.8mm; border-bottom: 1px solid #e3e1da; }
+.lateral h2 { color: #58e1ff; border-color: rgba(255,255,255,.14); }
+p { margin: 0; }
+
+.puesto { margin: 0 0 2.4mm; }
+.puesto .cab { display: flex; justify-content: space-between; gap: 3mm; font-weight: 700; font-size: 9pt; }
+.puesto .fecha { font-family: JB; font-weight: 500; font-size: 7.2pt; color: #565a63; white-space: nowrap; }
+.puesto .lugar { color: #565a63; font-size: 7.8pt; }
+.puesto .cargo { display: flex; justify-content: space-between; font-size: 8.2pt; font-weight: 600; }
+ul { margin: 0.8mm 0 0; padding-left: 4mm; }
+li { margin: 0 0 0.6mm; }
+.linea { font-size: 8.2pt; margin: 0 0 2.4mm; }
+.linea b { font-weight: 700; }
+
+.oss li { margin-bottom: 0.9mm; }
+.oss b { font-family: JB; font-weight: 700; font-size: 7.8pt; }
+
+.logo { display: block; width: 32mm; margin: 0 auto 2mm; image-rendering: pixelated; }
+.lateral .grupo { margin: 0 0 1.4mm; }
+.lateral .grupo b { color: #fff; font-weight: 600; display: block; font-size: 8pt; }
+.lateral .grupo span { color: #b8c3da; font-size: 7.8pt; }
+.lateral ul { padding-left: 3.6mm; }
+.lateral li { color: #cfd7e8; font-size: 7.8pt; }
+.lateral li b { color: #fff; }
+.nota { font-size: 7pt; color: #9aa6c2; margin-top: 1.5mm; }
