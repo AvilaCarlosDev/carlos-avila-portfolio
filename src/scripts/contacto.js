@@ -1,5 +1,7 @@
 // Formulario de contacto -> Web3Forms.
 // La clave de acceso es pública por diseño: va en el navegador (PUBLIC_WEB3FORMS_KEY).
+import { evento } from './conversiones.js'
+
 const ENDPOINT = 'https://api.web3forms.com/submit'
 const DOH = 'https://cloudflare-dns.com/dns-query'
 
@@ -98,6 +100,7 @@ export function conectar(form, { clave = import.meta.env?.PUBLIC_WEB3FORMS_KEY ?
     if (r.ok) {
       form.reset()
       mostrar(mensajes.ok, 'ok')
+      evento('generate_lead', { method: 'formulario' })
     } else {
       mostrar(mensajes.error, 'error')
     }
