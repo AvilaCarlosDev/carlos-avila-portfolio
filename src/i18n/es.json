@@ -3,7 +3,7 @@
   "htmlLang": "es",
   "meta": {
     "title": "Avilacarlosdev · Del problema a la solución",
-    "description": "Carlos Avila, developer en Venezuela: webs y apps para negocios que quieren más clientes, con React, Node, Supabase e IA. Proyectos con pruebas y CV."
+    "description": "Carlos Avila, Full Stack Developer con IA en Venezuela: webs y apps para negocios que quieren más clientes, con React, Node, Supabase e IA. Proyectos con pruebas y CV."
   },
   "nav": {
     "ariaLabel": "Navegación principal",
@@ -36,7 +36,7 @@
     "current": "ES"
   },
   "hero": {
-    "eyebrow": "Desarrollador full stack · Venezuela",
+    "eyebrow": "Full Stack Developer · IA · Venezuela",
     "titleBefore": "Del problema a la",
     "titleEm": "solución.",
     "sub": "Construyo apps y webs que resuelven problemas reales. Para equipos que buscan un desarrollador y para negocios que necesitan vender en línea.",
