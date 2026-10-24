@@ -12,6 +12,10 @@ const c = t.consentimiento
 </div>
 <script>
   import { iniciar } from '../scripts/consentimiento.js'
+  import { escuchar } from '../scripts/conversiones.js'
   const aviso = document.querySelector('.consentimiento')
-  if (aviso) iniciar(aviso, aviso.dataset.ga)
+  if (aviso) {
+    iniciar(aviso, aviso.dataset.ga)
+    escuchar()
+  }
 </script>
