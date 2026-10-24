@@ -393,6 +393,11 @@
           ]
         },
         {
+          "h": "Do you also build phone apps?",
+          "p": "Yes. I build apps that install on Android and iPhone straight from the browser, without going through an app store, like Forja. They open full screen, with their own icon on the phone.",
+          "list": []
+        },
+        {
           "h": "How much does it cost?",
           "p": "I'll quote you on WhatsApp once I understand what you need.",
           "list": []
