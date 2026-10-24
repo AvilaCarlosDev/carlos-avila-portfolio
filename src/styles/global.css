@@ -44,7 +44,7 @@ img { max-width: 100%; height: auto; }
 }
 .site-header .wrap { height: 100%; display: flex; align-items: center; gap: 22px; }
 .brand { display: flex; align-items: center; gap: 9px; font-weight: 700; font-size: 15px; margin-right: auto; }
-.brand img { width: 26px; height: 26px; border-radius: 6px; image-rendering: pixelated; }
+.brand img { width: 50px; height: 26px; }
 .site-nav { display: flex; gap: 20px; font-size: 13.5px; color: var(--mute); }
 .site-nav a:hover { color: var(--ink); }
 .lang { display: flex; gap: 6px; font-family: var(--mono); font-size: 12px; color: var(--mute); }
