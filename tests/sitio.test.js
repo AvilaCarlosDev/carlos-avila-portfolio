@@ -127,10 +127,9 @@ describe('página de inicio: contenido y accesibilidad', () => {
       }
       expect(doc.querySelector('#form-contacto').getAttribute('data-messages')).toContain('correoFalso')
       const descargas = doc.querySelectorAll('a[download]').map((a) => a.getAttribute('href'))
-      // enlace rápido en «Quién soy» + miniatura + botón principal (idioma de la página) y botón secundario (el otro idioma)
+      // miniatura + botón principal (idioma de la página) y botón secundario (el otro idioma)
       const [principal, secundario] = nombre === 'ES' ? ['ES', 'EN'] : ['EN', 'ES']
-      expect(descargas.sort()).toEqual([`/Carlos-Avila-CV-${principal}.pdf`, `/Carlos-Avila-CV-${principal}.pdf`, `/Carlos-Avila-CV-${principal}.pdf`, `/Carlos-Avila-CV-${secundario}.pdf`].sort())
-      expect(doc.querySelector('#quien-soy a[download]')?.getAttribute('href')).toBe(`/Carlos-Avila-CV-${principal}.pdf`)
+      expect(descargas.sort()).toEqual([`/Carlos-Avila-CV-${principal}.pdf`, `/Carlos-Avila-CV-${principal}.pdf`, `/Carlos-Avila-CV-${secundario}.pdf`].sort())
       const cambio = doc.querySelector('.lang a')
       expect(cambio.getAttribute('href')).toBe(archivo === 'index.html' ? '/en/' : '/')
     })

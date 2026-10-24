@@ -117,7 +117,6 @@ section.wrap { padding-top: 84px; }
 .cliente h4 { font-size: 22px; margin: 6px 0 8px; }
 .cliente p { color: var(--mute); margin: 0 0 14px; max-width: 70ch; }
 .estado-cliente { font-family: var(--mono); font-size: 12px; color: var(--blue); letter-spacing: 0.04em; text-transform: uppercase; }
-.cv-rapido { margin-top: 22px; }
 .correo { font-family: var(--mono); color: var(--blue); }
 .incluye, .pasos { margin: 0; padding-left: 20px; display: grid; gap: 6px; font-size: 15px; }
 .incluye { list-style: '✓  '; }
