@@ -161,6 +161,16 @@ describe('archivos del sitio', () => {
     expect(new Date(exp).getTime()).toBeGreaterThan(Date.now())
   })
 
+  it('/links/ (enlace de la bio) no se indexa, no está en el sitemap y lleva a negocio y a empresas', () => {
+    const doc = parse(leer('links/index.html'))
+    expect(doc.querySelector('meta[name="robots"]').getAttribute('content')).toMatch(/noindex/)
+    expect(leer('sitemap.xml')).not.toContain('/links/')
+    expect(doc.querySelectorAll('h1')).toHaveLength(1)
+    const hrefs = doc.querySelectorAll('.camino').map((a) => a.getAttribute('href'))
+    expect(hrefs[0]).toMatch(/^https:\/\/wa\.me\/13464919344\?text=/)
+    expect(hrefs[1]).toBe('/#cv')
+  })
+
   it('la 404 no se indexa', () => {
     expect(parse(leer('404.html')).querySelector('meta[name="robots"]').getAttribute('content')).toMatch(/noindex/)
   })
