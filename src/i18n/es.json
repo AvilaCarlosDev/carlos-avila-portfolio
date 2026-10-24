@@ -274,7 +274,12 @@
           "h": "Tus derechos",
           "p": "Puedes pedir acceso, corrección o eliminación de tus datos escribiéndome al correo indicado arriba."
         }
-      ]
+      ],
+      "analitica": {
+        "recojo": "Los que escribes en el formulario de contacto (nombre, correo y mensaje) y, solo si aceptas el aviso de analítica, datos estadísticos de uso que registra Google Analytics: páginas vistas, país aproximado, dispositivo y de dónde llegaste. Si lo rechazas o no respondes, Google Analytics no se carga.",
+        "h": "Analítica (Google Analytics)",
+        "p": "Uso Google Analytics 4 solo con tu permiso, para saber qué páginas interesan y cómo llegan las visitas. Guarda cookies propias de Google y no lo uso para publicidad personalizada. Para cambiar tu decisión, borra los datos de este sitio en tu navegador y el aviso volverá a aparecer."
+      }
     },
     "notFound": {
       "title": "Página no encontrada",
@@ -332,5 +337,12 @@
       "IA y agentes (MCP)"
     ]
   },
-  "whatsapp": "https://wa.me/584246223267"
+  "whatsapp": "https://wa.me/584246223267",
+  "consentimiento": {
+    "label": "Aviso de analítica",
+    "text": "¿Me dejas medir las visitas con Google Analytics? Solo se activa si aceptas.",
+    "link": "Más información",
+    "accept": "Aceptar",
+    "reject": "Rechazar"
+  }
 }

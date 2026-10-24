@@ -330,3 +330,18 @@ describe('accesibilidad y redacción', () => {
     expect(es).not.toMatch(/\b(buscás|tenés|podés|querés|sabés|escribí|ejecutá|mirá)\b/)
   })
 })
+
+// La política de privacidad promete "sin cookies ni analítica" mientras no haya PUBLIC_GA_ID.
+// Si se configura el ID, la política cambia sola (Legal.astro) y el aviso de consentimiento aparece.
+describe.skipIf(process.env.PUBLIC_GA_ID)('privacidad: sin ID de Google no hay rastreo', () => {
+  it.each(PAGINAS)('$path no carga Google ni muestra el aviso de analítica', ({ archivo }) => {
+    const html = leer(archivo)
+    expect(html).not.toMatch(/googletagmanager|google-analytics/)
+    expect(parse(html).querySelector('.consentimiento')).toBeNull()
+  })
+
+  it('la política sigue diciendo que el sitio no usa cookies', () => {
+    expect(leer('privacidad/index.html')).toContain('no usa cookies')
+    expect(leer('en/privacy/index.html')).toContain('uses no cookies')
+  })
+})

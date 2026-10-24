@@ -4,10 +4,14 @@ import '@fontsource/instrument-serif/400-italic.css'
 import '@fontsource-variable/inter'
 import '@fontsource/jetbrains-mono/500.css'
 import '../styles/global.css'
+import Consentimiento from '../components/Consentimiento.astro'
 
 // alternates: URLs relativas de la misma página en cada idioma, p. ej. { es: '/', en: '/en/' }
 const { t, path, title = t.meta.title, description = t.meta.description, alternates = { es: '/', en: '/en/' }, noindex = false } = Astro.props
 const sitio = Astro.site.origin
+// Google: ID de GA4 y código de verificación de Search Console. Vacíos = sin analítica ni etiqueta.
+const gaId = import.meta.env.PUBLIC_GA_ID ?? ''
+const verificacion = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION ?? ''
 const abs = (p) => new URL(p, sitio).href
 const url = abs(path)
 const og = abs('/og.jpg')
@@ -36,6 +40,7 @@ const grafo = { '@context': 'https://schema.org', '@graph': [persona, web] }
     <meta name="description" content={description} />
     <meta name="author" content="Carlos Avila" />
     <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
+    {verificacion && <meta name="google-site-verification" content={verificacion} />}
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <link rel="canonical" href={url} />
     <link rel="alternate" hreflang="es" href={abs(alternates.es)} />
@@ -68,5 +73,6 @@ const grafo = { '@context': 'https://schema.org', '@graph': [persona, web] }
   </head>
   <body>
     <slot />
+    {gaId && <Consentimiento t={t} id={gaId} />}
   </body>
 </html>

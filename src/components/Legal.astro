@@ -4,13 +4,18 @@ import Header from './Header.astro'
 import Footer from './Footer.astro'
 const { t, path, alternates, switchHref } = Astro.props
 const l = t.legal.privacidad
+// Con analítica activa (PUBLIC_GA_ID), la política lo declara: cambia "qué datos recojo" y añade su sección.
+const conAnalitica = Boolean(import.meta.env.PUBLIC_GA_ID)
+const secciones = conAnalitica
+  ? l.sections.flatMap((s, i) => (i === 1 ? [{ ...s, p: l.analitica.recojo }, { h: l.analitica.h, p: l.analitica.p }] : [s]))
+  : l.sections
 ---
 <Base t={t} path={path} title={l.metaTitle} description={l.metaDescription} alternates={alternates}>
   <Header t={t} switchHref={switchHref} home={false} />
   <main id="contenido" class="legal">
     <h1>{l.title}</h1>
     <p class="actualizado">{l.updated}</p>
-    {l.sections.map((s) => (<section><h2>{s.h}</h2><p>{s.p}</p></section>))}
+    {secciones.map((s) => (<section><h2>{s.h}</h2><p>{s.p}</p></section>))}
     <a class="btn line volver" href={t.legal.homeHref}>← {t.legal.homeLabel}</a>
   </main>
   <Footer t={t} />
