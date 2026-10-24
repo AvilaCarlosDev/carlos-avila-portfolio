@@ -14,12 +14,14 @@ const proyectos = [
   { nombre: 'Webs de ejemplo', texto: 'Seis demos por rubro que reciben clientes por WhatsApp', href: '/#negocios' },
 ]
 const redes = [
-  { nombre: 'Instagram', href: 'https://www.instagram.com/avilacarlosdev' },
   { nombre: 'LinkedIn', href: 'https://www.linkedin.com/in/avilacarlosdev' },
-  { nombre: 'GitHub', href: 'https://github.com/AvilaCarlosDev' },
-  { nombre: 'X', href: 'https://x.com/AvilaCarlosDev' },
-  { nombre: 'Bluesky', href: 'https://bsky.app/profile/avilacarlosdev.bsky.social' },
+  { nombre: 'Instagram', href: 'https://www.instagram.com/avilacarlosdev' },
   { nombre: 'Facebook', href: 'https://www.facebook.com/AvilaCarlosDev' },
+  { nombre: 'X', href: 'https://x.com/AvilaCarlosDev' },
+  { nombre: 'Threads', href: 'https://www.threads.com/@avilacarlosdev' },
+  { nombre: 'Bluesky', href: 'https://bsky.app/profile/avilacarlosdev.bsky.social' },
+  { nombre: 'Página de Facebook', href: 'https://www.facebook.com/profile.php?id=61595597465729' },
+  { nombre: 'GitHub', href: 'https://github.com/AvilaCarlosDev' },
 ]
 const externo = (href) => href.startsWith('http')
 ---
@@ -60,10 +62,11 @@ const externo = (href) => href.startsWith('http')
       ))}
     </ul>
 
-    <p class="redes">
+    <h2>Redes</h2>
+    <nav class="redes" aria-label="Redes">
       {redes.map((r) => <a href={r.href} target="_blank" rel="noopener">{r.nombre}</a>)}
-      <a href="/">avilacarlosdev.com</a>
-    </p>
+    </nav>
+    <p class="web"><a href="/">avilacarlosdev.com</a></p>
   </main>
 </Base>
 
@@ -83,6 +86,9 @@ const externo = (href) => href.startsWith('http')
   .proyectos a:hover { border-color: var(--blue); }
   .proyectos b { display: block; font-size: 16px; }
   .proyectos span { font-size: 14px; color: var(--mute); }
-  .redes { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 18px; font-size: 14px; }
-  .redes a { color: var(--mute); }
+  .redes { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 28px; }
+  .redes a { display: block; padding: 11px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--ink); text-decoration: none; font-size: 15px; font-weight: 500; }
+  .redes a:hover { border-color: var(--blue); }
+  .web { font-size: 14px; }
+  .web a { color: var(--mute); }
 </style>
