@@ -5,7 +5,7 @@
 [![CI](https://github.com/AvilaCarlosDev/carlos-avila-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/AvilaCarlosDev/carlos-avila-portfolio/actions/workflows/ci.yml)
 [![Licencia: MIT](https://img.shields.io/badge/licencia-MIT-blue.svg)](LICENSE)
 
-Portafolio de **Carlos Avila** (desarrollador, especialista en soporte a la comunidad y mentor senior en 4Geeks Academy). Un sitio corto con cuatro bloques: quién soy, proyectos, mi CV descargable y un formulario de contacto que solo acepta correos reales.
+Portafolio de **Carlos Avila** (developer: webs y apps para negocios, con React, Node, Supabase e IA). Un sitio corto con cuatro bloques: quién soy, proyectos, mi CV descargable y un formulario de contacto que solo acepta correos reales.
 
 **Sitio:** <https://avilacarlosdev.com> · **CV:** [español](public/Carlos-Avila-CV-ES.pdf) · [inglés](public/Carlos-Avila-CV-EN.pdf)
 

@@ -5,7 +5,7 @@
 [![CI](https://github.com/AvilaCarlosDev/carlos-avila-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/AvilaCarlosDev/carlos-avila-portfolio/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-Portfolio of **Carlos Avila** (developer, community support specialist and senior mentor at 4Geeks Academy). A short site with four blocks: who I am, projects, my downloadable CV and a contact form that only accepts real emails.
+Portfolio of **Carlos Avila** (developer: websites and apps for businesses, with React, Node, Supabase and AI). A short site with four blocks: who I am, projects, my downloadable CV and a contact form that only accepts real emails.
 
 **Site:** <https://avilacarlosdev.com> · **CV:** [Spanish](public/Carlos-Avila-CV-ES.pdf) · [English](public/Carlos-Avila-CV-EN.pdf)
 

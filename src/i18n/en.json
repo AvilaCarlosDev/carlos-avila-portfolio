@@ -3,7 +3,7 @@
   "htmlLang": "en",
   "meta": {
     "title": "Avilacarlosdev · From problem to solution",
-    "description": "Carlos Avila, full stack developer in Venezuela: apps and websites for teams and businesses. Mentor at 4Geeks Academy. Tested projects and CV."
+    "description": "Carlos Avila, developer in Venezuela: websites and apps for businesses that want more clients, with React, Node, Supabase and AI. Tested projects and CV."
   },
   "nav": {
     "ariaLabel": "Main navigation",
@@ -268,17 +268,17 @@
   "quien": {
     "title": "Who I am",
     "paragraphs": [
-      "I am Carlos, a Venezuelan developer. Today I work at 4Geeks Academy as a Community & Public Support Specialist and senior mentor: I support programming students and answer their technical questions.",
+      "I am Carlos, a Venezuelan developer. I build websites and apps for businesses that want more clients, with React, Node, Supabase and AI. My app Forja, for fitness coaches, is already in production.",
       "Before coding I spent years in sales and customer service and studied Medicine. That is where my way of working comes from: I listen, find the real problem and explain it clearly. I publish open source in Spanish, with tests, and automate with AI and agents."
     ],
     "facts": [
       {
         "label": "Now",
-        "value": "Community & Public Support Specialist · Senior Mentor at 4Geeks Academy"
+        "value": "Freelance developer: websites and apps for businesses"
       },
       {
         "label": "Also",
-        "value": "Freelance developer: apps and websites for businesses"
+        "value": "4Geeks Academy team, working with programming students"
       },
       {
         "label": "Location",
