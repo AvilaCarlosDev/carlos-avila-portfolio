@@ -2,7 +2,7 @@
   "lang": "es",
   "htmlLang": "es",
   "meta": {
-    "title": "Avilacarlosdev · Del problema a la solución",
+    "title": "Carlos Avila · Developer full stack, homelab e IA local",
     "description": "Carlos Avila, Full Stack Developer · IA en Venezuela: webs y apps con React, Node y Supabase para negocios que quieren más clientes. Proyectos y CV."
   },
   "nav": {
@@ -37,9 +37,9 @@
   },
   "hero": {
     "eyebrow": "Full Stack Developer · IA · Venezuela",
-    "titleBefore": "Del problema a la",
-    "titleEm": "solución.",
-    "sub": "Construyo webs y apps con React, Node.js y Supabase, con pruebas y en producción, y monto mis propios servidores e IA local. Para empresas que buscan un developer remoto y para negocios que quieren recibir clientes por WhatsApp.",
+    "titleBefore": "Monto mis servidores, mi IA local y mis apps.",
+    "titleEm": "Después intento romperlos.",
+    "sub": "Construyo webs y apps con React, Node.js y Supabase, con pruebas y en producción. Para empresas que buscan un developer remoto y para negocios que quieren recibir clientes por WhatsApp.",
     "ctaProjects": "Ver proyectos",
     "portraitAlt": "Retrato de Carlos Avila, en blanco y negro, con los brazos cruzados",
     "ctaBusiness": "Quiero una web para mi negocio"
