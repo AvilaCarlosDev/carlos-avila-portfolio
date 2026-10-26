@@ -183,7 +183,7 @@
       },
       "priceNote": "Te digo el precio por WhatsApp después de escuchar lo que necesitas.",
       "more": {
-        "label": "Más sobre webs para negocios",
+        "label": "Páginas web para negocios en Venezuela",
         "href": "/web-para-negocios/"
       }
     },
@@ -356,12 +356,23 @@
   "paginas": {
     "webNegocios": {
       "path": "/web-para-negocios/",
-      "metaTitle": "Páginas web para negocios en Venezuela · Avilacarlosdev",
+      "metaTitle": "Páginas web para negocios en Venezuela · Punto Fijo, Falcón",
       "metaDescription": "Webs para negocios que traen clientes por WhatsApp: cada contacto queda guardado, mides tus anuncios y carga rápido en el teléfono. Hecho en Punto Fijo.",
       "eyebrow": "Servicio · Webs para negocios",
       "title": "Una web para tu negocio que te traiga clientes por WhatsApp",
-      "lead": "Soy Carlos, developer en Punto Fijo, Falcón. Hago webs para negocios de Venezuela y Latinoamérica con un objetivo claro: que la gente que te encuentra te escriba.",
+      "lead": "Soy Carlos, programador en Punto Fijo, Falcón. Hago webs para negocios de Venezuela y Latinoamérica con un objetivo claro: que la gente que te encuentra te escriba.",
       "sections": [
+        {
+          "h": "Para quién es",
+          "p": "Para negocios donde la venta empieza con una conversación:",
+          "list": [
+            "Restaurantes, comida y delivery",
+            "Barberías, peluquerías y estética",
+            "Tiendas y ferreterías",
+            "Consultorios y profesionales de la salud",
+            "Servicios a domicilio, transporte y taxi"
+          ]
+        },
         {
           "h": "Qué incluye",
           "p": "Cada web sale con lo necesario para recibir y medir contactos:",
@@ -374,9 +385,40 @@
           ]
         },
         {
-          "h": "Demos por rubro",
-          "p": "Publiqué demos de delivery, barbería, tienda deportiva, ferretería, floristería y taxi, cada una con pedidos o reservas por WhatsApp. Puedes recorrerlas en mi portafolio.",
+          "h": "¿Para qué una web si ya tengo Instagram y WhatsApp?",
+          "p": "Tu web es tuya: la dirección, el diseño y los contactos no dependen de una red social. Cada persona que te escribe queda guardada aunque se borre el chat, sabes qué anuncio te la trajo y Google puede mostrarla cuando alguien busca lo que vendes.",
           "list": []
+        },
+        {
+          "h": "Demos por rubro",
+          "p": "Publiqué demos de varios rubros, cada una con pedidos o reservas por WhatsApp. Puedes abrirlas y probarlas:",
+          "list": [],
+          "links": [
+            {
+              "label": "Demo de web para delivery",
+              "href": "https://agencia-web-delivery-demo.vercel.app/"
+            },
+            {
+              "label": "Demo de web para barbería",
+              "href": "https://agencia-web-barberia-demo.vercel.app/"
+            },
+            {
+              "label": "Demo de web para tienda deportiva",
+              "href": "https://agencia-web-deportes-demo.vercel.app/"
+            },
+            {
+              "label": "Demo de web para ferretería",
+              "href": "https://agencia-web-ferreteria-demo.vercel.app/"
+            },
+            {
+              "label": "Demo de web para floristería",
+              "href": "https://agencia-web-floristeria-demo.vercel.app/"
+            },
+            {
+              "label": "Demo de web para taxi",
+              "href": "https://agencia-web-taxi-demo.vercel.app/"
+            }
+          ]
         },
         {
           "h": "Un cliente real",
@@ -393,9 +435,35 @@
           ]
         },
         {
+          "h": "Qué necesito de ti para empezar",
+          "p": "Con esto armo la primera propuesta. Si te falta algo, lo resolvemos juntos.",
+          "list": [
+            "Tu logo y colores, si ya los tienes",
+            "Fotos de tus productos, tu local o tu trabajo",
+            "Tus servicios, horarios y zona de entrega o atención",
+            "El número de WhatsApp donde quieres recibir los mensajes"
+          ]
+        },
+        {
+          "h": "¿Voy a aparecer en Google?",
+          "p": "Tu web sale preparada para que Google la lea bien. Cada página lleva su título y su descripción, la web tiene un mapa del sitio y carga rápido en el teléfono. Si la necesitas en otro idioma, también se puede. Además te ayudo a crear tu Perfil de Empresa en Google para que salgas en Maps. El primer lugar no te lo prometo. Eso depende de tu competencia y del tiempo.",
+          "list": []
+        },
+        {
+          "h": "¿El dominio es mío?",
+          "p": "Te recomiendo que el dominio (tunegocio.com) quede registrado a tu nombre, y te ayudo a hacerlo. Así la dirección de tu web es tuya, trabajes conmigo o no.",
+          "list": []
+        },
+        {
           "h": "¿También haces apps para el teléfono?",
           "p": "Sí. Hago apps que se instalan en Android y iPhone directo desde el navegador, sin pasar por la tienda, como Forja. Abren a pantalla completa, con su ícono en el teléfono.",
-          "list": []
+          "list": [],
+          "links": [
+            {
+              "label": "Caso de Forja, app instalable",
+              "href": "/casos/forja/"
+            }
+          ]
         },
         {
           "h": "¿Cuánto cuesta?",
@@ -413,26 +481,40 @@
         "href": "/#negocios"
       },
       "cta": "Cotiza por WhatsApp",
-      "ctaText": "Hola Carlos, vi tu portafolio y quiero una web para mi negocio."
+      "ctaText": "Hola Carlos, vi tu portafolio y quiero una web para mi negocio.",
+      "schema": {
+        "@type": "Service",
+        "serviceType": "Diseño de páginas web para negocios",
+        "name": "Una web para tu negocio que te traiga clientes por WhatsApp",
+        "areaServed": [
+          "Venezuela",
+          "Latinoamérica"
+        ]
+      }
     },
     "forja": {
       "path": "/casos/forja/",
-      "metaTitle": "Forja: app para entrenadores personales · Avilacarlosdev",
+      "metaTitle": "Forja: app para entrenadores personales (React + Supabase)",
       "metaDescription": "Caso de Forja, la app que hice para entrenadores personales: rutinas, dieta, medidas y cobros con React y Supabase. En producción y con 160 pruebas.",
       "eyebrow": "Caso · Producto propio",
       "title": "Forja, la app para entrenadores personales",
       "lead": "Forja es mi producto y está en producción. Con ella, un entrenador personal lleva a todos sus clientes desde el teléfono: qué entrena cada uno, qué come, cómo avanza y quién le debe.",
       "sections": [
         {
+          "h": "El problema",
+          "p": "Muchos entrenadores personales llevan a sus clientes entre chats, hojas de cálculo y notas. La rutina va en un mensaje y la dieta en un PDF. Las medidas quedan en una libreta y los cobros de memoria. Cuando los clientes aumentan, algo se pierde. Forja junta todo en un solo lugar.",
+          "list": []
+        },
+        {
           "h": "Qué hace",
           "p": "El entrenador y su cliente usan la misma app, cada uno con lo suyo:",
           "list": [
-            "El coach asigna rutinas con la animación de cada ejercicio",
-            "Arma la dieta de cada cliente",
-            "Carga medidas y ve la evolución en gráficas",
-            "Lleva sus cobros",
+            "El entrenador asigna rutinas con la animación de cada ejercicio",
+            "El entrenador arma la dieta de cada cliente",
+            "El entrenador carga medidas y ve la evolución en gráficas",
+            "El entrenador lleva sus cobros",
             "El cliente recibe avisos y entrena lo que le toca",
-            "Se instala en el teléfono como una app (PWA)"
+            "Los dos la instalan en el teléfono como una app (PWA)"
           ]
         },
         {
@@ -442,17 +524,49 @@
             "160 pruebas propias",
             "109 pruebas de permisos",
             "13 migraciones de base de datos"
+          ],
+          "links": [
+            {
+              "label": "Código de Forja en GitHub",
+              "href": "https://github.com/AvilaCarlosDev/Forja"
+            }
           ]
         },
         {
-          "h": "Planes",
+          "h": "Decisiones técnicas",
+          "p": "Las decisiones que más pesaron, y por qué:",
+          "list": [
+            "Los permisos se comprueban en la base de datos, además de en la pantalla. Aunque alguien manipule la app, Supabase no le entrega datos ajenos.",
+            "Permisos por columna. Una revisión de seguridad encontró que un perfil entregaba más campos de los necesarios, y lo cerré en la base de datos.",
+            "App instalable desde el navegador (PWA): sin tiendas ni esperas de aprobación, y cada mejora llega a todos al publicarla",
+            "Cada cambio de la base de datos va en una migración numerada, así se puede reconstruir y revisar"
+          ]
+        },
+        {
+          "h": "Lo que aprendí en producción",
+          "p": "Una vez se publicó por error una versión vieja de la app. Chocó con los permisos nuevos y los usuarios veían «No tienes permiso». El atajo era abrir el permiso, pero eso deshacía la corrección de seguridad. Lo resolví publicando la versión correcta y até producción a una sola rama para que no vuelva a pasar.",
+          "list": []
+        },
+        {
+          "h": "¿Cuánto cuesta Forja?",
           "p": "Gratis hasta 5 clientes. El plan Pro no tiene límite de clientes.",
+          "list": []
+        },
+        {
+          "h": "Lo que viene",
+          "p": "El siguiente paso es un coach con IA para quienes entrenan sin entrenador, incluido en un plan pago.",
           "list": []
         },
         {
           "h": "Qué te dice de mi trabajo",
           "p": "Puedo llevar una app de la idea a producción: diseño, base de datos, permisos, pruebas y publicación. Si tienes un negocio que necesita su propia app, este es el tipo de trabajo que hago.",
-          "list": []
+          "list": [],
+          "links": [
+            {
+              "label": "Páginas web para negocios",
+              "href": "/web-para-negocios/"
+            }
+          ]
         }
       ],
       "link": {
@@ -460,7 +574,22 @@
         "href": "https://forja-trainer.vercel.app/"
       },
       "cta": "Hablemos de tu app",
-      "ctaText": "Hola Carlos, vi el caso de Forja y quiero hablar de una app."
+      "ctaText": "Hola Carlos, vi el caso de Forja y quiero hablar de una app.",
+      "ogTipo": "article",
+      "schema": {
+        "@type": "SoftwareApplication",
+        "name": "Forja",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, Android, iOS",
+        "inLanguage": "es",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "Gratis hasta 5 clientes"
+        },
+        "sameAs": "https://forja-trainer.vercel.app/"
+      }
     }
   }
 }

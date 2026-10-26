@@ -183,7 +183,7 @@
       },
       "priceNote": "I'll quote you on WhatsApp once I understand what you need.",
       "more": {
-        "label": "More about websites for business",
+        "label": "Websites for small businesses",
         "href": "/en/websites-for-business/"
       }
     },
@@ -356,12 +356,23 @@
   "paginas": {
     "webNegocios": {
       "path": "/en/websites-for-business/",
-      "metaTitle": "Websites for small businesses · Avilacarlosdev",
+      "metaTitle": "WhatsApp Websites for Small Businesses in Latin America",
       "metaDescription": "Websites that bring customers through WhatsApp: every lead is saved, your ads are measured and it loads fast on any phone. Built from Venezuela, remote.",
       "eyebrow": "Service · Websites for business",
       "title": "A website for your business that brings customers through WhatsApp",
-      "lead": "I am Carlos, a developer in Punto Fijo, Venezuela. I build websites for businesses in Venezuela and Latin America with one clear goal: people who find you, message you.",
+      "lead": "I'm Carlos, a developer in Punto Fijo, Venezuela. I build websites for businesses in Venezuela and Latin America with one clear goal: people who find you, message you.",
       "sections": [
+        {
+          "h": "Who it is for",
+          "p": "For businesses where a sale starts with a conversation:",
+          "list": [
+            "Restaurants, food and delivery",
+            "Barbershops, hair and beauty salons",
+            "Shops and hardware stores",
+            "Clinics and health professionals",
+            "Home services, transport and taxis"
+          ]
+        },
         {
           "h": "What is included",
           "p": "Every site ships with what you need to receive and measure leads:",
@@ -374,9 +385,40 @@
           ]
         },
         {
-          "h": "Demos by industry",
-          "p": "I published demos for delivery, a barbershop, a sports store, a hardware store, a florist and a taxi service, each with orders or bookings through WhatsApp. You can browse them on my portfolio.",
+          "h": "Why a website if I already have Instagram and WhatsApp?",
+          "p": "Your website is yours: the address, the design and the leads don't depend on a social network. Everyone who writes to you is saved even if the chat gets deleted, you know which ad brought them, and Google can show you when someone searches for what you sell.",
           "list": []
+        },
+        {
+          "h": "Demos by industry",
+          "p": "I published demos for several industries, each with orders or bookings through WhatsApp. You can open and try them:",
+          "list": [],
+          "links": [
+            {
+              "label": "Website demo for a delivery",
+              "href": "https://agencia-web-delivery-demo.vercel.app/"
+            },
+            {
+              "label": "Website demo for a barbershop",
+              "href": "https://agencia-web-barberia-demo.vercel.app/"
+            },
+            {
+              "label": "Website demo for a sports store",
+              "href": "https://agencia-web-deportes-demo.vercel.app/"
+            },
+            {
+              "label": "Website demo for a hardware store",
+              "href": "https://agencia-web-ferreteria-demo.vercel.app/"
+            },
+            {
+              "label": "Website demo for a florist",
+              "href": "https://agencia-web-floristeria-demo.vercel.app/"
+            },
+            {
+              "label": "Website demo for a taxi service",
+              "href": "https://agencia-web-taxi-demo.vercel.app/"
+            }
+          ]
         },
         {
           "h": "A real client",
@@ -393,9 +435,35 @@
           ]
         },
         {
+          "h": "What I need from you to start",
+          "p": "This is what I use to put together the first proposal. If something's missing, we'll sort it out together.",
+          "list": [
+            "Your logo and colors, if you have them",
+            "Photos of your products, your place or your work",
+            "Your services, hours and delivery or service area",
+            "The WhatsApp number where you want to receive messages"
+          ]
+        },
+        {
+          "h": "Will I show up on Google?",
+          "p": "Your site is built so Google can read it properly. Every page has its own title and description, there's a sitemap, and it loads fast on phones. If you need it in a second language, that's covered too. I'll also help you set up your Google Business Profile so you show up on Maps. I won't promise you the top spot. That depends on your competition and on time.",
+          "list": []
+        },
+        {
+          "h": "Is the domain mine?",
+          "p": "I recommend registering the domain (yourbusiness.com) in your name, and I'll help you do it. That way your web address is yours, whether you keep working with me or not.",
+          "list": []
+        },
+        {
           "h": "Do you also build phone apps?",
           "p": "Yes. I build apps that install on Android and iPhone straight from the browser, without going through an app store, like Forja. They open full screen, with their own icon on the phone.",
-          "list": []
+          "list": [],
+          "links": [
+            {
+              "label": "Forja case study, an installable app",
+              "href": "/en/case-studies/forja/"
+            }
+          ]
         },
         {
           "h": "How much does it cost?",
@@ -413,46 +481,92 @@
         "href": "/en/#negocios"
       },
       "cta": "Get a quote on WhatsApp",
-      "ctaText": "Hi Carlos, I saw your portfolio and I'd like a website for my business."
+      "ctaText": "Hi Carlos, I saw your portfolio and I'd like a website for my business.",
+      "schema": {
+        "@type": "Service",
+        "serviceType": "Website design for small businesses",
+        "name": "A website for your business that brings customers through WhatsApp",
+        "areaServed": [
+          "Venezuela",
+          "Latin America"
+        ]
+      }
     },
     "forja": {
       "path": "/en/case-studies/forja/",
-      "metaTitle": "Forja: an app for personal trainers · Avilacarlosdev",
+      "metaTitle": "Forja case study: personal trainer app, React + Supabase",
       "metaDescription": "Case study of Forja, the app I built for personal trainers: workouts, diet, measurements and payments with React and Supabase. In production, 160 tests.",
       "eyebrow": "Case study · My own product",
       "title": "Forja, the app for personal trainers",
       "lead": "Forja is my product and it is in production. A personal trainer runs every client from their phone: what each one trains, what they eat, how they progress and who owes a payment.",
       "sections": [
         {
+          "h": "The problem",
+          "p": "A lot of personal trainers run their clients out of chats, spreadsheets and notes. The workout goes out in a message and the diet in a PDF. Measurements end up in a notebook and payments live in their head. As the client list grows, things slip. Forja puts it all in one place.",
+          "list": []
+        },
+        {
           "h": "What it does",
           "p": "Trainer and client use the same app, each with their own view:",
           "list": [
-            "The coach assigns workouts with an animation of each exercise",
-            "Builds each client's diet",
-            "Logs measurements and sees progress in charts",
-            "Tracks payments",
+            "The trainer assigns workouts with an animation of each exercise",
+            "The trainer builds each client's diet",
+            "The trainer logs measurements and sees progress in charts",
+            "The trainer tracks payments",
             "The client gets notifications and trains what is due",
-            "Installs on the phone like an app (PWA)"
+            "Both install it on their phone like an app (PWA)"
           ]
         },
         {
           "h": "How it is built",
           "p": "React on the front and Supabase with row level security behind it: each person can only see their own data, and automated tests check it.",
           "list": [
-            "160 tests of its own",
+            "160 automated tests",
             "109 permission tests",
             "13 database migrations"
+          ],
+          "links": [
+            {
+              "label": "Forja source code on GitHub",
+              "href": "https://github.com/AvilaCarlosDev/Forja"
+            }
           ]
         },
         {
-          "h": "Plans",
+          "h": "Technical decisions",
+          "p": "The decisions that mattered most, and why:",
+          "list": [
+            "Permissions are enforced in the database as well as on screen. Even if someone tampers with the app, Supabase won't hand over someone else's data.",
+            "Column-level permissions. A security review found a profile was returning more fields than it needed, so I locked it down in the database.",
+            "Installable from the browser (PWA): no app stores or approval waits, and every improvement reaches everyone on release",
+            "Every database change ships as a numbered migration, so it can be rebuilt and reviewed"
+          ]
+        },
+        {
+          "h": "What production taught me",
+          "p": "An old version of the app was once published by mistake. It clashed with the new permissions, and users started seeing \"You don't have permission.\" The quick fix would have been to loosen the permission, but that would have undone the security fix. Instead I released the right version and tied production to a single branch so it doesn't happen again.",
+          "list": []
+        },
+        {
+          "h": "How much does Forja cost?",
           "p": "Free for up to 5 clients. The Pro plan has no client limit.",
+          "list": []
+        },
+        {
+          "h": "What's next",
+          "p": "The next step is an AI coach for people who train without a trainer, included in a paid plan.",
           "list": []
         },
         {
           "h": "What it says about my work",
           "p": "I can take an app from idea to production: design, database, permissions, tests and release. If your business needs its own app, this is the kind of work I do.",
-          "list": []
+          "list": [],
+          "links": [
+            {
+              "label": "Websites for small businesses",
+              "href": "/en/websites-for-business/"
+            }
+          ]
         }
       ],
       "link": {
@@ -460,7 +574,22 @@
         "href": "https://forja-trainer.vercel.app/"
       },
       "cta": "Let's talk about your app",
-      "ctaText": "Hi Carlos, I saw the Forja case study and want to talk about an app."
+      "ctaText": "Hi Carlos, I saw the Forja case study and want to talk about an app.",
+      "ogTipo": "article",
+      "schema": {
+        "@type": "SoftwareApplication",
+        "name": "Forja",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, Android, iOS",
+        "inLanguage": "en",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "Free for up to 5 clients"
+        },
+        "sameAs": "https://forja-trainer.vercel.app/"
+      }
     }
   }
 }
