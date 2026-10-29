@@ -25,6 +25,7 @@
     "globals": "17.12.0",
     "node-html-parser": "9.0.4",
     "playwright-core": "1.63.0",
+    "simple-icons": "16.35.0",
     "vitest": "5.0.2"
   },
   "engines": {

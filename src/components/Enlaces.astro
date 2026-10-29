@@ -5,6 +5,10 @@
 import { Image } from 'astro:assets'
 import Base from '../layouts/Base.astro'
 import retrato from '../assets/retrato.jpg'
+import { siInstagram, siFacebook, siX, siThreads, siBluesky, siTiktok, siWhatsapp, siGithub, siBuymeacoffee } from 'simple-icons'
+
+// simple-icons ya no trae LinkedIn (lo retiró a pedido de la marca): este es su logo oficial.
+const siLinkedin = { hex: '0A66C2', path: 'M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z' }
 
 const { t } = Astro.props
 const textos = {
@@ -22,7 +26,7 @@ const textos = {
     proyectos: 'Proyectos',
     redes: 'Redes',
     pagina: 'Página de Facebook',
-    cafe: 'Invítame un café ☕',
+    cafe: 'Invítame un café',
     lista: [
       { nombre: 'Forja', texto: 'App para entrenadores, en producción, con 109 pruebas de permisos', href: '/casos/forja/' },
       { nombre: 'polaris-local-ai', texto: 'IA local en una RX 580 de 8 GB, con benchmarks medidos', href: 'https://github.com/AvilaCarlosDev/polaris-local-ai' },
@@ -44,7 +48,7 @@ const textos = {
     proyectos: 'Projects',
     redes: 'Social',
     pagina: 'Facebook Page',
-    cafe: 'Buy me a coffee ☕',
+    cafe: 'Buy me a coffee',
     lista: [
       { nombre: 'Forja', texto: 'App for coaches, in production, with 109 permission tests', href: '/en/case-studies/forja/' },
       { nombre: 'polaris-local-ai', texto: 'Local AI on an 8 GB RX 580, with measured benchmarks', href: 'https://github.com/AvilaCarlosDev/polaris-local-ai' },
@@ -59,19 +63,21 @@ const inicio = t.lang === 'es' ? '/' : '/en/'
 const wa = `${t.whatsapp}?text=${encodeURIComponent(x.wa)}`
 const proyectos = x.lista
 const redes = [
-  { nombre: 'LinkedIn', href: 'https://www.linkedin.com/in/avilacarlosdev' },
-  { nombre: 'Instagram', href: 'https://www.instagram.com/avilacarlosdev' },
-  { nombre: 'Facebook', href: 'https://www.facebook.com/AvilaCarlosDev' },
-  { nombre: 'X', href: 'https://x.com/AvilaCarlosDev' },
-  { nombre: 'Threads', href: 'https://www.threads.com/@avilacarlosdev' },
-  { nombre: 'Bluesky', href: 'https://bsky.app/profile/avilacarlosdev.bsky.social' },
-  { nombre: x.pagina, href: 'https://www.facebook.com/profile.php?id=61595597465729' },
-  { nombre: 'TikTok', href: 'https://www.tiktok.com/@avilacarlosdev' },
-  { nombre: 'WhatsApp Business', href: wa },
-  { nombre: 'GitHub', href: 'https://github.com/AvilaCarlosDev' },
-  { nombre: x.cafe, href: 'https://buymeacoffee.com/avilacarlosdev' },
+  { nombre: 'LinkedIn', href: 'https://www.linkedin.com/in/avilacarlosdev', icono: siLinkedin },
+  { nombre: 'Instagram', href: 'https://www.instagram.com/avilacarlosdev', icono: siInstagram },
+  { nombre: 'Facebook', href: 'https://www.facebook.com/AvilaCarlosDev', icono: siFacebook },
+  { nombre: 'X', href: 'https://x.com/AvilaCarlosDev', icono: siX },
+  { nombre: 'Threads', href: 'https://www.threads.com/@avilacarlosdev', icono: siThreads },
+  { nombre: 'Bluesky', href: 'https://bsky.app/profile/avilacarlosdev.bsky.social', icono: siBluesky },
+  { nombre: x.pagina, href: 'https://www.facebook.com/profile.php?id=61595597465729', icono: siFacebook },
+  { nombre: 'TikTok', href: 'https://www.tiktok.com/@avilacarlosdev', icono: siTiktok },
+  { nombre: 'WhatsApp Business', href: wa, icono: siWhatsapp },
+  { nombre: 'GitHub', href: 'https://github.com/AvilaCarlosDev', icono: siGithub },
+  { nombre: x.cafe, href: 'https://buymeacoffee.com/avilacarlosdev', icono: siBuymeacoffee, clase: 'cafe' },
 ]
 const externo = (href) => href.startsWith('http')
+// Los logos negros toman el color del texto para no perderse; el café va en su botón amarillo.
+const color = (i) => (['000000', '181717', 'FFDD00'].includes(i.hex) ? 'currentColor' : `#${i.hex}`)
 ---
 <Base
   t={t}
@@ -116,7 +122,12 @@ const externo = (href) => href.startsWith('http')
 
     <h2>{x.redes}</h2>
     <nav class="redes" aria-label={x.redes}>
-      {redes.map((r) => <a href={r.href} target="_blank" rel="noopener">{r.nombre}</a>)}
+      {redes.map((r) => (
+        <a class={r.clase} href={r.href} target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d={r.icono.path} fill={color(r.icono)} /></svg>
+          {r.nombre}
+        </a>
+      ))}
     </nav>
     <p class="web"><a href={inicio}>avilacarlosdev.com</a></p>
   </main>
@@ -141,9 +152,12 @@ const externo = (href) => href.startsWith('http')
   .proyectos b { display: block; font-size: 16px; }
   .proyectos span { font-size: 14px; color: var(--mute); }
   .redes { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 28px; }
-  .redes a { display: block; padding: 11px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--ink); text-decoration: none; font-size: 15px; font-weight: 500; }
+  .redes a { display: flex; align-items: center; justify-content: center; gap: 6px; padding: 12px 8px; white-space: nowrap; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--ink); text-decoration: none; font-size: 13.5px; font-weight: 500; }
   .redes a:hover { border-color: var(--blue); }
   .redes a:last-child { grid-column: 1 / -1; }
+  .redes svg { flex: none; }
+  .redes .cafe { background: #ffdd00; border-color: #ffdd00; color: #0d0c22; }
+  .redes .cafe:hover { border-color: #0d0c22; }
   .web { font-size: 14px; }
   .web a { color: var(--mute); }
 </style>

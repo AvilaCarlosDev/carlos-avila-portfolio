@@ -180,6 +180,7 @@ describe('archivos del sitio', () => {
     expect(es.querySelector('.idioma a').getAttribute('href')).toBe('/en/links/')
     expect(en.querySelector('.idioma a').getAttribute('href')).toBe('/links/')
     expect(en.querySelectorAll('.camino')[1].getAttribute('href')).toBe('/en/#cv')
+    for (const a of es.querySelectorAll('.redes a')) expect(a.querySelector('svg path')?.getAttribute('d'), a.text).toBeTruthy()
   })
 
   it('la 404 no se indexa', () => {
