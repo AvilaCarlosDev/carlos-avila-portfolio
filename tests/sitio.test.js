@@ -171,6 +171,17 @@ describe('archivos del sitio', () => {
     expect(hrefs[1]).toBe('/#cv')
   })
 
+  it('/en/links/ es la versión en inglés y cada idioma enlaza al otro', () => {
+    const es = parse(leer('links/index.html'))
+    const en = parse(leer('en/links/index.html'))
+    expect(en.querySelector('html').getAttribute('lang')).toBe('en')
+    expect(en.querySelector('meta[name="robots"]').getAttribute('content')).toMatch(/noindex/)
+    expect(leer('sitemap.xml')).not.toContain('/en/links/')
+    expect(es.querySelector('.idioma a').getAttribute('href')).toBe('/en/links/')
+    expect(en.querySelector('.idioma a').getAttribute('href')).toBe('/links/')
+    expect(en.querySelectorAll('.camino')[1].getAttribute('href')).toBe('/en/#cv')
+  })
+
   it('la 404 no se indexa', () => {
     expect(parse(leer('404.html')).querySelector('meta[name="robots"]').getAttribute('content')).toMatch(/noindex/)
   })

@@ -1,0 +1,149 @@
+---
+// Página del enlace de la bio (Instagram, Facebook, LinkedIn): dos caminos según quién llega
+// y los proyectos que más se comparten. No se indexa: es una puerta de entrada, no contenido.
+// La usan /links/ y /en/links/; los textos de cada idioma están aquí mismo.
+import { Image } from 'astro:assets'
+import Base from '../layouts/Base.astro'
+import retrato from '../assets/retrato.jpg'
+
+const { t } = Astro.props
+const textos = {
+  es: {
+    path: '/links/',
+    title: 'Carlos Avila · enlaces',
+    description: 'Enlaces de Carlos Avila: webs y apps para negocios, CV para empresas y sus proyectos de homelab, IA local y seguridad.',
+    skip: 'Saltar al contenido',
+    retrato: 'Retrato de Carlos Avila',
+    entrada: 'Monto mis propios servidores, mi IA local y mis apps. Después intento romperlos.',
+    caminos: 'Qué buscas',
+    wa: 'Hola Carlos, vengo de tus redes y quiero hablar de mi negocio.',
+    negocio: ['Tengo un negocio', 'Cuéntame qué vendes y te digo qué web o app haría'],
+    empresa: ['Busco developer', 'CV, proyectos con cifras y contacto'],
+    proyectos: 'Proyectos',
+    redes: 'Redes',
+    pagina: 'Página de Facebook',
+    cafe: 'Invítame un café ☕',
+    lista: [
+      { nombre: 'Forja', texto: 'App para entrenadores, en producción, con 109 pruebas de permisos', href: '/casos/forja/' },
+      { nombre: 'polaris-local-ai', texto: 'IA local en una RX 580 de 8 GB, con benchmarks medidos', href: 'https://github.com/AvilaCarlosDev/polaris-local-ai' },
+      { nombre: 'apis-gratis-es', texto: '23 APIs gratis verificadas para la comunidad hispana', href: 'https://github.com/AvilaCarlosDev/apis-gratis-es' },
+      { nombre: 'Webs de ejemplo', texto: 'Seis demos por rubro que reciben clientes por WhatsApp', href: '/#negocios' },
+    ],
+  },
+  en: {
+    path: '/en/links/',
+    title: 'Carlos Avila · links',
+    description: 'Links from Carlos Avila: websites and apps for businesses, CV for companies and his homelab, local AI and security projects.',
+    skip: 'Skip to content',
+    retrato: 'Portrait of Carlos Avila',
+    entrada: 'I build my own servers, my local AI and my apps. Then I try to break them.',
+    caminos: 'What are you looking for',
+    wa: 'Hi Carlos, I found you on social media and want to talk about my business.',
+    negocio: ['I have a business', 'Tell me what you sell and I’ll tell you what website or app I’d build'],
+    empresa: ['Hiring a developer', 'CV, projects with numbers and contact'],
+    proyectos: 'Projects',
+    redes: 'Social',
+    pagina: 'Facebook Page',
+    cafe: 'Buy me a coffee ☕',
+    lista: [
+      { nombre: 'Forja', texto: 'App for coaches, in production, with 109 permission tests', href: '/en/case-studies/forja/' },
+      { nombre: 'polaris-local-ai', texto: 'Local AI on an 8 GB RX 580, with measured benchmarks', href: 'https://github.com/AvilaCarlosDev/polaris-local-ai' },
+      { nombre: 'apis-gratis-es', texto: '23 verified free APIs for the Spanish-speaking community', href: 'https://github.com/AvilaCarlosDev/apis-gratis-es' },
+      { nombre: 'Sample websites', texto: 'Six demos by industry that bring in clients through WhatsApp', href: '/en/#negocios' },
+    ],
+  },
+}
+const x = textos[t.lang]
+const otro = textos[t.lang === 'es' ? 'en' : 'es']
+const inicio = t.lang === 'es' ? '/' : '/en/'
+const wa = `${t.whatsapp}?text=${encodeURIComponent(x.wa)}`
+const proyectos = x.lista
+const redes = [
+  { nombre: 'LinkedIn', href: 'https://www.linkedin.com/in/avilacarlosdev' },
+  { nombre: 'Instagram', href: 'https://www.instagram.com/avilacarlosdev' },
+  { nombre: 'Facebook', href: 'https://www.facebook.com/AvilaCarlosDev' },
+  { nombre: 'X', href: 'https://x.com/AvilaCarlosDev' },
+  { nombre: 'Threads', href: 'https://www.threads.com/@avilacarlosdev' },
+  { nombre: 'Bluesky', href: 'https://bsky.app/profile/avilacarlosdev.bsky.social' },
+  { nombre: x.pagina, href: 'https://www.facebook.com/profile.php?id=61595597465729' },
+  { nombre: 'TikTok', href: 'https://www.tiktok.com/@avilacarlosdev' },
+  { nombre: 'WhatsApp Business', href: wa },
+  { nombre: 'GitHub', href: 'https://github.com/AvilaCarlosDev' },
+  { nombre: x.cafe, href: 'https://buymeacoffee.com/avilacarlosdev' },
+]
+const externo = (href) => href.startsWith('http')
+---
+<Base
+  t={t}
+  path={x.path}
+  title={x.title}
+  description={x.description}
+  alternates={{ es: textos.es.path, en: textos.en.path }}
+  noindex
+>
+  <a class="skip" href="#contenido">{x.skip}</a>
+  <main id="contenido" class="links">
+    <div class="lang idioma" role="group" aria-label={t.nav.langLabel}>
+      <b aria-current="true">{t.nav.current}</b> /
+      <a href={otro.path} hreflang={t.nav.switchTo.hreflang} lang={t.nav.switchTo.hreflang} title={t.nav.switchTo.name}>{t.nav.switchTo.code}</a>
+    </div>
+    <Image class="foto" src={retrato} alt={x.retrato} widths={[96, 192]} sizes="96px" />
+    <h1>Carlos Avila</h1>
+    <p class="entrada">{x.entrada}</p>
+
+    <nav class="caminos" aria-label={x.caminos}>
+      <a class="camino" href={wa} target="_blank" rel="noopener">
+        <b>{x.negocio[0]}</b>
+        <span>{x.negocio[1]}</span>
+      </a>
+      <a class="camino" href={`${inicio}#cv`}>
+        <b>{x.empresa[0]}</b>
+        <span>{x.empresa[1]}</span>
+      </a>
+    </nav>
+
+    <h2>{x.proyectos}</h2>
+    <ul class="proyectos">
+      {proyectos.map((p) => (
+        <li>
+          <a href={p.href} target={externo(p.href) ? '_blank' : undefined} rel={externo(p.href) ? 'noopener' : undefined}>
+            <b>{p.nombre}{externo(p.href) ? ' ↗' : ' →'}</b>
+            <span>{p.texto}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <h2>{x.redes}</h2>
+    <nav class="redes" aria-label={x.redes}>
+      {redes.map((r) => <a href={r.href} target="_blank" rel="noopener">{r.nombre}</a>)}
+    </nav>
+    <p class="web"><a href={inicio}>avilacarlosdev.com</a></p>
+  </main>
+</Base>
+
+<style>
+  .links { max-width: 520px; margin: 0 auto; padding: 24px 16px 64px; text-align: center; }
+  .idioma { justify-content: flex-end; align-items: baseline; margin-bottom: 8px; }
+  .idioma a { color: var(--mute); padding: 6px 4px; }
+  .foto { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; margin: 0 auto 16px; display: block; }
+  h1 { font-size: 40px; margin: 0 0 8px; }
+  .entrada { color: var(--mute); font-size: 17px; margin: 0 0 28px; }
+  .caminos { display: grid; gap: 12px; margin-bottom: 36px; }
+  .camino { display: block; text-align: left; padding: 18px 20px; border-radius: 14px; background: var(--navy); color: #fff; text-decoration: none; }
+  .camino:first-child { background: #25d366; color: #06260f; }
+  .camino b { display: block; font-size: 18px; }
+  .camino span { font-size: 14px; opacity: 0.85; }
+  h2 { font-size: 26px; margin: 0 0 12px; text-align: left; }
+  .proyectos { list-style: none; padding: 0; margin: 0 0 32px; display: grid; gap: 10px; text-align: left; }
+  .proyectos a { display: block; padding: 14px 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--card); color: var(--ink); text-decoration: none; }
+  .proyectos a:hover { border-color: var(--blue); }
+  .proyectos b { display: block; font-size: 16px; }
+  .proyectos span { font-size: 14px; color: var(--mute); }
+  .redes { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 28px; }
+  .redes a { display: block; padding: 11px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--ink); text-decoration: none; font-size: 15px; font-weight: 500; }
+  .redes a:hover { border-color: var(--blue); }
+  .redes a:last-child { grid-column: 1 / -1; }
+  .web { font-size: 14px; }
+  .web a { color: var(--mute); }
+</style>
