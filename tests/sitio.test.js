@@ -408,9 +408,11 @@ describe('apps para el teléfono: solo PWA, sin prometer tiendas', () => {
 })
 
 describe('WhatsApp Business', () => {
-  it('el número visible junto al botón es el de WhatsApp Business', () => {
-    expect(leer('index.html')).toContain('+1 346 491 9344')
-    expect(leer('en/index.html')).toContain('+1 346 491 9344')
+  it('el número no se muestra en texto: solo va dentro del enlace de WhatsApp', () => {
+    for (const archivo of ['index.html', 'en/index.html']) {
+      expect(leer(archivo)).not.toContain('+1 346 491 9344')
+      expect(leer(archivo)).toContain('https://wa.me/13464919344')
+    }
     expect(leer('index.html')).not.toContain('584246223267')
   })
 })
