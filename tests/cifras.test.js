@@ -13,15 +13,6 @@ const item = (d, id) => d.proyectos.items.find((i) => i.id === id)
 
 describe('cifras verificadas de los proyectos', () => {
   for (const [nombre, d] of [['ES', es], ['EN', en]]) {
-    it(`${nombre}: apis-gratis-es muestra 23 APIs verificadas, 1777 en el directorio, 5 demos y 373 pruebas`, () => {
-      const n = numeros(item(d, 'apis-gratis-es').numbers)
-      expect(n).toEqual([V['apis-gratis-es'].apis, V['apis-gratis-es'].directorio, V['apis-gratis-es'].demos, V['apis-gratis-es'].pruebas])
-      // El directorio no está verificado: el sitio no puede presentarlo como si lo estuviera.
-      expect(item(d, 'apis-gratis-es').numbers[1]).toMatch(d.lang === 'es' ? /sin verificar/ : /unverified/)
-      const suma = Object.values(V['apis-gratis-es'].detalle).reduce((a, b) => a + b, 0)
-      expect(suma).toBe(V['apis-gratis-es'].pruebas)
-    })
-
     it(`${nombre}: polaris-local-ai muestra 6 modelos de texto y visión, 2 de imagen y 25 pruebas`, () => {
       const o = V['polaris-local-ai']
       const n = numeros(item(d, 'polaris-local-ai').numbers)
@@ -45,9 +36,9 @@ describe('cifras verificadas de los proyectos', () => {
     expect(new Date(verificadas.fecha).getTime()).toBeLessThanOrEqual(Date.now())
   })
 
-  it('los proyectos de la página son exactamente los tres elegidos, con enlace a su repositorio', () => {
+  it('los proyectos de la página son exactamente los dos elegidos, con enlace a su repositorio', () => {
     for (const d of [es, en]) {
-      expect(d.proyectos.items.map((i) => i.id)).toEqual(['Forja', 'polaris-local-ai', 'apis-gratis-es'])
+      expect(d.proyectos.items.map((i) => i.id)).toEqual(['Forja', 'polaris-local-ai'])
       for (const i of d.proyectos.items) expect(i.url).toBe(`https://github.com/AvilaCarlosDev/${i.id}`)
     }
   })

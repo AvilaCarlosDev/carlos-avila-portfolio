@@ -259,10 +259,10 @@ describe('quién soy y proyectos: contenido', () => {
       expect(doc.querySelectorAll('#quien-soy .chips li').length).toBeGreaterThanOrEqual(8)
     })
 
-    it(`${nombre}: proyectos son los 3 proyectos, con GitHub, captura real y demos en vivo`, () => {
+    it(`${nombre}: proyectos son los 2 proyectos, con GitHub, captura real y demos en vivo`, () => {
       const doc = parse(leer(archivo))
-      expect(doc.querySelectorAll('#proyectos .proj')).toHaveLength(3)
-      expect(doc.querySelectorAll('#proyectos .proj h3').map((h) => h.text)).toEqual(['Forja', 'polaris-local-ai', 'apis-gratis-es'])
+      expect(doc.querySelectorAll('#proyectos .proj')).toHaveLength(2)
+      expect(doc.querySelectorAll('#proyectos .proj h3').map((h) => h.text)).toEqual(['Forja', 'polaris-local-ai'])
       // Cada proyecto se ve con una captura del producto, con texto alternativo descriptivo.
       for (const card of doc.querySelectorAll('#proyectos .proj')) {
         const media = card.querySelector('.shot img, .shot video')
@@ -281,9 +281,7 @@ describe('quién soy y proyectos: contenido', () => {
       expect(doc.querySelector('#proyectos .proj a[href="https://forja-trainer.vercel.app/"]'), 'Forja en vivo').not.toBeNull()
       expect(doc.querySelectorAll('#proyectos .demo')).toHaveLength(6)
       expect(doc.querySelectorAll('#proyectos .demo .btn[href*="vercel.app"]')).toHaveLength(6)
-      const demos = doc.querySelectorAll('#proyectos a[href*="github.io"]')
-      expect(demos).toHaveLength(1)
-      expect(demos[0].getAttribute('href')).toBe('https://avilacarlosdev.github.io/apis-gratis-es/')
+      expect(doc.querySelector('#proyectos a[href*="apis-gratis-es"]')).toBeNull()
       expect(doc.querySelector('#trayectoria')).toBeNull()
     })
   }

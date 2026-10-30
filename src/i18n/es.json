@@ -74,20 +74,6 @@
         "url": "https://github.com/AvilaCarlosDev/polaris-local-ai",
         "shotAlt": "Isla flotante en vóxeles, animada: la escena 3D de polaris-local-ai con agua, palmeras y un faro",
         "video": "isla"
-      },
-      {
-        "id": "apis-gratis-es",
-        "description": "Catálogo verificado de APIs públicas y gratuitas para la comunidad hispanohablante, con demos que funcionan en vivo y un directorio ampliado (sin verificar) a partir de public-apis.",
-        "numbers": [
-          "23 APIs verificadas",
-          "1777 en el directorio, sin verificar",
-          "5 demos",
-          "373 pruebas"
-        ],
-        "url": "https://github.com/AvilaCarlosDev/apis-gratis-es",
-        "demoUrl": "https://avilacarlosdev.github.io/apis-gratis-es/",
-        "shot": "apis-gratis-es",
-        "shotAlt": "Portada de apis-gratis-es: APIs gratuitas que funcionan, probadas en apps de verdad, con el mapa de Ubicación y el clima de las demos"
       }
     ],
     "demos": {
