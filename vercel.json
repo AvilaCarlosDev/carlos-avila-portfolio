@@ -35,6 +35,24 @@
           "value": "same-origin"
         }
       ]
+    },
+    {
+      "source": "/Carlos-Avila-CV-ES.pdf",
+      "headers": [
+        {
+          "key": "Content-Disposition",
+          "value": "attachment; filename=\"Carlos-Avila-CV-ES.pdf\""
+        }
+      ]
+    },
+    {
+      "source": "/Carlos-Avila-CV-EN.pdf",
+      "headers": [
+        {
+          "key": "Content-Disposition",
+          "value": "attachment; filename=\"Carlos-Avila-CV-EN.pdf\""
+        }
+      ]
     }
   ]
 }
