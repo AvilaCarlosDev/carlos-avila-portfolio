@@ -201,6 +201,14 @@ describe('archivos del sitio', () => {
     expect(cab['Content-Security-Policy']).toMatch(/frame-ancestors 'none'/)
     for (const k of ['Strict-Transport-Security', 'X-Content-Type-Options', 'X-Frame-Options', 'Referrer-Policy', 'Permissions-Policy']) expect(cab[k], k).toBeTruthy()
   })
+
+  it('los PDF del CV se sirven como descarga (iPhone ignora el atributo download y los abría en el visor)', () => {
+    const v = JSON.parse(readFileSync(resolve(import.meta.dirname, '../vercel.json'), 'utf8'))
+    for (const l of ['ES', 'EN']) {
+      const regla = v.headers.find((h) => h.source === `/Carlos-Avila-CV-${l}.pdf`)
+      expect(regla?.headers, l).toContainEqual({ key: 'Content-Disposition', value: `attachment; filename="Carlos-Avila-CV-${l}.pdf"` })
+    }
+  })
 })
 
 describe('compatibilidad con la CSP (font-src y img-src \'self\')', () => {
