@@ -83,13 +83,10 @@
     }
   },
   "cv": {
-    "fecha": "2026-10-24",
+    "fecha": "2026-10-30",
     "nota": "Cifras que cita el CV en PDF (public/Carlos-Avila-CV-*.pdf), generado con cv/generar.sh desde cv/cv-*.html.",
     "cifras": {
-      "apis-gratis-es APIs": 23,
-      "apis-gratis-es pruebas": 373,
-      "mcp-readiness-check pruebas": 94,
-      "openclaw-skills verificadas byte a byte": 15
+      "Forja pruebas": 160
     }
   }
 }
