@@ -1,5 +1,5 @@
 ---
-import firma from '../assets/firma.png'
+import logo from '../assets/logo.png'
 const { t, switchHref = t.nav.switchTo.href, home = true } = Astro.props
 const n = t.nav
 const inicio = t.lang === 'es' ? '/' : '/en/'
@@ -9,7 +9,7 @@ const enlace = (l) => (home ? l.href : inicio + l.href)
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href={inicio} aria-label="Avilacarlosdev">
-      <img src={firma.src} width="50" height="26" alt="" />
+      <img src={logo.src} width="31" height="28" alt="" />
       Avilacarlosdev
     </a>
     <nav class="site-nav" aria-label={n.ariaLabel}>

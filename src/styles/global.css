@@ -44,7 +44,7 @@ img { max-width: 100%; height: auto; }
 }
 .site-header .wrap { height: 100%; display: flex; align-items: center; gap: 22px; }
 .brand { display: flex; align-items: center; gap: 9px; font-weight: 700; font-size: 15px; margin-right: auto; }
-.brand img { width: 50px; height: 26px; }
+.brand img { width: 31px; height: 28px; }
 .site-nav { display: flex; gap: 20px; font-size: 13.5px; color: var(--mute); }
 .site-nav a:hover { color: var(--ink); }
 .lang { display: flex; gap: 6px; font-family: var(--mono); font-size: 12px; color: var(--mute); }
@@ -162,7 +162,7 @@ section.wrap { padding-top: 84px; }
 
 .site-footer { margin-top: 90px; border-top: 1px solid var(--line); padding: 26px 0; }
 .site-footer .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--mute); }
-.site-footer img { height: 34px; width: auto; image-rendering: pixelated; background: var(--navy); border-radius: 8px; padding: 2px 8px; }
+.site-footer img { height: 34px; width: auto; }
 
 
 .privacidad { margin: 10px 0 0; font-size: 12.5px; color: var(--mute); }
