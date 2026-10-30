@@ -2,8 +2,8 @@
   "lang": "es",
   "htmlLang": "es",
   "meta": {
-    "title": "Carlos Avila · Developer full stack, homelab e IA local",
-    "description": "Carlos Avila, Full Stack Developer · IA en Venezuela: webs y apps con React, Node y Supabase para negocios que quieren más clientes. Proyectos y CV."
+    "title": "Carlos Avila · Developer, homelab e IA local",
+    "description": "Carlos Avila, developer en Venezuela: webs y apps para negocios con React, Node.js y Python, homelab e IA local. Privacidad, seguridad y control de datos."
   },
   "nav": {
     "ariaLabel": "Navegación principal",
@@ -36,10 +36,10 @@
     "current": "ES"
   },
   "hero": {
-    "eyebrow": "Full Stack Developer · IA · Venezuela",
+    "eyebrow": "Developer · Homelab · IA local",
     "titleBefore": "Monto mis servidores, mi IA local y mis apps.",
     "titleEm": "Después intento romperlos.",
-    "sub": "Construyo webs y apps con React, Node.js y Supabase, con pruebas y en producción. Para empresas que buscan un developer remoto y para negocios que quieren recibir clientes por WhatsApp.",
+    "sub": "Construyo webs y apps con React, Node.js y Python, con pruebas y en producción. Para empresas que buscan un developer remoto y para negocios que quieren recibir clientes por WhatsApp.",
     "ctaProjects": "Ver proyectos",
     "portraitAlt": "Retrato de Carlos Avila, en blanco y negro, con los brazos cruzados",
     "ctaBusiness": "Quiero una web para mi negocio"
@@ -197,7 +197,7 @@
     "title": "Mi CV, al día",
     "sub": "Una página, sin relleno. Disponible en español y en inglés.",
     "boxTitle": "Descarga mi CV",
-    "text": "Mi trabajo como developer freelance, el caso del Dr. Eddy Hernández, Forja, mis proyectos de código abierto con cifras y mis certificaciones verificables.",
+    "text": "Mi experiencia freelance, el caso del Dr. Eddy Hernández, Forja, mis proyectos de código abierto y mis certificaciones.",
     "btnPrimary": "Descargar en español",
     "btnSecondary": "Download in English",
     "primaryFile": "/Carlos-Avila-CV-ES.pdf",
@@ -298,8 +298,8 @@
   "quien": {
     "title": "Quién soy",
     "paragraphs": [
-      "Soy Carlos, desarrollador venezolano. Hago webs y apps para negocios que quieren más clientes, con React, Node, Supabase e IA. Mi app Forja, para entrenadores, ya está en producción.",
-      "Antes de programar pasé años en ventas y atención al cliente y estudié Medicina. De ahí viene mi forma de trabajar: escucho, encuentro el problema real y lo explico con claridad. Publico código abierto en español, con pruebas, y automatizo con IA y agentes."
+      "Soy Carlos Avila, developer. Construyo webs, apps y automatizaciones para negocios con React, Node.js, Python y Supabase, y opero mi propia infraestructura: un homelab con servidores, servicios autoalojados e IA local. Mi app Forja, para entrenadores, ya está en producción.",
+      "Antes de programar pasé años en ventas y atención al cliente y estudié Medicina. De ahí viene mi forma de trabajar: escucho, encuentro el problema real y lo explico con claridad. Privacidad, seguridad y control de datos en cada proyecto."
     ],
     "facts": [
       {
@@ -312,11 +312,11 @@
       },
       {
         "label": "Código abierto",
-        "value": "373 pruebas en apis-gratis-es · 94 % de cobertura en mcp-readiness-check · PRs aceptados en pythiaLabs"
+        "value": "polaris-local-ai, IA local en una RX 580 · 6 webs para negocios en vivo · PRs aceptados en pythiaLabs, DevSwitch e icon-sprite"
       },
       {
         "label": "Ubicación",
-        "value": "Punto Fijo, Venezuela · trabajo remoto (UTC−4)"
+        "value": "Venezuela · trabajo remoto (UTC−4)"
       },
       {
         "label": "Idiomas",
@@ -337,8 +337,9 @@
       "PHP · Laravel",
       "PostgreSQL · Supabase",
       "Git · GitHub",
+      "Homelab · Proxmox · Tailscale",
       "Docker · Linux",
-      "IA y agentes (MCP)"
+      "IA local y agentes (MCP)"
     ]
   },
   "whatsapp": "https://wa.me/13464919344",
