@@ -26,25 +26,6 @@
         "ls supabase/migrations | grep -cE '^00[0-9][0-9]_forja' → 13"
       ]
     },
-    "apis-gratis-es": {
-      "apis": 23,
-      "directorio": 1777,
-      "demos": 5,
-      "pruebas": 373,
-      "medido": "2026-10-24",
-      "detalle": {
-        "verificador, catálogo y directorio (Python, unittest)": 88,
-        "demos (Node, node --test)": 277,
-        "paridad de README (shell)": 8
-      },
-      "comandos": [
-        "python3 -m unittest discover -s tests -p 'test_*.py'   → Ran 88 tests, OK",
-        "cd demos && node --test \"**/tests/*.test.js\"          → tests 277, pass 277, fail 0",
-        "bash tests/check-parity.test.sh                        → 8 passed, 0 failed",
-        "python3: len(json.load(open('data/apis.json'))['entradas']) → 23",
-        "python3: len(json.load(open('data/directorio.json'))['entradas']) → 1777 (sin verificar, a partir de public-apis)"
-      ]
-    },
     "mcp-readiness-check": {
       "nota": "Ya no se muestra en el sitio (todavía no está inscrito en NPM). Se conserva porque el CV en PDF todavía cita estas cifras.",
       "pruebas": 94,

@@ -74,20 +74,6 @@
         "url": "https://github.com/AvilaCarlosDev/polaris-local-ai",
         "shotAlt": "Animated floating voxel island: the polaris-local-ai 3D scene with water, palm trees and a lighthouse",
         "video": "isla"
-      },
-      {
-        "id": "apis-gratis-es",
-        "description": "Verified catalog of free public APIs for the Spanish-speaking community, with live demos and an extended directory (unverified) built from public-apis.",
-        "numbers": [
-          "23 verified APIs",
-          "1777 in the directory, unverified",
-          "5 demos",
-          "373 tests"
-        ],
-        "url": "https://github.com/AvilaCarlosDev/apis-gratis-es",
-        "demoUrl": "https://avilacarlosdev.github.io/apis-gratis-es/",
-        "shot": "apis-gratis-es",
-        "shotAlt": "apis-gratis-es home page: free APIs that work, tested in real apps, with the Location demo map and weather card"
       }
     ],
     "demos": {
@@ -308,7 +294,7 @@
       },
       {
         "label": "Open to",
-        "value": "Remote Full Stack Developer roles"
+        "value": "Remote Developer roles"
       },
       {
         "label": "Open source",
