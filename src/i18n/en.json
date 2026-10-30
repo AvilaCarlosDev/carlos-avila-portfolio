@@ -233,12 +233,12 @@
     "githubLabel": "Carlos on GitHub",
     "linkedinLabel": "Carlos on LinkedIn",
     "whatsapp": "Message me on WhatsApp",
-    "whatsappNote": "+1 346 491 9344 · I reply the same day",
+    "whatsappNote": "I reply the same day",
     "whatsappText": "Hi Carlos, I saw your portfolio.",
     "email": "contacto@avilacarlosdev.com"
   },
   "footer": {
-    "rights": "© 2026 Avilacarlosdev · Made in Venezuela",
+    "rights": "Avilacarlosdev",
     "signatureAlt": "AvilaCarlosDev logo",
     "privacy": {
       "label": "Privacy",
