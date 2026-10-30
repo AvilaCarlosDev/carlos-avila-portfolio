@@ -2,8 +2,8 @@
   "lang": "en",
   "htmlLang": "en",
   "meta": {
-    "title": "Carlos Avila · Full stack developer, homelab and local AI",
-    "description": "Carlos Avila, Full Stack Developer · AI in Venezuela: websites and apps with React, Node and Supabase for businesses that want more clients. CV."
+    "title": "Carlos Avila · Developer, homelab and local AI",
+    "description": "Carlos Avila, developer in Venezuela: websites and apps for businesses with React, Node.js and Python, homelab and local AI. Privacy, security and data control."
   },
   "nav": {
     "ariaLabel": "Main navigation",
@@ -36,10 +36,10 @@
     "current": "EN"
   },
   "hero": {
-    "eyebrow": "Full Stack Developer · AI · Venezuela",
+    "eyebrow": "Developer · Homelab · Local AI",
     "titleBefore": "I run my own servers, local AI and apps.",
     "titleEm": "Then I try to break them.",
-    "sub": "I build websites and apps with React, Node.js and Supabase, tested and in production. For companies hiring a remote developer and for businesses that want customers on WhatsApp.",
+    "sub": "I build websites and apps with React, Node.js and Python, tested and in production. For companies hiring a remote developer and for businesses that want customers on WhatsApp.",
     "ctaProjects": "See projects",
     "portraitAlt": "Black and white portrait of Carlos Avila with arms crossed",
     "ctaBusiness": "I need a website for my business"
@@ -197,7 +197,7 @@
     "title": "My CV, up to date",
     "sub": "One page, no filler. Available in English and Spanish.",
     "boxTitle": "Download my CV",
-    "text": "My freelance developer work, the Dr. Eddy Hernández project, Forja, my open source projects with numbers and my verifiable certifications.",
+    "text": "My freelance experience, the Dr. Eddy Hernández project, Forja, my open source projects and my certifications.",
     "btnPrimary": "Download in English",
     "btnSecondary": "Descargar en español",
     "primaryFile": "/Carlos-Avila-CV-EN.pdf",
@@ -298,8 +298,8 @@
   "quien": {
     "title": "Who I am",
     "paragraphs": [
-      "I am Carlos, a Venezuelan developer. I build websites and apps for businesses that want more clients, with React, Node, Supabase and AI. My app Forja, for fitness coaches, is already in production.",
-      "Before coding I spent years in sales and customer service and studied Medicine. That is where my way of working comes from: I listen, find the real problem and explain it clearly. I publish open source in Spanish, with tests, and automate with AI and agents."
+      "I am Carlos Avila, a developer. I build websites, apps and automations for businesses with React, Node.js, Python and Supabase, and I run my own infrastructure: a homelab with servers, self-hosted services and local AI. My app Forja, for fitness coaches, is already in production.",
+      "Before coding I spent years in sales and customer service and studied Medicine. That is where my way of working comes from: I listen, find the real problem and explain it clearly. Privacy, security and data control in every project."
     ],
     "facts": [
       {
@@ -312,11 +312,11 @@
       },
       {
         "label": "Open source",
-        "value": "373 tests in apis-gratis-es · 94% coverage in mcp-readiness-check · merged PRs in pythiaLabs"
+        "value": "polaris-local-ai, local AI on an RX 580 · 6 live business websites · merged PRs in pythiaLabs, DevSwitch and icon-sprite"
       },
       {
         "label": "Location",
-        "value": "Punto Fijo, Venezuela · remote (UTC−4)"
+        "value": "Venezuela · remote (UTC−4)"
       },
       {
         "label": "Languages",
@@ -337,8 +337,9 @@
       "PHP · Laravel",
       "PostgreSQL · Supabase",
       "Git · GitHub",
+      "Homelab · Proxmox · Tailscale",
       "Docker · Linux",
-      "AI and agents (MCP)"
+      "Local AI and agents (MCP)"
     ]
   },
   "whatsapp": "https://wa.me/13464919344",
