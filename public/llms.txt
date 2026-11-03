@@ -1,0 +1,24 @@
+# Carlos Avila (AvilaCarlosDev)
+
+> Carlos Avila es developer en Venezuela. Hace webs y apps para negocios de Venezuela, Estados Unidos, España y Latinoamérica, en remoto: webs que traen clientes por WhatsApp, guardan cada contacto y miden los anuncios. Una web para negocio va desde $350. Monta sus servidores, su IA local y sus apps. Después intenta romperlos.
+
+## Servicios
+- [Páginas web para negocios](https://avilacarlosdev.com/web-para-negocios/): qué incluye, para quién es, cómo se trabaja, precio (desde $350) y preguntas frecuentes
+- [Websites for business (EN)](https://avilacarlosdev.com/en/websites-for-business/): la misma página en inglés
+
+## Casos
+- [Forja](https://avilacarlosdev.com/casos/forja/): app instalable para entrenadores personales, React + Supabase con seguridad por fila (RLS)
+- [Polaris](https://github.com/AvilaCarlosDev/polaris-local-ai): IA local en una AMD RX 580 de 8 GB, router compatible con la API de OpenAI y benchmarks medidos
+
+## Sobre Carlos
+- [Inicio y CV](https://avilacarlosdev.com/): perfil, proyectos y CV en español e inglés
+- Contacto: contacto@avilacarlosdev.com
+
+## Perfiles
+- GitHub: https://github.com/AvilaCarlosDev
+- LinkedIn: https://www.linkedin.com/in/avilacarlosdev
+- Instagram: https://www.instagram.com/avilacarlosdev
+- Facebook: https://www.facebook.com/profile.php?id=61595597465729
+- X: https://x.com/AvilaCarlosDev
+- TikTok: https://www.tiktok.com/@avilacarlosdev
+- Bluesky: https://bsky.app/profile/avilacarlosdev.bsky.social

@@ -8,6 +8,7 @@ const f = t.footer
   <div class="wrap">
     <Image src={logo} alt={f.signatureAlt} height={34} />
     <nav class="foot-links" aria-label="Legal">
+      {f.pages.map((p) => <a href={p.href}>{p.label}</a>)}
       <a href={f.privacy.href}>{f.privacy.label}</a>
       <a href={f.sourceHref} rel="noopener">{f.sourceLabel}</a>
       <a href={f.licenseHref} rel="noopener">{f.license}</a>

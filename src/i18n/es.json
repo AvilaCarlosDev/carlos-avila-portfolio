@@ -157,7 +157,7 @@
       "cliente": {
         "label": "Cliente",
         "status": "En migración · próximo lanzamiento",
-        "name": "Dr. Eddy Hernández · cirujano bariátrico · Punto Fijo",
+        "name": "Dr. Eddy Hernández · cirujano bariátrico",
         "description": "Estoy pasando su web de WordPress a React. Antes de abrir WhatsApp, el paciente llena un formulario corto: el contacto queda guardado y al doctor le llega un aviso por correo, sin exponer su número. Incluye una página de gracias para medir sus anuncios de Meta y una calculadora de IMC.",
         "features": [
           "Formulario con protección antispam",
@@ -167,7 +167,7 @@
           "Calculadora de IMC"
         ]
       },
-      "priceNote": "Te digo el precio por WhatsApp después de escuchar lo que necesitas.",
+      "priceNote": "Desde $350. Te digo el precio exacto por WhatsApp después de escuchar lo que necesitas.",
       "more": {
         "label": "Páginas web para negocios en Venezuela",
         "href": "/web-para-negocios/"
@@ -225,6 +225,10 @@
   },
   "footer": {
     "rights": "Avilacarlosdev",
+    "pages": [
+      { "label": "Webs para negocios", "href": "/web-para-negocios/" },
+      { "label": "Caso Forja", "href": "/casos/forja/" }
+    ],
     "signatureAlt": "Logo de AvilaCarlosDev",
     "privacy": {
       "label": "Privacidad",
@@ -339,11 +343,11 @@
   "paginas": {
     "webNegocios": {
       "path": "/web-para-negocios/",
-      "metaTitle": "Páginas web para negocios en Venezuela · Punto Fijo, Falcón",
-      "metaDescription": "Webs para negocios que traen clientes por WhatsApp: cada contacto queda guardado, mides tus anuncios y carga rápido en el teléfono. Hecho en Punto Fijo.",
+      "metaTitle": "Páginas web para negocios con WhatsApp · Venezuela y remoto",
+      "metaDescription": "Webs para negocios que traen clientes por WhatsApp: cada contacto queda guardado, mides tus anuncios y carga rápido en el teléfono. Desde Venezuela, en remoto.",
       "eyebrow": "Servicio · Webs para negocios",
       "title": "Una web para tu negocio que te traiga clientes por WhatsApp",
-      "lead": "Soy Carlos, programador en Punto Fijo, Falcón. Hago webs para negocios de Venezuela y Latinoamérica con un objetivo claro: que la gente que te encuentra te escriba.",
+      "lead": "Soy Carlos, developer en Venezuela. Hago webs para negocios de Venezuela, Estados Unidos, España y Latinoamérica, en remoto, con un objetivo claro: que la gente que te encuentra te escriba.",
       "sections": [
         {
           "h": "Para quién es",
@@ -450,12 +454,12 @@
         },
         {
           "h": "¿Cuánto cuesta?",
-          "p": "Te digo el precio por WhatsApp después de escuchar lo que necesitas.",
+          "p": "Una web para negocio va desde $350. El precio final depende de lo que necesites: te lo digo por WhatsApp después de escucharte.",
           "list": []
         },
         {
-          "h": "¿Trabajas fuera de Falcón?",
-          "p": "Sí. Trabajo remoto con negocios de cualquier ciudad de Venezuela o de otro país.",
+          "h": "¿Trabajas fuera de Venezuela?",
+          "p": "Sí. Trabajo en remoto con negocios de cualquier ciudad de Venezuela, de Estados Unidos, de España y del resto de Latinoamérica.",
           "list": []
         }
       ],
@@ -471,8 +475,21 @@
         "name": "Una web para tu negocio que te traiga clientes por WhatsApp",
         "areaServed": [
           "Venezuela",
+          "Estados Unidos",
+          "España",
           "Latinoamérica"
-        ]
+        ],
+        "description": "Webs para negocios que traen clientes por WhatsApp: cada contacto queda guardado, mides tus anuncios y carga rápido en el teléfono.",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "USD",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "minPrice": "350",
+            "priceCurrency": "USD"
+          },
+          "description": "Desde $350. El precio final depende del proyecto."
+        }
       }
     },
     "forja": {
@@ -571,7 +588,7 @@
           "priceCurrency": "USD",
           "description": "Gratis hasta 5 clientes"
         },
-        "sameAs": "https://forja-trainer.vercel.app/"
+        "installUrl": "https://forja-trainer.vercel.app/"
       }
     }
   }

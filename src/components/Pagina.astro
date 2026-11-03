@@ -21,9 +21,16 @@ const migas = {
     { '@type': 'ListItem', position: 2, name: pg.title, item: new URL(pg.path, sitio).href },
   ],
 }
-const autor = { '@id': `${sitio}/#persona` }
-const nodo = pg.schema && { ...pg.schema, url: new URL(pg.path, sitio).href, [pg.schema['@type'] === 'Service' ? 'provider' : 'author']: autor }
-const esquema = nodo ? [migas, nodo] : [migas]
+const esServicio = pg.schema?.['@type'] === 'Service'
+const relacion = esServicio ? { provider: { '@id': `${sitio}/#negocio` } } : { '@id': `${sitio}/casos/forja/#app`, author: { '@id': `${sitio}/#persona` } }
+const nodo = pg.schema && { ...pg.schema, url: new URL(pg.path, sitio).href, ...relacion }
+// Preguntas frecuentes: las secciones cuyo título es una pregunta, tal como se ven en la página.
+const preguntas = pg.sections.filter((s) => s.h.trim().endsWith('?'))
+const faq = preguntas.length > 0 && {
+  '@type': 'FAQPage',
+  mainEntity: preguntas.map((s) => ({ '@type': 'Question', name: s.h, acceptedAnswer: { '@type': 'Answer', text: [s.p, ...s.list].join(' ') } })),
+}
+const esquema = [migas, nodo, faq].filter(Boolean)
 const ogImagen = imagen ? { src: imagen.src, width: imagen.width, height: imagen.height, alt: imagenAlt } : undefined
 ---
 <Base t={t} path={pg.path} title={pg.metaTitle} description={pg.metaDescription} alternates={alternates} ogTipo={pg.ogTipo ?? 'website'} ogImagen={ogImagen} esquema={esquema}>

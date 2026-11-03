@@ -157,7 +157,7 @@
       "cliente": {
         "label": "Client",
         "status": "Migration in progress · launching soon",
-        "name": "Dr. Eddy Hernández · bariatric surgeon · Punto Fijo, Venezuela",
+        "name": "Dr. Eddy Hernández · bariatric surgeon",
         "description": "I'm moving his website from WordPress to React. Before WhatsApp opens, the patient fills in a short form: the lead is saved and the doctor gets an email alert, without exposing his number. It includes a thank-you page to measure his Meta ads and a BMI calculator.",
         "features": [
           "Spam-protected form",
@@ -167,7 +167,7 @@
           "BMI calculator"
         ]
       },
-      "priceNote": "I'll quote you on WhatsApp once I understand what you need.",
+      "priceNote": "From $350. I'll give you the exact price on WhatsApp once I understand what you need.",
       "more": {
         "label": "Websites for small businesses",
         "href": "/en/websites-for-business/"
@@ -225,6 +225,10 @@
   },
   "footer": {
     "rights": "Avilacarlosdev",
+    "pages": [
+      { "label": "Websites for business", "href": "/en/websites-for-business/" },
+      { "label": "Forja case study", "href": "/en/case-studies/forja/" }
+    ],
     "signatureAlt": "AvilaCarlosDev logo",
     "privacy": {
       "label": "Privacy",
@@ -339,11 +343,11 @@
   "paginas": {
     "webNegocios": {
       "path": "/en/websites-for-business/",
-      "metaTitle": "WhatsApp Websites for Small Businesses in Latin America",
+      "metaTitle": "WhatsApp Websites for Small Businesses · Venezuela and Remote",
       "metaDescription": "Websites that bring customers through WhatsApp: every lead is saved, your ads are measured and it loads fast on any phone. Built from Venezuela, remote.",
       "eyebrow": "Service · Websites for business",
       "title": "A website for your business that brings customers through WhatsApp",
-      "lead": "I'm Carlos, a developer in Punto Fijo, Venezuela. I build websites for businesses in Venezuela and Latin America with one clear goal: people who find you, message you.",
+      "lead": "I'm Carlos, a developer in Venezuela. I build websites for businesses in Venezuela, the United States, Spain and Latin America, remotely, with one clear goal: people who find you, message you.",
       "sections": [
         {
           "h": "Who it is for",
@@ -450,12 +454,12 @@
         },
         {
           "h": "How much does it cost?",
-          "p": "I'll quote you on WhatsApp once I understand what you need.",
+          "p": "A business website starts at $350. The final price depends on what you need: I'll quote you on WhatsApp after hearing you out.",
           "list": []
         },
         {
           "h": "Do you work outside Venezuela?",
-          "p": "Yes. I work remotely with businesses in any city or country.",
+          "p": "Yes. I work remotely with businesses anywhere in Venezuela, the United States, Spain and the rest of Latin America.",
           "list": []
         }
       ],
@@ -471,8 +475,21 @@
         "name": "A website for your business that brings customers through WhatsApp",
         "areaServed": [
           "Venezuela",
+          "United States",
+          "Spain",
           "Latin America"
-        ]
+        ],
+        "description": "Websites that bring customers through WhatsApp: every lead is saved, your ads are measured and it loads fast on any phone.",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "USD",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "minPrice": "350",
+            "priceCurrency": "USD"
+          },
+          "description": "From $350. Final price depends on the project."
+        }
       }
     },
     "forja": {
@@ -571,7 +588,7 @@
           "priceCurrency": "USD",
           "description": "Free for up to 5 clients"
         },
-        "sameAs": "https://forja-trainer.vercel.app/"
+        "installUrl": "https://forja-trainer.vercel.app/"
       }
     }
   }
