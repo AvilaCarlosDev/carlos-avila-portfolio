@@ -22,16 +22,37 @@ const persona = {
   '@type': 'Person',
   '@id': `${sitio}/#persona`,
   name: 'Carlos Avila',
-  alternateName: 'Avilacarlosdev',
+  alternateName: ['AvilaCarlosDev', 'Avilacarlosdev'],
   jobTitle: 'Developer',
   description: t.meta.description,
   url: sitio,
   image: og,
   knowsLanguage: ['es', 'en'],
-  sameAs: ['https://github.com/AvilaCarlosDev', 'https://www.linkedin.com/in/avilacarlosdev', 'https://www.instagram.com/avilacarlosdev', 'https://x.com/AvilaCarlosDev', 'https://bsky.app/profile/avilacarlosdev.bsky.social', 'https://www.threads.com/@avilacarlosdev', 'https://www.facebook.com/AvilaCarlosDev', 'https://www.tiktok.com/@avilacarlosdev'],
+  nationality: { '@type': 'Country', name: 'Venezuela' },
+  knowsAbout: ['React', 'Node.js', 'Python', 'Supabase', 'Seguridad por fila (RLS)', 'IA local', 'Homelab', 'Páginas web para negocios'],
+  owns: [{ '@id': `${sitio}/casos/forja/#app` }],
+  sameAs: ['https://github.com/AvilaCarlosDev', 'https://www.linkedin.com/in/avilacarlosdev', 'https://www.instagram.com/avilacarlosdev', 'https://x.com/AvilaCarlosDev', 'https://bsky.app/profile/avilacarlosdev.bsky.social', 'https://www.threads.com/@avilacarlosdev', 'https://www.facebook.com/AvilaCarlosDev', 'https://www.facebook.com/profile.php?id=61595597465729', 'https://www.tiktok.com/@avilacarlosdev'],
+}
+// El negocio (sin dirección: trabaja en remoto). Une la web con el Perfil de Empresa de Google.
+const negocio = {
+  '@type': 'ProfessionalService',
+  '@id': `${sitio}/#negocio`,
+  name: 'AvilaCarlosDev',
+  alternateName: 'Avilacarlosdev',
+  url: sitio,
+  image: og,
+  logo: abs('/favicon-512.png'),
+  email: 'contacto@avilacarlosdev.com',
+  telephone: '+1-346-491-9344',
+  founder: { '@id': `${sitio}/#persona` },
+  address: { '@type': 'PostalAddress', addressCountry: 'VE' },
+  areaServed: [{ '@type': 'Country', name: 'Venezuela' }, { '@type': 'Country', name: 'United States' }, { '@type': 'Country', name: 'Spain' }, 'Latinoamérica'],
+  knowsLanguage: ['es', 'en'],
+  priceRange: 'Desde $350',
+  sameAs: ['https://www.facebook.com/profile.php?id=61595597465729', 'https://www.instagram.com/avilacarlosdev', 'https://www.linkedin.com/in/avilacarlosdev', 'https://www.tiktok.com/@avilacarlosdev', 'https://x.com/AvilaCarlosDev'],
 }
 const web = { '@type': 'WebSite', '@id': `${sitio}/#web`, url: sitio, name: 'Avilacarlosdev', inLanguage: ['es', 'en'], publisher: { '@id': `${sitio}/#persona` } }
-const grafo = { '@context': 'https://schema.org', '@graph': [persona, web, ...esquema] }
+const grafo = { '@context': 'https://schema.org', '@graph': [persona, negocio, web, ...esquema] }
 ---
 <!doctype html>
 <html lang={t.htmlLang}>

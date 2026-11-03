@@ -297,11 +297,12 @@ describe('quién soy y proyectos: contenido', () => {
 
 // Dos públicos (pedido de Carlos, 2026-10-07): quien contrata talento y el negocio que necesita una web.
 describe('presentación: dos llamadas a la acción', () => {
-  for (const [archivo, nombre] of [['index.html', 'ES'], ['en/index.html', 'EN']]) {
+  // El botón del negocio lleva a la página de servicio, que es la que Google indexa (2026-11-03).
+  for (const [archivo, nombre, servicio] of [['index.html', 'ES', '/web-para-negocios/'], ['en/index.html', 'EN', '/en/websites-for-business/']]) {
     it(`${nombre}: "ver proyectos" y "webs para tu negocio"; GitHub y LinkedIn viven en Contacto`, () => {
       const doc = parse(leer(archivo))
       const botones = doc.querySelectorAll('#inicio .cta a')
-      expect(botones.map((a) => a.getAttribute('href'))).toEqual(['#proyectos', '#negocios'])
+      expect(botones.map((a) => a.getAttribute('href'))).toEqual(['#proyectos', servicio])
       expect(doc.querySelector('#inicio a[href*="github.com"]')).toBeNull()
       expect(doc.querySelector('#contacto a[href*="github.com/AvilaCarlosDev"]')).not.toBeNull()
       expect(doc.querySelector('#contacto a[href*="linkedin.com/in/avilacarlosdev"]')).not.toBeNull()
@@ -420,5 +421,43 @@ describe('WhatsApp Business', () => {
       expect(leer(archivo)).toContain('https://wa.me/13464919344')
     }
     expect(leer('index.html')).not.toContain('584246223267')
+  })
+})
+
+// SEO, GEO y AEO (2026-11-03): el negocio como entidad, preguntas frecuentes y lectura por IA.
+describe('buscadores e IA', () => {
+  const grafo = (archivo) => JSON.parse(parse(leer(archivo)).querySelector('script[type="application/ld+json"]').text)['@graph']
+
+  it('cada página publica el negocio y el Service apunta a él', () => {
+    expect(grafo('index.html').some((n) => n['@type'] === 'ProfessionalService' && n['@id'].endsWith('/#negocio'))).toBe(true)
+    const servicio = grafo('web-para-negocios/index.html').find((n) => n['@type'] === 'Service')
+    expect(servicio.provider['@id']).toMatch(/\/#negocio$/)
+    expect(servicio.offers.priceSpecification.minPrice).toBe('350')
+  })
+
+  it('las preguntas de la página de servicio salen como FAQPage', () => {
+    for (const archivo of ['web-para-negocios/index.html', 'en/websites-for-business/index.html']) {
+      const faq = grafo(archivo).find((n) => n['@type'] === 'FAQPage')
+      expect(faq.mainEntity.length).toBeGreaterThan(3)
+      expect(faq.mainEntity.every((q) => q.name.endsWith('?'))).toBe(true)
+    }
+  })
+
+  it('Punto Fijo no aparece en la portada ni en el título del servicio', () => {
+    for (const archivo of ['index.html', 'en/index.html']) expect(leer(archivo)).not.toContain('Punto Fijo')
+    expect(parse(leer('web-para-negocios/index.html')).querySelector('title').text).not.toContain('Punto Fijo')
+  })
+
+  it('llms.txt existe y robots.txt deja entrar a los buscadores de IA', () => {
+    expect(leer('llms.txt')).toContain('# Carlos Avila (AvilaCarlosDev)')
+    const robots = leer('robots.txt')
+    for (const bot of ['GPTBot', 'OAI-SearchBot', 'ClaudeBot', 'PerplexityBot']) expect(robots).toContain(`User-agent: ${bot}`)
+  })
+
+  it('los PDF del CV no se indexan', () => {
+    const v = JSON.parse(readFileSync(resolve(import.meta.dirname, '../vercel.json'), 'utf8'))
+    const pdfs = v.headers.filter((h) => h.source.endsWith('.pdf'))
+    expect(pdfs).toHaveLength(2)
+    for (const h of pdfs) expect(h.headers).toContainEqual({ key: 'X-Robots-Tag', value: 'noindex' })
   })
 })
