@@ -50,7 +50,7 @@ describe('cifras verificadas de los proyectos', () => {
     for (const d of [es, en]) {
       expect(d.proyectos.demos.items.map((i) => i.id)).toEqual(rubros.map((r) => `web-${r}-demo`))
       for (const [k, i] of d.proyectos.demos.items.entries()) {
-        expect(i.url).toBe(`https://github.com/AvilaCarlosDev/${i.id}`)
+        expect(i.url).toBe(rubros[k] === 'taxi' ? 'https://github.com/AvilaCarlosDev/transporte-privado-demo' : `https://github.com/AvilaCarlosDev/${i.id}`)
         expect(i.demoUrl).toBe(rubros[k] === 'taxi' ? DEMO_TRANSPORTE : `https://agencia-web-${rubros[k]}-demo.vercel.app/`)
       }
     }

@@ -128,7 +128,7 @@
           "thumbAlt": "Flower shop demo: home page with collection and flower orders"
         },
         {
-          "id": "transporte-privado-demo",
+          "id": "web-taxi-demo",
           "name": "Private transport (demo)",
           "description": "Airport transfers, trips to the beach and other states, and corporate transport, in SUVs and vans. 3D hero and a reference fare calculator.",
           "url": "https://github.com/AvilaCarlosDev/transporte-privado-demo",

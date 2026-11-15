@@ -128,7 +128,7 @@
           "thumbAlt": "Demo de floristería: portada con colección y pedidos de flores"
         },
         {
-          "id": "transporte-privado-demo",
+          "id": "web-taxi-demo",
           "name": "Transporte privado (demo)",
           "description": "Traslados al aeropuerto, viajes a playa y otros estados y transporte corporativo, en SUV y van. Hero 3D y calculadora de tarifa referencial.",
           "url": "https://github.com/AvilaCarlosDev/transporte-privado-demo",
