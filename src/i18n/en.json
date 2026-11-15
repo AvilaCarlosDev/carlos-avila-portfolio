@@ -129,12 +129,12 @@
         },
         {
           "id": "web-taxi-demo",
-          "name": "Taxi",
-          "description": "Taxi and transfer service: quote calculator, rates, drivers and bookings over WhatsApp.",
+          "name": "Private transport (demo)",
+          "description": "Airport transfers, trips to the beach and other states, and corporate transport, in SUVs and vans. 3D hero and a reference fare calculator.",
           "url": "https://github.com/AvilaCarlosDev/web-taxi-demo",
           "demoUrl": "https://agencia-web-taxi-demo.vercel.app/",
           "thumb": "taxi",
-          "thumbAlt": "Taxi demo: trip quote with origin, destination and fare"
+          "thumbAlt": "Private transport demo: 3D hero with SUV and van for airport transfers, beach trips and corporate transport"
         }
       ],
       "id": "negocios",
@@ -402,7 +402,7 @@
               "href": "https://agencia-web-floristeria-demo.vercel.app/"
             },
             {
-              "label": "Website demo for a taxi service",
+              "label": "Website demo for private transport",
               "href": "https://agencia-web-taxi-demo.vercel.app/"
             }
           ]

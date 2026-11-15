@@ -129,12 +129,12 @@
         },
         {
           "id": "web-taxi-demo",
-          "name": "Taxi",
-          "description": "Servicio de taxi y transfer: cotizador, tarifas, conductores y reservas por WhatsApp.",
+          "name": "Transporte privado (demo)",
+          "description": "Traslados al aeropuerto, viajes a playa y otros estados y transporte corporativo, en SUV y van. Hero 3D y calculadora de tarifa referencial.",
           "url": "https://github.com/AvilaCarlosDev/web-taxi-demo",
           "demoUrl": "https://agencia-web-taxi-demo.vercel.app/",
           "thumb": "taxi",
-          "thumbAlt": "Demo de taxi: cotizador de viaje con origen, destino y tarifa"
+          "thumbAlt": "Demo de transporte privado: hero en 3D con SUV y van para traslados al aeropuerto, playa y transporte corporativo"
         }
       ],
       "id": "negocios",
@@ -402,7 +402,7 @@
               "href": "https://agencia-web-floristeria-demo.vercel.app/"
             },
             {
-              "label": "Demo de web para taxi",
+              "label": "Demo de web para transporte privado",
               "href": "https://agencia-web-taxi-demo.vercel.app/"
             }
           ]
