@@ -128,10 +128,10 @@
           "thumbAlt": "Demo de floristería: portada con colección y pedidos de flores"
         },
         {
-          "id": "web-taxi-demo",
+          "id": "transporte-privado-demo",
           "name": "Transporte privado (demo)",
           "description": "Traslados al aeropuerto, viajes a playa y otros estados y transporte corporativo, en SUV y van. Hero 3D y calculadora de tarifa referencial.",
-          "url": "https://github.com/AvilaCarlosDev/web-taxi-demo",
+          "url": "https://github.com/AvilaCarlosDev/transporte-privado-demo",
           "demoUrl": "https://agencia-web-taxi-demo.vercel.app/",
           "thumb": "taxi",
           "thumbAlt": "Demo de transporte privado: hero en 3D con SUV y van para traslados al aeropuerto, playa y transporte corporativo"
