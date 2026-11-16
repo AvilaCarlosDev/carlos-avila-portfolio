@@ -105,8 +105,8 @@ section.wrap { padding-top: 84px; }
 .demos-head p { max-width: 380px; color: var(--mute); margin: 0; font-size: 15px; }
 .demo-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .demo { display: flex; flex-direction: column; padding: 14px 14px 20px; }
-.demo-thumb { display: block; margin-bottom: 14px; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); aspect-ratio: 16 / 10; }
-.demo-thumb img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.3s; }
+.demo-thumb { display: block; margin-bottom: 14px; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); aspect-ratio: 16 / 9; }
+.demo-thumb img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 0.3s; }
 .demo:hover .demo-thumb img { transform: scale(1.03); }
 .demo h4, .demo p, .demo .row { padding: 0 6px; }
 .oferta { margin-top: 16px; display: grid; grid-template-columns: 1fr 1fr auto; gap: 28px; align-items: center; }
